@@ -1,6 +1,8 @@
 #+title: Configuración de Neovim
 
-Este es el archivo para configurar Neovim. Puesto que no es mi editor principal, y a penas lo estoy aprendiendo a usar, las configuraciones son bastante simples. Así como son simples, son entendibles, por lo que tampoco tienen comentarios.
+Este es el archivo para configurar Neovim. Puesto que no es mi editor principal,
+y a penas lo estoy aprendiendo a usar, las configuraciones son bastante simples.
+Así como son simples, son entendibles, por lo que tampoco tienen comentarios.
 
 Para (re)generarlas ejecuta ~M-x org-babel-tangle~.
 
