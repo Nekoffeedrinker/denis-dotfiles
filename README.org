@@ -1,7 +1,6 @@
 #+title: TIENES QUE LEERME
 
 * Acerca de
-
 Estos son los 'dotfiles' que utilizo para configurar algunos programas que
 utilizo en Linux. Están reunidos aquí para una mejor organización y un correcto
 control de versiones. Para ello utilizo esencialmente GNU Stow y Git.
@@ -20,7 +19,6 @@ Stow para instalar los archivos y olvidarte, ya que este no copiará ningún
 archivo org a tu directorio home.
 
 * Requerimientos
-
 - Git
 - GNU Stow
 
@@ -28,7 +26,7 @@ Ambos requerimientos son relativamente opcionales. *Git* se puede omitir
 parcialmente, ya que se puede descargar el repositorio en formato ~.zip~ desde
 el propio GitHub. También se puede prescindir de *GNU Stow*, debido a que puedes
 crear manualmente tus propios /symlinks/ (en español, enlaces simbólicos), u
-optar por la via fácil de copiar los archivos a sus respectivas carpetas.
+optar por la vía fácil de copiar los archivos a sus respectivas carpetas.
 
 Sin embargo, estas dos herramientas permiten un uso más práctico, además de
 añadir funciones que serían una tarea laboriosa o ineficiente si se hicieran de
@@ -39,8 +37,7 @@ Por lo tanto, recomiendo ampliamente utilizar amplias herramientas y aprender lo
 suficiente para tu conveniencia.
 
 ** ¿Necesito Emacs o no?
-
-Como lo mencioné en la introducción, Emacs es completamente opcional par el uso
+Como lo mencioné en la introducción, Emacs es completamente opcional para el uso
 de estos archivos. No obstante, esta configuración está pensada para *realizar
 el mantenimiento de estos usando Emacs*, debido a que la explicación y
 documentación está en archivos org.
@@ -51,16 +48,26 @@ documentación sobre ello, es mejor que abras el ~.org~ en cualquier editor y lo
 leas detenidamente.
 
 Para las personas interesadas en usar los ~:tangle~ de org-mode, dejaré una
-explicacióñ al final de este README.
+explicación al final de este README.
 
 * Instalación
-
 ** Git
 
-*** TODO Agregar la documentación de Git una vez que se suba el repositorio.
+Primero asegurate de tener git instalado.
+
+Después ejecuta este comando *dentro de tu directorio home*
+
+#+begin_src bash
+
+git clone https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.dotfilesDenis/
+
+#+end_src
+
+Ya que lo tengas, verifica que estén los archivos y continua con Stow
+
+#+RESULTS:
 
 ** GNU Stow
-
 Lo primero que hay que hacer es posicionar el esta carpeta de /dotfiles/ dentro
 de nuestro /home directory/, el directorio de usuario, que en sistemas Linux lo
 podremos identificar como ~/home/username/~, o simplemente con la tilde (~/).
@@ -74,7 +81,6 @@ carpeta.
 *Para entrar más en detalle, favor de consultar el final de este README.*
 
 *** Instalar todas las configuraciones
-
 Para instalar todas las configuraciones, ejecuta:
 
 #+begin_src bash
@@ -83,7 +89,7 @@ stow *
 
 #+end_src
 
-Para quitar los /symlinks/ (y por lo tanto los /dotfiles/), usa:
+Para quitar todos los /symlinks/ (y por lo tanto los /dotfiles/), usa:
 
 #+begin_src bash
 
@@ -93,7 +99,6 @@ stow -D *
 
 
 *** Instalar solo las configuraciones de 1 programa
-
 Supongamos que quieres instalar *Neovim*. Primero identifica el en el
 repositorio el nombre de la carpeta, en este caso ~nvim~. A continuación,
 ejecuta el siguiente comando:
