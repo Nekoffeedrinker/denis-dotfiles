@@ -357,4 +357,27 @@
 ;; Arduino
 
 (use-package! arduino-mode
-  :mode "\\.ino\\'")
+  :mode "\\.ino\\'"
+  :hook (arduino-mode . eglot-ensure))
+
+(defun dp/arduino-gen-compile-db ()
+  (interactive)
+  (let ((default-directory (file-name-directory (buffer-file-name)))
+        (process-environment (cons "PATH=/home/linuxbrew/.linuxbrew/bin:/usr/bin:/bin" process-environment)))
+    (let ((proc (start-process-shell-command
+                 "arduino-gen-db" "*arduino-gen-db*"
+                 "arduino-cli compile --only-compilation-database -b esp32:esp32:esp32 --build-path /tmp/arduino-build . && cp /tmp/arduino-build/compile_commands.json .")))
+      (set-process-sentinel proc
+        (lambda (p _)
+          (when (eq (process-status p) 'exit)
+            (kill-buffer "*arduino-gen-db*")
+            (if (eq (process-exit-status p) 0)
+                (message "✓ compile_commands.json generado")
+              (message "✗ Error al generar compile_commands.json"))))))))
+
+(defun dp/arduino-gen-clangd ()
+  (interactive)
+  (let ((clangd-file (expand-file-name ".clangd" (file-name-directory (buffer-file-name)))))
+    (with-temp-file clangd-file
+      (insert "CompileFlags:\n  Remove: [-m*, -f*, \"@*\"]\n"))
+    (message "✓ .clangd generado")))
