@@ -6,10 +6,10 @@ Así como son simples, son entendibles, por lo que tampoco tienen comentarios.
 
 Para (re)generarlas ejecuta ~M-x org-babel-tangle~.
 
-#+begin_src lua :tangle .config/nvim/init.lua
+#+begin_src lua :tangle init.lua
 
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.expandtab = false

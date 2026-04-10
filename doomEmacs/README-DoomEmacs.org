@@ -1,0 +1,89 @@
+d#+title: Configuración de Doom Emacs
+
+* Tabla de contenidos :toc:
+- [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
+- [[#instalación][Instalación]]
+  - [[#warnings-de-doom-doctor][Warnings de Doom Doctor]]
+- [[#terminal][Terminal]]
+- [[#tangle-config][Tangle: Config]]
+- [[#tangle-packages][Tangle: Packages]]
+
+* Comandos Básicos de configuración
+- *~doom doctor~*
+  Diagnostica problemas en la configuración y puede sugerirte cómo solucionarlo.
+- *~doom sync~*
+  Sincronizar las configuraciones de Doom Emacs con Emacs. Activa módulos del
+  ~init.el~, descarga paquetes del ~packages.el~, y verifica que no haya
+  errores.
+  OJO: no carga cosas que estén en ~config.el~, para eso se necesita reiniciar.
+- *~doom gc~*
+  Para limpiar los paquetes y módulos que no estén cargados.
+
+* Instalación
+
+#+begin_src bash
+
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+~/.config/emacs/bin/doom install
+
+#+end_src
+
+añadir doom al path: =~/.config/emacs/bin=
+
+Leer la guía de primeros pasos: [[https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org][Doom Emacs: Getting Started Guide]]
+
+** Warnings de Doom Doctor
+
+Cuando se instaló en /Fedora Workstation 43/, doom doctor indicó la falta de
+'Simbols Nerd Font', 'shellcheck' y un compilador para markdown. Para cada una
+hay que correr los siguientes:
+
+- *Symbols Nerd Font Mono*
+  Instalar los archivos de la fuente
+
+  #+begin_src bash
+
+  mkdir -p ~/.local/share/fonts/NerdFonts && \
+  curl -Lo ~/.local/share/fonts/NerdFonts/SymbolsNerdFontMono-Regular.ttf \
+    "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf" && \
+  fc-cache -fv
+
+  #+end_src
+
+- *Markdown compiler*
+  Fedora ya tiene instalado ~python3-markdown~ con el nombre de ~markdown_py~,
+  pero Doom Emacs lo busca como ~markdown~. Por lo tanto, se hizo un symlink:
+
+  #+begin_src bash
+
+  sudo ln -s /usr/bin/markdown_py /usr/local/bin/markdown
+
+  #+end_src
+
+- *ShellCheck*
+
+  #+begin_src bash
+
+  sudo dnf install ShellCheck
+
+  #+end_src
+
+* Terminal
+De las cuatro disponibles (eshell, shell, term, vterm), elegí
+- ~eshell~ porque es la que tiene más cosas. Está escrita en elisp, entiende
+  comandos de Emacs nativamente, más dificil de usar, pero algunos programas de
+  terminal no sirven.
+- ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
+  igualita a la que ya uso en Kitty.
+
+* Tangle: Config
+
+#+begin_src elisp :tangle .config/doom/config.el
+
+#+end_src
+
+* Tangle: Packages
+
+#+begin_src elisp :tangle .config/doom/packages.el
+
+#+end_src

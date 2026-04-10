@@ -30,7 +30,7 @@
 ; Monaspace Xenon
 ; Iosevka Slab Extended
 
-(setq doom-font (font-spec :family "Monaspace Xenon" :size 16 :weight 'semi-light)
+(setq doom-font (font-spec :family "Monaspace Xenon" :size 15 :weight 'semi-light)
       doom-variable-pitch-font (font-spec :family "Public Sans" :size 18))
 
 (custom-set-faces!
@@ -55,7 +55,6 @@
 ;(setq doom-theme 'doom-wilmersdorf)      ; El mejor org, pero lo demás lo resalta gris
 ;(setq doom-theme 'doom-spacegrey)      ; Muy gris, Buen naranja, pero no resalta org
 ;(setq doom-theme 'doom-moonlight)      ; Buen org, no me gusta el ambiente morado
-;(setq doom-theme 'doom-tomorrow-night) ; Buen color, org no me convence
 ;(setq doom-theme 'doom-opera-light) ; Tema claro
 ;(setq doom-theme 'doom-monokai-spectrum) ; Tema oscuro
 ;(setq doom-theme 'doom-monokai-pro) ; Tema oscuro
@@ -67,35 +66,36 @@
 ;(setq doom-theme 'doom-flatwhite) ; Tema claro
 ;(setq doom-theme 'doom-tomorrow-day) ; Tema claro
 ;(setq doom-theme 'doom-material-dark) ; Tema oscuro
+;(setq doom-theme 'doom-tomorrow-night) ; Buen color, org no me convence
 
 
 ;; Hacer cambiar tema según el sistema
 (use-package! auto-dark
-  :defer t
-  :init
-  ;; Configure themes
-  (setq! auto-dark-themes '((doom-material-dark) (doom-tomorrow-day))) ; Oscuro / Claro
-  ;; Disable doom's theme loading mechanism (just to make sure)
-  (setq! doom-theme nil)
-  ;; Declare that all themes are safe to load.
-  ;; Be aware that setting this variable may have security implications if you
-  ;; get tricked into loading untrusted themes (via auto-dark-mode or manually).
-  ;; See the documentation of custom-safe-themes for details.
-  (setq! custom-safe-themes t)
-  ;; Enable auto-dark-mode at the right point in time.
-  ;; This is inspired by doom-ui.el. Using server-after-make-frame-hook avoids
-  ;; issues with an early start of the emacs daemon using systemd, which causes
-  ;; problems with the DBus connection that auto-dark mode relies upon.
-  (defun my-auto-dark-init-h ()
-    (auto-dark-mode)
-    (remove-hook 'server-after-make-frame-hook #'my-auto-dark-init-h)
-    (remove-hook 'after-init-hook #'my-auto-dark-init-h))
-  (let ((hook (if (daemonp)
-                  'server-after-make-frame-hook
-                'after-init-hook)))
-    ;; Depth -95 puts this before doom-init-theme-h, which sounds like a good
-    ;; idea, if only for performance reasons.
-    (add-hook hook #'my-auto-dark-init-h -95)))
+ :defer t
+ :init
+ ;; Configure themes
+ (setq! auto-dark-themes '((doom-tomorrow-night) (doom-tomorrow-day))) ; Oscuro / Claro
+ ;; Disable doom's theme loading mechanism (just to make sure)
+ (setq! doom-theme nil)
+ ;; Declare that all themes are safe to load.
+ ;; Be aware that setting this variable may have security implications if you
+ ;; get tricked into loading untrusted themes (via auto-dark-mode or manually).
+ ;; See the documentation of custom-safe-themes for details.
+ (setq! custom-safe-themes t)
+ ;; Enable auto-dark-mode at the right point in time.
+ ;; This is inspired by doom-ui.el. Using server-after-make-frame-hook avoids
+ ;; issues with an early start of the emacs daemon using systemd, which causes
+ ;; problems with the DBus connection that auto-dark mode relies upon.
+ (defun my-auto-dark-init-h ()
+   (auto-dark-mode)
+   (remove-hook 'server-after-make-frame-hook #'my-auto-dark-init-h)
+   (remove-hook 'after-init-hook #'my-auto-dark-init-h))
+ (let ((hook (if (daemonp)
+                 'server-after-make-frame-hook
+               'after-init-hook)))
+   ;; Depth -95 puts this before doom-init-theme-h, which sounds like a good
+   ;; idea, if only for performance reasons.
+   (add-hook hook #'my-auto-dark-init-h -95)))
 
 
 ;; Cambiar algunos colores específicos
@@ -124,10 +124,10 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/Emacs/Notas/")
+(setq org-directory "~/Documents/Emacs/Notas/")
 
 ;; Org agenda con roam
-(setq org-agenda-files (list org-directory "~/Emacs/Roam/" "~/Emacs/Roam/journal/"))
+(setq org-agenda-files (list org-directory "~/Documents/Emacs/Roam/" "~/Documents/Emacs/Roam/journal/"))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
@@ -195,7 +195,7 @@
 ;(add-hook 'typst-mode-hook #'abbrev-mode)
 
 ;; Diccionario personal
-(setq ispell-personal-dictionary "~/.config/emacs/.local/etc/ispell/mis-palabras.pws")
+(setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
 
 ;; Configurar la detección del lenguaje automático
 ;(use-package! guess-language
@@ -252,7 +252,7 @@
       :desc "Dirvish" "o _" #'dirvish)
 
 ;; Configurar Org-Jorunal ----------------------------------
-(setq org-journal-dir "~/Emacs/Diario/"
+(setq org-journal-dir "~/Documents/Emacs/Diario/"
       org-journal-date-prefix "#+title: "
       org-journal-time-prefix "\n* "
       org-journal-date-format "%A, %d/%b/%Y"
@@ -277,7 +277,7 @@
 
 
 ;; Configurar Org-Roam -------------------------------------
-(setq org-roam-directory "~/Emacs/Roam"
+(setq org-roam-directory "~/Documents/Emacs/Roam"
       org-roam-dailies-directory "journal/"
       org-roam-graph-viewer
       (lambda (file)
@@ -286,14 +286,14 @@
 
 ;; Ajustes de refile para usarlo con roam.
 (setq org-refile-targets
-      `(("~/Emacs/Inbox.org" :maxlevel . 2)
-        (,(directory-files "~/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
+      `(("~/Documents/Emacs/Notas/Inbox.org" :maxlevel . 2)
+        (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
 
 
 ;; Org Roam Bibtex (orb) ---------
 
 ;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
-(setq! citar-bibliography '("~/Emacs/Roam/refs/referencias.bib"))
+(setq! citar-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
 
 ;; Activar orb luego de que cargue org-roam
 (use-package! org-roam-bibtex
@@ -306,7 +306,7 @@
 (setq orb-insert-interface 'citar)
 
 ;; Decirle a orb dónde buscar las citas
-(setq bibtex-completion-bibliography '("~/Emacs/Roam/refs/referencias.bib"))
+(setq bibtex-completion-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
 
 ;; Crear un atajo para crear una nota de una bibliografía
 (map! :leader
