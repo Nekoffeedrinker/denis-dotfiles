@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Denis Castillón
+	email = orangeneko158@outlook.com
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[core]
+	editor = nvim
