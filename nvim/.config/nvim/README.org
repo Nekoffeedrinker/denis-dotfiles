@@ -6,7 +6,7 @@ Así como son simples, son entendibles, por lo que tampoco tienen comentarios.
 
 Para (re)generarlas ejecuta ~M-x org-babel-tangle~.
 
-#+begin_src lua :tangle init.lua
+#+begin_src lua :tangle lua/config/options.lua
 
 vim.opt.number = true
 vim.opt.relativenumber = true
