@@ -12,3 +12,11 @@ zstyle :compinstall filename '/home/denis/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+
+# ==================== denis configs ====================
+
+# Arreglar el clear de kitty
+clear() {
+  printf '\033[2J\033[3J\033[H'
+}
