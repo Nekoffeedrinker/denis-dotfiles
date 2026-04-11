@@ -59,7 +59,7 @@ Después ejecuta este comando *dentro de tu directorio home*
 
 #+begin_src bash
 
-git clone https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.dotfilesDenis/
+git clone https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles/
 
 #+end_src
 
