@@ -20,3 +20,6 @@ compinit
 clear() {
   printf '\033[2J\033[3J\033[H'
 }
+
+# Alias para recostruir nix
+alias rebuild='sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13'
