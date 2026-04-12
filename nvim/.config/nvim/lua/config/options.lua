@@ -11,3 +11,5 @@ vim.opt.swapfile = false
 vim.diagnostic.config({
 	virtual_text = true
 })
+
+vim.cmd.colorscheme "catppuccin"
