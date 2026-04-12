@@ -6,6 +6,9 @@ return {
 	opts = {
 		explorer = { enabled = true },
 		picker = { enabled = true },
+		terminal = {
+			win = { style = "terminal", height = 0.3 },
+		},
 	},
 	keys = {
 		-- Top Pickers & Explorer
@@ -15,5 +18,9 @@ return {
 		{ "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
 		{ "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
 		{ "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+		-- Terminal
+		{ "<leader>ft", function() Snacks.terminal(nil, { cwd = vim.fn.getcwd() }) end, desc = "Terminal (Root Dir)" },
+		{ "<leader>fT", function() Snacks.terminal(nil, { cwd = vim.fn.expand("%:p:h") }) end, desc = "Terminal (cwd)" },
+		{ "<c-/>",      function() Snacks.terminal(nil, { cwd = vim.fn.getcwd() }) end, desc = "Terminal (Root Dir)", mode = { "n", "t" } },
 	}
 }
