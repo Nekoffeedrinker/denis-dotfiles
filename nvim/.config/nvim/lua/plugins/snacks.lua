@@ -5,7 +5,14 @@ return {
 	---@type snacks.Config
 	opts = {
 		explorer = { enabled = true },
-		picker = { enabled = true },
+		picker = { 
+			enabled = true,
+			sources = {
+				explorer = {
+					hidden = true,
+				},
+			},
+		},
 		terminal = {
 			win = { style = "terminal", height = 0.3 },
 		},

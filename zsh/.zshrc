@@ -16,6 +16,9 @@ compinit
 
 # ==================== denis configs ====================
 
+# autocompletar cuando inician por punto
+setopt globdots
+
 # Arreglar el clear de kitty
 clear() {
   printf '\033[2J\033[3J\033[H'
