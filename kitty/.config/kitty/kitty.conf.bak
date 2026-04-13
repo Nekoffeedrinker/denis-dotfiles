@@ -1,10 +1,6 @@
 # vim:fileencoding=utf-8
 
-# Asegurarme de usar zsh
-shell zsh
-
 # BEGIN_KITTY_THEME
-# Noctalia
 include current-theme.conf
 # END_KITTY_THEME
 
