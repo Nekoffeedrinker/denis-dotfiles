@@ -59,7 +59,7 @@ Después ejecuta este comando *dentro de tu directorio home*
 
 #+begin_src bash
 
-git clone https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles/
+git clone --recurse-submodules https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles/
 
 #+end_src
 
@@ -68,7 +68,7 @@ máquina donde vas a clonar el repositorio, para luego usar este comando:
 
 #+begin_src bash
 
-git clone git@github.com:Nekoffeedrinker/denis-dotfiles.git ~/.dotfilesDenis/
+git clone --recurse-submodules git@github.com:Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles/
 
 #+end_src
 
