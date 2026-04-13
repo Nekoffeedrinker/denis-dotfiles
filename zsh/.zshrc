@@ -73,3 +73,9 @@ clear() {
 # Recostruir nix
 alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
 
+
+# ========================= FUNCIONES =========================
+
+# Abrir algo usando la temrinal de manera facil
+abrir() { nohup "$@" &>/dev/null & disown; }
+
