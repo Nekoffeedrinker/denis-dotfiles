@@ -1,5 +1,7 @@
 # ========================= PLUGINS =========================
 
+ulimit -n 4096   # Aumentar límite de file descriptors
+
 # Habilitar el prompt instantaneo de Powerlevel10k. Debe estar cerca del inicio de ~/.zshrc. 
 # El código de inicialización que puede requerir entrada por consola (solicitudes de contraseña, 
 # confirmaciones [y/n], etc.) debe ir antes de este bloque; todo lo demás puede ir después.
