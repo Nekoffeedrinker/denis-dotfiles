@@ -2,3 +2,5 @@ lazy-lock.json
 kitty/.config/kitty/dank-tabs.conf
 kitty/.config/kitty/dank-theme.conf
 niriWM/.config/niri/dms/colors.kdl
+niriWM/.config/DankMaterialShell/firefox.css
+nvim/.config/nvim/lua/plugins/dankcolors.lua
