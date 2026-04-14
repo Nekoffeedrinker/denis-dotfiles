@@ -59,6 +59,9 @@ zstyle :compinstall filename '/home/denis/.zshrc'
 autoload -Uz compinit
 compinit
 
+# === === === Título de la ventana === === ===
+precmd() { print -Pn "\e]0;%~\a" }
+preexec() { print -Pn "\e]0;%~ | $1\a" }
 
 # === === === Programas === === ===
 
@@ -67,12 +70,21 @@ clear() {
   printf '\033[2J\033[3J\033[H'
 }
 
+# ========================= ATAJOS =========================
+
+bindkey '\e[H'  beginning-of-line
+bindkey '\e[F'  end-of-line
+bindkey '\e[3~' delete-char
 
 # ========================= ALIAS =========================
 
+# ls colorado
+alias ls="ls --color"
+alias ll="ls -l --color"
+alias l="ls -alh --color"
+
 # Recostruir nix
 alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
-
 
 # ========================= FUNCIONES =========================
 
