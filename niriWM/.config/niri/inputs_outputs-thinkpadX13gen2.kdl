@@ -1,0 +1,63 @@
+// wiki: https://niri-wm.github.io/niri/Configuration%3A-Input.html
+input {
+    keyboard {
+        repeat-delay 600
+        repeat-rate 25
+        xkb {
+            layout "us"
+            variant "altgr-intl"
+            options "caps:escape_shifted_capslock"
+        }
+
+        // Habilitad numlock al inicio
+        // numlock
+    }
+
+    touchpad {
+        // off
+        // dwt
+        // dwtp
+        tap
+        natural-scroll
+        accel-speed 0
+        accel-profile "adaptive"
+        scroll-method "two-finger"
+        // scroll-factor vertical=1.0 horizontal=-2.0
+    }
+
+    mouse {
+        // off
+        accel-speed 0
+        accel-profile "flat"
+		// scroll-factor 0
+    }
+
+    trackpoint {
+        // off
+        accel-speed 0
+        accel-profile "flat"
+        scroll-method "on-button-down"
+        // scroll-button 273
+        // scroll-button-lock
+    }
+    // warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+
+// Puedes configurar los monitores por nombre, para ello debes usar
+// el comando 'niri msg outputs' dentro de una sesión de niri.
+// Para más información de la configuración, la wiki es:
+// https://yalter.github.io/niri/Configuration:-Outputs
+output "eDP-1" {
+    // off
+    mode "1920x1200"
+    scale 1
+	transform "normal"
+    position x=0 y=0
+	focus-at-startup
+
+	hot-corners {
+		off
+	}
+}
