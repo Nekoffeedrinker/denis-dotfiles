@@ -111,9 +111,18 @@ bindkey "^X^E" edit-command-line
 # ========================= ALIAS =========================
 
 # ls colorado
-alias ls="ls --color"
-alias ll="ls -l --color"
-alias l="ls -alh --color"
+# alias ls="ls --color"
+# alias l="ls -lh --color"
+# alias ll="ls -alh --color"
+
+# = Remplazar ls y tree =
+alias ls="exa"
+alias l="exa -lh"
+alias ll="exa -alh"
+alias tree="exa --tree"
+
+# = Remplazar cat =
+alias cat="bat"
 
 # Alias de git
 alias gs="git status"
