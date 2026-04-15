@@ -9,3 +9,5 @@
 	prompt = false
 [core]
 	editor = nvim
+[alias]
+	graph = log --oneline --graph --decorate --all
