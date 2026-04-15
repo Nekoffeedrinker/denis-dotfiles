@@ -102,6 +102,12 @@ bindkey '\e[H'  beginning-of-line
 bindkey '\e[F'  end-of-line
 bindkey '\e[3~' delete-char
 
+bindkey ' ' magic-space
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # ========================= ALIAS =========================
 
 # ls colorado
@@ -123,5 +129,6 @@ abrir() { nohup "$@" &>/dev/null & disown; }
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# ========================= ========================= =========================
-
+# ========================= VARIABLES DE ENTORNO =========================
+export EDITOR=nvim
+export VISUAL=nvim
