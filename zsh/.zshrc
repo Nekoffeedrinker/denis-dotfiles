@@ -128,8 +128,10 @@ alias cat="bat"
 alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
-alias ga="git add -p"
+alias ga="git add"
 alias gc="git commit"
+alias gca="git commit --amend"
+alias gcan="git commit --amend --no-edit"
 alias gl="git log"
 
 # Recostruir nix
