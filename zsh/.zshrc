@@ -135,7 +135,7 @@ alias gcan="git commit --amend --no-edit"
 alias gl="git log"
 
 # Recostruir nix
-alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
+# alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
 
 
 # === === Funciones === ===
