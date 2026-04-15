@@ -169,6 +169,8 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 //spawn-at-startup "waybar"
 
+spawn-at-startup "zapzap"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -249,9 +251,10 @@ window-rule {
 include "binds-dms_defaults.kdl"
 
 binds {
-    Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
-    Super+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }
-    Super+E hotkey-overlay-title="Abrir el Explorador de archivos (Nautilus)" { spawn "nautilus"; }
+    Mod+Return hotkey-overlay-title="Abrir Kitty" { spawn "kitty"; }
+    Mod+E hotkey-overlay-title="Abrir el Explorador de archivos" { spawn "nautilus"; }
+    Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }
+    Mod+M hotkey-overlay-title="Abrir Zapzap" { spawn "zapzap"; }
     // Super+Shift+B hotkey-overlay-title="Abrir Zen Browser" { spawn "zen"; }
 
 
