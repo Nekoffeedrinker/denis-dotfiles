@@ -115,6 +115,14 @@ alias ls="ls --color"
 alias ll="ls -l --color"
 alias l="ls -alh --color"
 
+# Alias de git
+alias gs="git status"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias ga="git add -p"
+alias gc="git commit"
+alias gl="git log"
+
 # Recostruir nix
 alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
 
