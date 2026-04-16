@@ -151,3 +151,8 @@ eval "$(zoxide init --cmd cd zsh)"
 # ========================= VARIABLES DE ENTORNO =========================
 export EDITOR=nvim
 export VISUAL=nvim
+
+# ========================= SOURCES =========================
+
+# Usar fzf con git
+source ~/.denisDotfiles/SCRIPTS/fzf-git.sh
