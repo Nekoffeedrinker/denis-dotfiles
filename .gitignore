@@ -1,4 +1,17 @@
 lazy-lock.json
+
+# ignorar gtk
+respaldoTemas/.config/gtk-3.0/gtk.css
+respaldoTemas/.config/gtk-3.0/noctalia.css
+respaldoTemas/.config/gtk-4.0/
+
+# DankMaterialShell
 niriWM/.config/niri/dms/colors.kdl
 DankMaterialShell/.config/DankMaterialShell/plugin_settings.json
 DankMaterialShell/.config/DankMaterialShell/plugins/
+
+# Noctalia
+noctalia/.config/noctalia/colors.json
+niriWM/.config/niri/noctalia.kdl
+kitty/.config/kitty/current-theme.conf
+kitty/.config/kitty/themes/
