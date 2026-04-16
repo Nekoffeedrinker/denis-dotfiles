@@ -236,7 +236,6 @@ window-rule {
     clip-to-geometry true
 }
 
-// include "binds-dms_defaults.kdl"
 include "binds-noctalia_defaults.kdl"
 
 binds {
