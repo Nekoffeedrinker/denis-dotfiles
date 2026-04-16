@@ -116,10 +116,10 @@ bindkey "^X^E" edit-command-line
 # alias ll="ls -alh --color"
 
 # = Remplazar ls y tree =
-alias ls="exa"
-alias l="exa -lh"
-alias ll="exa -alh"
-alias tree="exa --tree"
+alias ls="exa --color=always --icons=always"
+alias l="exa --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time"
+alias ll="exa --color=always --icons=always --git -al"
+alias tree="exa --color=always --icons=always --tree"
 
 # = Remplazar cat =
 alias cat="bat"
