@@ -10,4 +10,7 @@ binds {
     XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
     XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
     XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+
+    // Clipper
+    Mod+V { spawn "noctalia-shell" "ipc" "call" "plugin:clipper" "toggle"; }
 }
