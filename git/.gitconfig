@@ -20,8 +20,8 @@
     diffFilter = delta --color-only
 
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    # side-by-side = true
+    navigate = true        # Usar n y N para moverse entre secciones del diff
+    ; side-by-side = true  # Desactivado para activarse con un alias
 
 ; [merge]
 ;     conflictstyle = diff3

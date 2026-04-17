@@ -128,6 +128,8 @@ alias cat="bat"
 alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gdd='git -c delta.features=side-by-side diff'
+alias gdds='git -c delta.features=side-by-side diff --staged'
 alias ga="git add"
 alias gc="git commit"
 alias gca="git commit --amend"
