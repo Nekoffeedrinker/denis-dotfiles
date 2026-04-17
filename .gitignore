@@ -12,6 +12,8 @@ DankMaterialShell/.config/DankMaterialShell/plugins/
 
 # Noctalia
 noctalia/.config/noctalia/colors.json
+noctalia/.config/noctalia/colorschemes/
+noctalia/.config/noctalia/plugins/
 niriWM/.config/niri/noctalia.kdl
 kitty/.config/kitty/current-theme.conf
 kitty/.config/kitty/themes/
