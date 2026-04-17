@@ -1,9 +1,7 @@
 lazy-lock.json
 
 # ignorar gtk
-respaldoTemas/.config/gtk-3.0/gtk.css
-respaldoTemas/.config/gtk-3.0/noctalia.css
-respaldoTemas/.config/gtk-4.0/
+respaldoTemas/
 
 # DankMaterialShell
 niriWM/.config/niri/dms/colors.kdl
