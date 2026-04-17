@@ -241,6 +241,7 @@ include "binds-noctalia_defaults.kdl"
 binds {
     Mod+Return hotkey-overlay-title="Abrir Kitty" { spawn "kitty"; }
     Mod+E hotkey-overlay-title="Abrir el Explorador de archivos" { spawn "nautilus"; }
+    Mod+N hotkey-overlay-title="Abrir el Editor de texto" { spawn "gnome-text-editor"; }
     Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }
     Mod+M hotkey-overlay-title="Abrir Zapzap" { spawn "zapzap"; }
     // Super+Shift+B hotkey-overlay-title="Abrir Zen Browser" { spawn "zen"; }
@@ -529,6 +530,11 @@ recent-windows {
         Alt+grave       { next-window filter="app-id"; }
         Alt+Shift+grave { previous-window filter="app-id"; }
     }
+}
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
 }
 
 // = Incluir archivos de DMS
