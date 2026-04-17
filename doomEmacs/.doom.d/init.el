@@ -21,12 +21,12 @@
        ;;layout            ; layouts de teclado que no son QWERTY
 
        :completion
-       ;;company           ; the ultimate code completion backend
-       (corfu +orderless)  ; complete with cap(f), cape and a flying feather!
-       ;;helm              ; the *other* search engine for love and life
-       ;;ido               ; the other *other* search engine...
-       ;;ivy               ; a search engine for love and life
-       vertico             ; the search engine of the future
+       ;;company           ; autocompletado de código avanzado
+       (corfu +orderless)  ; completado con capf y orden flexible
+       ;;helm              ; motor de búsqueda robusto y visual
+       ;;ido               ; el motor de búsqueda clásico de emacs
+       ;;ivy               ; búsqueda intereactiva ligera y potente
+       vertico             ; motor de búsqueda moderno y minimalista
 
        :ui
        ;;deft              ; crear, Buscar y filtrar notas en texto plano
@@ -35,23 +35,25 @@
        ;;doom-quit         ; mensajes de confirmación de salida graciosos
        ;;(emoji +unicode)  ; habiliar soporte de emogis
        hl-todo             ; resaltar TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       ;;indent-guides     ; highlighted indent columns
-       ;;ligatures         ; ligatures and symbols to make your code pretty again
-       ;;minimap           ; show a map of the code on the side
-       modeline            ; snazzy, Atom-inspired modeline, plus API
-       ;;nav-flash         ; blink cursor line after big motions
-       ;;neotree           ; a project drawer, like NERDTree for vim
-       ophints             ; highlight the region an operation acts on
-       (popup +defaults)   ; tame sudden yet inevitable temporary windows
-       ;;smooth-scroll     ; So smooth you won't believe it's not butter
-       ;;tabs              ; a tab bar for Emacs
-       ;;treemacs          ; a project drawer, like neotree but cooler
-       ;;unicode           ; extended unicode support for various languages
-       (vc-gutter +pretty) ; vcs diff in the fringe
-       vi-tilde-fringe     ; fringe tildes to mark beyond EOB
-       ;;window-select     ; visually switch windows
-       workspaces          ; tab emulation, persistence & separate workspaces
-       ;;zen               ; distraction-free coding or writing
+       ;;indent-guides     ; resaltar el identado usando columnas
+       ;;ligatures         ; activar soporte para ligaduras y simbolos
+       ;;minimap           ; mostrar un mapa del código en el lateral
+       modeline            ; barra de estado inspirada en Atom
+       ;;nav-flash         ; parpade a la línea del cursor al moverlo lejos
+       ;;neotree           ; explorador de archivos lateral simple
+       ophints             ; resalta el área de la última acción
+       (popup +defaults)   ; gestión inteligente de ventanas temporales
+       ;;smooth-scroll     ; desplazamiento suave (especialmente para trackpad)
+       ;;tabs              ; barra de pestañas
+       ;;treemacs          ; explorador de archivos lateral avanzado
+       ;;unicode           ; activar soporte extendido para caracteres unicode
+       (vc-gutter          ; indicar los cambios segun git en el margen derecho
+        ;; +pretty
+        )
+       vi-tilde-fringe     ; poner `~` para líneas vacias al final (terminó el documento)
+       ;;window-select     ; salto entre ventanas de manera visual (asignando letras o números)
+       workspaces          ; activar función de workspases mediante TAB
+       ;;zen               ; modo de escritura sin distracción
 
        :editor
        (evil +everywhere)  ; come to the dark side, we have cookies
