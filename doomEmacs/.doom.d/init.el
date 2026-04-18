@@ -56,65 +56,65 @@
        ;; zen               ; modo de escritura sin distracción
 
        :editor
-       (evil +everywhere)   ; come to the dark side, we have cookies
-       file-templates       ; auto-snippets for empty files
-       fold                 ; (nigh) universal code folding
-       ;; (format +onsave)  ; automated prettiness
-       ;; god               ; run Emacs commands without modifier keys
-       ;; lispy             ; vim for lisp, for people who don't like vim
-       ;; multiple-cursors  ; editing in many places at once
-       ;; objed             ; text object editing for the innocent
-       ;; parinfer          ; turn lisp into python, sort of
-       ;; rotate-text       ; cycle region at point between text candidates
-       snippets             ; my elves. They type so I don't have to
-       (whitespace +guess +trim)  ; a butler for your whitespace
-       ;; word-wrap         ; soft wrapping with language-aware indent
+       (evil +everywhere)   ; movimientos de vim en todo emacs
+       file-templates       ; plantillas automáticas para arcivos nuevos
+       fold                 ; plegar bloques de código
+       ;; (format +onsave)  ; autoformateo al guardar
+       ;; god               ; ejecutar atajos emacs sin las teclas modificadoras
+       ;; lispy             ; edita y organiza lisp usando teclas rápidas como en vim
+       ;; multiple-cursors  ; utilizar múltiples cursores
+       ;; objed             ; edición basada en 'objetos de texto'
+       ;; parinfer          ; ajusta paréntesis autoáticamente según la sangría
+       ;; rotate-text       ; alterna entre palabras opuestas o relacionadas
+       snippets             ; plantillas de código reutilizables
+       (whitespace +guess +trim)  ; detecta el estilo de identado y limpia el final de linea
+       ;; word-wrap         ; activar el ajuste de línea (sin romper palabras)
 
        :emacs
-       dired                ; making dired pretty [functional]
-       electric             ; smarter, keyword-based electric-indent
-       ;; eww               ; the internet is gross
-       ;; ibuffer           ; interactive buffer management
-       tramp                ; remote files at your arthritic fingertips
-       undo                 ; persistent, smarter undo for your inevitable mistakes
-       vc                   ; version-control and Emacs, sitting in a tree
+       dired                ; explorador y gestor de archivos visual y potente
+       electric             ; identación automática inteligente
+       ;; eww               ; navegador web dentro de emacs (solo texto)
+       ;; ibuffer           ; gestión interactiva y avanzada de buffers
+       tramp                ; edición de archivos remotos por ssh
+       undo                 ; historial de cambios persistente
+       vc                   ; interfaz estándar para control de versiones
 
        :term
-       ;; eshell            ; the elisp shell that works everywhere
-       ;; shell             ; simple shell REPL for Emacs
-       ;; term              ; basic terminal emulator for Emacs
-       ;; vterm             ; the best terminal emulation in Emacs
+       ;; eshell            ; shell scrita puramnete en elisp
+       ;; shell             ; consla de comandos simple basada en texto (REPL)
+       ;; term              ; emulador de terminal básico
+       ;; vterm             ; terminal con emulación completa (mejor que term)
 
        :checkers
-       syntax               ; tasing you for every semicolon you forget
-       ;; (spell +flyspell) ; tasing you for misspelling mispelling
-       ;; grammar           ; tasing grammar mistake every you make
+       syntax               ; chequeo de sintaxis en tiempo real
+       ;; (spell +flyspell) ; corrector ortográfico al vuelo
+       ;; grammar           ; correción gramatical avanzada
 
        :tools
        ;; ansible
-       ;; biblio            ; Writes a PhD for you (citation needed)
-       ;; collab            ; buffers with friends
-       ;; debugger          ; stepping through code, to help you add bugs
+       ;; biblio            ; gestión de bibliografías y citas
+       ;; collab            ; gestión colaborativa en tiempo real
+       ;; debugger          ; depurador de código integrado
        ;; direnv
        ;; docker
-       ;; editorconfig      ; let someone else argue about tabs vs spaces
-       ;; ein               ; tame Jupyter notebooks with emacs
-       (eval +overlay)      ; run code, run (also, repls)
-       lookup               ; navigate your code and its documentation
-       ;; llm               ; when I said you needed friends, I didn't mean...
-       ;; (lsp +eglot)      ; M-x vscode
+       ;; editorconfig      ; sincroniza el estilo de código con otros editores
+       ;; ein               ; integración con jupyter notebooks
+       (eval +overlay)      ; evaluación de código en línea
+       lookup               ; búsqueda de definiciones y documentación
+       ;; llm               ; integración con modelos de lenguaje (IA)
+       ;; (lsp +eglot)      ; soporte para LSP (Languaje Server Protocol)
        magit                ; a git porcelain for Emacs
-       ;; make              ; run make tasks from Emacs
-       ;; pass              ; password manager for nerds
-       ;; pdf               ; pdf enhancements
-       ;; terraform         ; infrastructure as code
-       ;; tmux              ; an API for interacting with tmux
-       ;; tree-sitter       ; syntax and parsing, sitting in a tree...
-       ;; upload            ; map local to remote projects via ssh/ftp
+       ;; make              ; ejecución de Make tasks
+       ;; pass              ; gestión de contraseñas dentro de emacs
+       ;; pdf               ; visor de PDF mejorado
+       ;; terraform         ; sintaxis y ejecución de comandos Hcl
+       ;; tmux              ; API para integrar sesiones tmux
+       ;; tree-sitter       ; parseo rápido para mejor resaltado
+       ;; upload            ; subida de archivos via ssh/ftp
 
        :os
-       (:if (featurep :system 'macos) macos)  ; improve compatibility with macOS
-       ;; tty               ; improve the terminal Emacs experience
+       (:if (featurep :system 'macos) macos)  ; mejoras para macOS
+       ;; tty               ; mejor experiencia en terminal tty
 
        :lang
        ;; ada               ; In strong typing we (blindly) trust
@@ -191,11 +191,11 @@
 
        :app
        ;; calendar
-       ;; emms
-       ;; everywhere        ; *leave* Emacs!? You must be joking
-       ;; irc               ; how neckbeards socialize
-       ;; (rss +org)        ; emacs as an RSS reader
+       ;; emms              ; sistema multimedia para emacs
+       ;; everywhere        ; usar emacs en cualquier caja de texto
+       ;; irc               ; chat mediante protocolo IRC
+       ;; (rss +org)        ; lector de noticias RSS con Org
 
        :config
-       ;; literate
-       (default +bindings +smartparens))
+       ;; literate         ; configuración en literario
+       (default +bindings +smartparens)) ; cargar ajustes por defecto
