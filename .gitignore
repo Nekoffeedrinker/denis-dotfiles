@@ -1,8 +1,5 @@
 lazy-lock.json
 
-# ignorar gtk
-respaldoTemas/
-
 # DankMaterialShell
 niriWM/.config/niri/dms/colors.kdl
 DankMaterialShell/.config/DankMaterialShell/plugin_settings.json
