@@ -3,6 +3,7 @@ d#+title: Configuración de Doom Emacs
 * Tabla de contenidos :toc:
 - [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
 - [[#initel][init.el]]
+  - [[#ui][UI]]
   - [[#terminal][Terminal]]
 - [[#tangle-config][Tangle: Config]]
 - [[#tangle-packages][Tangle: Packages]]
@@ -19,6 +20,8 @@ d#+title: Configuración de Doom Emacs
   Para limpiar los paquetes y módulos que no estén cargados.
 
 * init.el
+** UI
+- Desactivar '+pretty' en ~vc-gutter~ porque me gustan los indicadores toscos
 
 ** Terminal
 De las cuatro disponibles (eshell, shell, term, vterm), elegí
