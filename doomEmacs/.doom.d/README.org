@@ -1,4 +1,5 @@
 #+title: Configuración de Doom Emacs
+#+auto_tangle: t
 
 * Tabla de contenidos :toc:
 - [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
@@ -7,6 +8,8 @@
   - [[#terminal][Terminal]]
 - [[#tangle-config][Tangle: Config]]
 - [[#tangle-packages][Tangle: Packages]]
+- [[#org-mode][Org-mode]]
+  - [[#org-auto-tangle][Org-auto-tangle]]
 
 * Comandos Básicos de configuración
 - *~doom doctor~*
@@ -168,4 +171,22 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
+#+end_src
+
+* Org-mode
+
+** Org-auto-tangle
+
+Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
+
+#+begin_src elisp :tangle packages.el
+(package! org-auto-tangle)
+#+end_src
+
+#+begin_src elisp :tangle config.el
+(use-package! org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  (setq org-auto-tangle-default t))
 #+end_src
