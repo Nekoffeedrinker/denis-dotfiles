@@ -1,4 +1,4 @@
-d#+title: Configuración de Doom Emacs
+#+title: Configuración de Doom Emacs
 
 * Tabla de contenidos :toc:
 - [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
@@ -36,10 +36,6 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí
 #+begin_src elisp :tangle config.el
 
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
-;;
-;; Hola este es un comentario de prueba
-;;
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
@@ -119,10 +115,6 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí
 
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
-
-;;
-;; Hola este es un comentario de prueba
-;;
 
 ;; To install a package:
 ;;
