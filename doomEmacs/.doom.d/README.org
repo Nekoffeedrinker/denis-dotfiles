@@ -6,8 +6,12 @@
 - [[#initel][init.el]]
   - [[#ui][UI]]
   - [[#terminal][Terminal]]
-- [[#tangle-config][Tangle: Config]]
-- [[#tangle-packages][Tangle: Packages]]
+- [[#tangle-config-packages][Tangle config-packages]]
+- [[#aspecto-visual][Aspecto visual]]
+  - [[#tipografía][Tipografía]]
+  - [[#tema][Tema]]
+- [[#original-config][Original Config]]
+- [[#original-packages][Original Packages]]
 - [[#org-mode][Org-mode]]
   - [[#org-auto-tangle][Org-auto-tangle]]
 
@@ -34,41 +38,96 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí
 - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
   igualita a la que ya uso en Kitty.
 
-* Tangle: Config
+* Tangle config-packages
 
 #+begin_src elisp :tangle config.el
 
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets. It is optional.
-;; (setq user-full-name "John Doe"
-;;       user-mail-address "john@doe.com")
+#+end_src
+#+begin_src elisp :tangle packages.el
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom:
-;;
-;; - `doom-font' -- the primary font to use
-;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
-;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;; - `doom-symbol-font' -- for symbols
-;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
-;;
-;; See 'C-h v doom-font' for documentation and more examples of what they
-;; accept. For example:
-;;
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 15 :weight 'regular)
-     doom-variable-pitch-font (font-spec :family "Public Sans" :size 18))
-;;
-;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
-;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
-;; refresh your font settings. If Emacs still can't find your font, it likely
-;; wasn't installed correctly. Font issues are rarely Doom issues!
+;; -*- no-byte-compile: t; -*-
+;;; $DOOMDIR/packages.el
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+#+end_src
+
+* Aspecto visual
+
+** Tipografía
+
+Para Doom emacs, hay 5 variables para controlar las fuentes. A parte de la
+fuente primaria, el resto son opcionales
+- ~doom-font~ es fuente primaria (monoespaciada).
+- ~doom-variable-pitch-font~ es una fuente que no es monoespaciada
+- ~doom-big-font~ es la fuente utilizada para =doom-big-font-mode=. Este modo
+  es útil para presentaciones o video streaming.
+- ~doom-symbol-font~ para /símbolos.
+- ~doom-serif-font~ para la fuente ~fixed-pitch-serif~ (no sé cómo usarla).
+
+#+begin_src elisp :tangle config.el
+(setq doom-font
+        (font-spec
+         :family "MonaspiceXe Nerd Font Mono"
+         :size 16 :weight 'regular)
+      doom-variable-pitch-font
+        (font-spec
+         :family "Public Sans"
+         :size 18)
+      doom-serif-font
+        (font-spec
+         :family "MonaspiceAr Nerd Font Mono"
+         :size 16))
+
+(custom-set-faces!
+  '(italic
+    :family "MonaspiceRn Nerd Font Mono"
+    :slant italic))
+#+end_src
+
+Una función poderosa de emacs son los /faces/ que serían como estilos de fuente
+que podemos configurar para ciertos casos. En la configuración de arriba, se
+configuró una para que el texto en italicas tenga una fuente distinta.
+
+** Tema
+
+Luego de instalar un tema, o elegir uno de los que trae doom, hay que cargarlo
+usando ~doom-theme~ en la configuración. O también, puedes cargarlo usando
+=M-x load-theme=, pero este sólo estará temporalmente.
+
+#+begin_src elisp :tangle packages.el
+(package! catppuccin-theme)
+#+end_src
+
+#+begin_src elisp :tangle config.el
+(setq doom-theme 'catppuccin)
+#+end_src
+
+Otros temas que he probado son:
+
+#+begin_src elisp :tangle-no
+
+; doom-palenight         ; Predeterminado pero poquito mejor
+; doom-nord              ; Muy gris para mí
+; doom-wilmersdorf       ; El mejor org, pero lo demás lo resalta gris
+; doom-spacegrey         ; Muy gris, Buen naranja, pero no resalta org
+; doom-moonlight         ; Buen org, no me gusta el ambiente morado
+; doom-opera-light       ; Tema claro
+; doom-monokai-spectrum  ; Tema oscuro
+; doom-monokai-pro       ; Tema oscuro
+; doom-tokyo-night       ; Tema oscuro
+; doom-oceanic-next      ; Tema oscuro
+
+; doom-flatwhite         ; Tema claro
+; doom-material-dark     ; Tema oscuro
+; doom-tomorrow-day      ; Tema claro
+; doom-tomorrow-night    ; Buen color, org no me convence
+
+#+end_src
+
+* Original Config
+
+#+begin_src elisp :tangle config.el
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -112,12 +171,9 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí
 
 #+end_src
 
-* Tangle: Packages
+* Original Packages
 
 #+begin_src elisp :tangle packages.el
-
-;; -*- no-byte-compile: t; -*-
-;;; $DOOMDIR/packages.el
 
 ;; To install a package:
 ;;
