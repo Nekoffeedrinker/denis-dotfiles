@@ -35,17 +35,17 @@
        ;; doom-quit         ; mensajes de confirmación de salida graciosos
        ;; (emoji +unicode)  ; habiliar soporte de emogis
        hl-todo              ; resaltar TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       ;; indent-guides     ; resaltar el identado usando columnas
-       ;; ligatures         ; activar soporte para ligaduras y simbolos
+       indent-guides     ; resaltar el identado usando columnas
+       ligatures         ; activar soporte para ligaduras y simbolos
        ;; minimap           ; mostrar un mapa del código en el lateral
        modeline             ; barra de estado inspirada en Atom
        ;; nav-flash         ; parpade a la línea del cursor al moverlo lejos
        ;; neotree           ; explorador de archivos lateral simple
        ophints              ; resalta el área de la última acción
        (popup +defaults)    ; gestión inteligente de ventanas temporales
-       ;; smooth-scroll     ; desplazamiento suave (especialmente para trackpad)
+       smooth-scroll     ; desplazamiento suave (especialmente para trackpad)
        ;; tabs              ; barra de pestañas
-       ;; treemacs          ; explorador de archivos lateral avanzado
+       treemacs          ; explorador de archivos lateral avanzado
        ;; unicode           ; activar soporte extendido para caracteres unicode
        (vc-gutter           ; indicar los cambios segun git en el margen derecho
         ;;  +pretty
@@ -59,16 +59,16 @@
        (evil +everywhere)   ; movimientos de vim en todo emacs
        file-templates       ; plantillas automáticas para arcivos nuevos
        fold                 ; plegar bloques de código
-       ;; (format +onsave)  ; autoformateo al guardar
+       (format +onsave)  ; autoformateo al guardar
        ;; god               ; ejecutar atajos emacs sin las teclas modificadoras
        ;; lispy             ; edita y organiza lisp usando teclas rápidas como en vim
        ;; multiple-cursors  ; utilizar múltiples cursores
        ;; objed             ; edición basada en 'objetos de texto'
-       ;; parinfer          ; ajusta paréntesis autoáticamente según la sangría
+       ;; parinfer          ; en lisp pone paréntesis autoáticamente según la sangría
        ;; rotate-text       ; alterna entre palabras opuestas o relacionadas
        snippets             ; plantillas de código reutilizables
        (whitespace +guess +trim)  ; detecta el estilo de identado y limpia el final de linea
-       ;; word-wrap         ; activar el ajuste de línea (sin romper palabras)
+       word-wrap         ; activar el ajuste de línea (sin romper palabras)
 
        :emacs
        dired                ; explorador y gestor de archivos visual y potente
@@ -80,10 +80,10 @@
        vc                   ; interfaz estándar para control de versiones
 
        :term
-       ;; eshell            ; shell scrita puramnete en elisp
+       eshell            ; shell scrita puramnete en elisp
        ;; shell             ; consla de comandos simple basada en texto (REPL)
        ;; term              ; emulador de terminal básico
-       ;; vterm             ; terminal con emulación completa (mejor que term)
+       vterm             ; terminal con emulación completa (mejor que term)
 
        :checkers
        syntax               ; chequeo de sintaxis en tiempo real

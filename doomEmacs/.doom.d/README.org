@@ -5,6 +5,7 @@
 - [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
 - [[#initel][init.el]]
   - [[#ui][UI]]
+  - [[#editor][Editor]]
   - [[#terminal][Terminal]]
 - [[#tangle-config-packages][Tangle config-packages]]
 - [[#aspecto-visual][Aspecto visual]]
@@ -31,15 +32,21 @@
 
 * init.el
 ** UI
-- Desactivar '+pretty' en ~vc-gutter~ porque me gustan los indicadores toscos
-
+- Activar ~indent-guides~.
+- Activar ~ligatures~.
+- Activar ~smooth-scroll~.
+- Activar ~treemacs~.
+- Desactivar '+pretty' en ~vc-gutter~ porque me gustan los indicadores toscos.
+** Editor
+- Activar ~(format +onsave)~.
+- Activar ~word-wrap~ (para lenguajes de programación).
 ** Terminal
-De las cuatro disponibles (eshell, shell, term, vterm), elegí
-- ~eshell~ porque es la que tiene más cosas. Está escrita en elisp, entiende
-  comandos de Emacs nativamente, más dificil de usar, pero algunos programas de
-  terminal no sirven.
-- ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
-  igualita a la que ya uso en Kitty.
+De las cuatro disponibles (eshell, shell, term, vterm), elegí:
+ - ~eshell~ porque es la que tiene más cosas. Está escrita en elisp, entiende
+   comandos de Emacs nativamente, más dificil de usar, pero algunos programas de
+   terminal no sirven.
+ - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
+   igualita a la que ya uso en Kitty.
 
 * Tangle config-packages
 
