@@ -14,8 +14,9 @@
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
-- [[#original-config][Original Config]]
-- [[#original-packages][Original Packages]]
+- [[#comentarios-originales][Comentarios Originales]]
+  - [[#config][Config]]
+  - [[#packages][Packages]]
 
 * Comandos Básicos de configuración
 - *~doom doctor~*
@@ -169,9 +170,10 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
 #+end_src
 
 
-* Original Config
+* Comentarios Originales
+** Config
 
-#+begin_src elisp :tangle config.el
+#+begin_src elisp :tangle-no
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
@@ -206,9 +208,9 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
 
 #+end_src
 
-* Original Packages
+** Packages
 
-#+begin_src elisp :tangle packages.el
+#+begin_src elisp :tangle-no
 
 ;; To install a package:
 ;;
