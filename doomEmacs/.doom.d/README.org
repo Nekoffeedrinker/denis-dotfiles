@@ -12,6 +12,7 @@
   - [[#tipografía][Tipografía]]
   - [[#tema][Tema]]
   - [[#numeración-de-lineas][Numeración de lineas]]
+  - [[#frame][Frame]]
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
@@ -256,6 +257,24 @@ Es posible elegir entre tres modos de numeración de lineas
 #+end_src
 
 Notar que para la numeración relativa hay que anteponer una comilla simple.
+
+** Frame
+
+Se puede hacer que la ventana tenga cierto tamaño al iniciar
+
+#+begin_src elisp :tangle-no
+;; == Definir el tamaño de la ventana al iniciar ==
+(add-hook 'emacs-startup-hook
+  (lambda ()
+    (when (display-graphic-p)
+      (set-frame-size (selected-frame) 90 40)  ;; Ancho y alto en caracteres
+      (set-frame-position (selected-frame) 100 50))))  ;; Posición en píxeles
+
+;; == Abrir emacs maximizado ==
+;; (add-hook 'window-setup-hook 'toggle-frame-maximized)
+#+end_src
+
+Actualmente no se está haciendo tangle porque uso un Tiling Window Manager.
 
 * Org-mode
 
