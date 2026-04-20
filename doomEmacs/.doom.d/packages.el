@@ -3,4 +3,6 @@
 
 (package! catppuccin-theme)
 
+(package! auto-dark)
+
 (package! org-auto-tangle)

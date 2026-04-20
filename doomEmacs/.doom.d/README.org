@@ -146,7 +146,7 @@ usando ~doom-theme~ en la configuración. O también, puedes cargarlo usando
 #+end_src
 
 #+begin_src elisp :tangle config.el
-(setq doom-theme 'catppuccin)
+;; (setq doom-theme 'catppuccin)
 #+end_src
 
 Otros temas que he probado son:
@@ -170,6 +170,79 @@ Otros temas que he probado son:
 ; doom-tomorrow-night    ; Buen color, org no me convence
 
 #+end_src
+
+*** Plugin: Auto-Dark
+
+Se trata de un plugin que permite sincronizar el modo oscuro.
+Requiere instalar el paquete y configurar su comportamiento.
+
+#+begin_src elisp :tangle packages.el
+(package! auto-dark)
+#+end_src
+
+Caso específico de cappuccin
+
+#+begin_src elisp :tangle config.el
+(use-package! auto-dark
+  :defer t
+  :init
+  ;; Usamos catppuccin en ambos slots; el flavor cambia vía hooks
+  (setq! auto-dark-themes '((catppuccin) (catppuccin)))
+  ;; Disable doom's theme loading mechanism (just to make sure)
+  (setq! doom-theme nil)
+  ;; Declare that all themes are safe to load.
+  (setq! custom-safe-themes t)
+  ;; Hooks para cambiar el flavor según el modo del sistema
+  (setq! auto-dark-dark-mode-hook
+         (list (lambda ()
+                 (setq catppuccin-flavor 'mocha)
+                 (catppuccin-reload))))
+  (setq! auto-dark-light-mode-hook
+         (list (lambda ()
+                 (setq catppuccin-flavor 'latte)
+                 (catppuccin-reload))))
+  (defun my-auto-dark-init-h ()
+    (auto-dark-mode)
+    (remove-hook 'server-after-make-frame-hook #'my-auto-dark-init-h)
+    (remove-hook 'after-init-hook #'my-auto-dark-init-h))
+  (let ((hook (if (daemonp)
+                  'server-after-make-frame-hook
+                'after-init-hook)))
+    (add-hook hook #'my-auto-dark-init-h -95)))
+#+end_src
+
+Para temas que no son cappuccin
+
+#+begin_src elisp :tangle-no
+(use-package! auto-dark
+ :defer t
+ :init
+ ;; Configure themes (Oscuro / Claro)
+ (setq! auto-dark-themes '((doom-tomorrow-night) (doom-tomorrow-day)))
+ ;; Disable doom's theme loading mechanism (just to make sure)
+ (setq! doom-theme nil)
+ ;; Declare that all themes are safe to load.
+ ;; Be aware that setting this variable may have security implications if you
+ ;; get tricked into loading untrusted themes (via auto-dark-mode or manually).
+ ;; See the documentation of custom-safe-themes for details.
+ (setq! custom-safe-themes t)
+ ;; Enable auto-dark-mode at the right point in time.
+ ;; This is inspired by doom-ui.el. Using server-after-make-frame-hook avoids
+ ;; issues with an early start of the emacs daemon using systemd, which causes
+ ;; problems with the DBus connection that auto-dark mode relies upon.
+ (defun my-auto-dark-init-h ()
+   (auto-dark-mode)
+   (remove-hook 'server-after-make-frame-hook #'my-auto-dark-init-h)
+   (remove-hook 'after-init-hook #'my-auto-dark-init-h))
+ (let ((hook (if (daemonp)
+                 'server-after-make-frame-hook
+               'after-init-hook)))
+   ;; Depth -95 puts this before doom-init-theme-h, which sounds like a good
+   ;; idea, if only for performance reasons.
+   (add-hook hook #'my-auto-dark-init-h -95)))
+#+end_src
+
+Actualmente estoy usando cappuccin, por lo que el tangle va para ese.
 
 ** Numeración de lineas
 

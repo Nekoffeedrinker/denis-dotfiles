@@ -48,7 +48,34 @@
      "..." "///" "//" "!!" "||" ";;" ";;;"))
     (global-ligature-mode t))
 
-(setq doom-theme 'catppuccin)
+;; (setq doom-theme 'catppuccin)
+
+(use-package! auto-dark
+  :defer t
+  :init
+  ;; Usamos catppuccin en ambos slots; el flavor cambia vía hooks
+  (setq! auto-dark-themes '((catppuccin) (catppuccin)))
+  ;; Disable doom's theme loading mechanism (just to make sure)
+  (setq! doom-theme nil)
+  ;; Declare that all themes are safe to load.
+  (setq! custom-safe-themes t)
+  ;; Hooks para cambiar el flavor según el modo del sistema
+  (setq! auto-dark-dark-mode-hook
+         (list (lambda ()
+                 (setq catppuccin-flavor 'mocha)
+                 (catppuccin-reload))))
+  (setq! auto-dark-light-mode-hook
+         (list (lambda ()
+                 (setq catppuccin-flavor 'latte)
+                 (catppuccin-reload))))
+  (defun my-auto-dark-init-h ()
+    (auto-dark-mode)
+    (remove-hook 'server-after-make-frame-hook #'my-auto-dark-init-h)
+    (remove-hook 'after-init-hook #'my-auto-dark-init-h))
+  (let ((hook (if (daemonp)
+                  'server-after-make-frame-hook
+                'after-init-hook)))
+    (add-hook hook #'my-auto-dark-init-h -95)))
 
 (setq display-line-numbers-type 'relative)
 
