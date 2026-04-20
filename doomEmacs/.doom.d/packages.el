@@ -3,6 +3,8 @@
 
 (package! catppuccin-theme)
 
+(package! org-auto-tangle)
+
 ;; To install a package:
 ;;
 ;;   1. Declare them here in a `package!' statement,
@@ -54,5 +56,3 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
-
-(package! org-auto-tangle)
