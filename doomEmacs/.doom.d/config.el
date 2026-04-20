@@ -2,7 +2,7 @@
 
 (setq doom-font
         (font-spec
-         :family "MonaspiceXe Nerd Font Mono"
+         :family "Monaspace Xenon Frozen"
          :size 16 :weight 'regular)
       doom-variable-pitch-font
         (font-spec
@@ -10,13 +10,32 @@
          :size 18)
       doom-serif-font
         (font-spec
-         :family "MonaspiceAr Nerd Font Mono"
+         :family "Monaspace Argon Frozen"
          :size 16))
 
 (custom-set-faces!
   '(italic
-    :family "MonaspiceRn Nerd Font Mono"
+    :family "Monaspace Radon Frozen"
     :slant italic))
+
+(use-package ligature
+  :config
+  (ligature-set-ligatures
+   't   ; Para activarlo en todos los modos
+   '("--" "---" "==" "===" "!=" "!==" "=!="
+     "=:=" "=/=" "<=" ">=" "&&" "&&&" "&=" "++" "+++" "***" ";;" "!!"
+     "??" "???" "?:" "?." "?=" "<:" ":<" ":>" ">:" "<:<" "<>" "<<<" ">>>"
+     "<<" ">>" "||" "-|" "_|_" "|-" "||-" "|=" "||=" "##" "###" "####"
+     "#{" "#[" "]#" "#(" "#?" "#_" "#_(" "#:" "#!" "#=" "^=" "<$>" "<$"
+     "$>" "<+>" "<+" "+>" "<*>" "<*" "*>" "</" "</>" "/>" "<!--" "<#--"
+     "-->" "->" "->>" "<<-" "<-" "<=<" "=<<" "<<=" "<==" "<=>" "<==>"
+     "==>" "=>" "=>>" ">=>" ">>=" ">>-" ">-" "-<" "-<<" ">->" "<-<" "<-|"
+     "<=|" "|=>" "|->" "<->" "<~~" "<~" "<~>" "~~" "~~>" "~>" "~-" "-~"
+     "~@" "[||]" "|]" "[|" "|}" "{|" "[<" ">]" "|>" "<|" "||>" "<||"
+     "|||>" "<|||" "<|>" "..." ".." ".=" "..<" ".?" "::" ":::" ":=" "::="
+     ":?" ":?>" "//" "///" "/*" "*/" "/=" "//=" "/==" "@_" "__" "???"
+     "<:<" ";;;"))
+  (global-ligature-mode t))
 
 (setq doom-theme 'catppuccin)
 

@@ -78,7 +78,7 @@ fuente primaria, el resto son opcionales
 #+begin_src elisp :tangle config.el
 (setq doom-font
         (font-spec
-         :family "MonaspiceXe Nerd Font Mono"
+         :family "Monaspace Xenon Frozen"
          :size 16 :weight 'regular)
       doom-variable-pitch-font
         (font-spec
@@ -86,18 +86,43 @@ fuente primaria, el resto son opcionales
          :size 18)
       doom-serif-font
         (font-spec
-         :family "MonaspiceAr Nerd Font Mono"
+         :family "Monaspace Argon Frozen"
          :size 16))
 
 (custom-set-faces!
   '(italic
-    :family "MonaspiceRn Nerd Font Mono"
+    :family "Monaspace Radon Frozen"
     :slant italic))
 #+end_src
 
 Una función poderosa de emacs son los /faces/ que serían como estilos de fuente
 que podemos configurar para ciertos casos. En la configuración de arriba, se
 configuró una para que el texto en italicas tenga una fuente distinta.
+
+*** Ligaduras
+
+Primero hay que activar =ligatures= en el ~init.el~. Y se activan así:
+
+#+begin_src elisp :tangle config.el
+(use-package ligature
+  :config
+  (ligature-set-ligatures
+   't   ; Para activarlo en todos los modos
+   '("--" "---" "==" "===" "!=" "!==" "=!="
+     "=:=" "=/=" "<=" ">=" "&&" "&&&" "&=" "++" "+++" "***" ";;" "!!"
+     "??" "???" "?:" "?." "?=" "<:" ":<" ":>" ">:" "<:<" "<>" "<<<" ">>>"
+     "<<" ">>" "||" "-|" "_|_" "|-" "||-" "|=" "||=" "##" "###" "####"
+     "#{" "#[" "]#" "#(" "#?" "#_" "#_(" "#:" "#!" "#=" "^=" "<$>" "<$"
+     "$>" "<+>" "<+" "+>" "<*>" "<*" "*>" "</" "</>" "/>" "<!--" "<#--"
+     "-->" "->" "->>" "<<-" "<-" "<=<" "=<<" "<<=" "<==" "<=>" "<==>"
+     "==>" "=>" "=>>" ">=>" ">>=" ">>-" ">-" "-<" "-<<" ">->" "<-<" "<-|"
+     "<=|" "|=>" "|->" "<->" "<~~" "<~" "<~>" "~~" "~~>" "~>" "~-" "-~"
+     "~@" "[||]" "|]" "[|" "|}" "{|" "[<" ">]" "|>" "<|" "||>" "<||"
+     "|||>" "<|||" "<|>" "..." ".." ".=" "..<" ".?" "::" ":::" ":=" "::="
+     ":?" ":?>" "//" "///" "/*" "*/" "/=" "//=" "/==" "@_" "__" "???"
+     "<:<" ";;;"))
+  (global-ligature-mode t))
+#+end_src
 
 ** Tema
 
