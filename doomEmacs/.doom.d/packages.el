@@ -5,6 +5,6 @@
 
 (package! auto-dark)
 
-(package! org-auto-tangle)
-
 (package! pdf-tools :built-in 'prefer)
+
+(package! org-auto-tangle)

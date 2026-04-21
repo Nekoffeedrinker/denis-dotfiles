@@ -15,11 +15,11 @@
   - [[#numeración-de-lineas][Numeración de lineas]]
   - [[#frame][Frame]]
   - [[#banner-de-bienvenida][Banner de bienvenida]]
+- [[#utilidades][Utilidades]]
+  - [[#visor-pdf][Visor PDF]]
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
-- [[#utilidades][Utilidades]]
-  - [[#visor-pdf][Visor PDF]]
 - [[#comentarios-originales][Comentarios Originales]]
   - [[#config][Config]]
   - [[#packages][Packages]]
@@ -160,7 +160,7 @@ usando ~doom-theme~ en la configuración. O también, puedes cargarlo usando
 
 Otros temas que he probado son:
 
-#+begin_src elisp :tangle-no
+#+begin_src elisp
 
 ; doom-palenight         ; Predeterminado pero poquito mejor
 ; doom-nord              ; Muy gris para mí
@@ -294,6 +294,21 @@ Para cambiarlo las letras grandes de DOOM EMACS por una imagen:
 Actualmente no se hace tangle porque es para referencia (temporalmente).
 
 
+* Utilidades
+** Visor PDF
+
+En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el cual vinene integrado en 'pdf-tools'.
+- Para sistemas normales se puede usar el comando ~M-x pdf-tools-install~.
+- En NixOS hay que añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
+
+Después, se añade lo siguiente a Emacs
+#+begin_src elisp :tangle packages.el
+(package! pdf-tools :built-in 'prefer)
+#+end_src
+
+Esto le dice a Doom que use la versión que ya instaló Nix.
+
+
 * Org-mode
 ** Directorios/carpetas de org-mode
 
@@ -322,24 +337,10 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
 #+end_src
 
 
-* Utilidades
-** Visor PDF
-
-En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el cual vinene integrado en 'pdf-tools'.
-- Para sistemas normales se puede usar el comando ~M-x pdf-tools-install~.
-- En NixOS hay que añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
-
-Después, se añade lo siguiente a Emacs
-#+begin_src elisp :tangle packages.el
-(package! pdf-tools :built-in 'prefer)
-#+end_src
-
-Esto le dice a Doom que use la versión que ya instaló Nix.
-
 * Comentarios Originales
 ** Config
 
-#+begin_src elisp :tangle-no
+#+begin_src elisp
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
@@ -376,7 +377,7 @@ Esto le dice a Doom que use la versión que ya instaló Nix.
 
 ** Packages
 
-#+begin_src elisp :tangle-no
+#+begin_src elisp
 
 ;; To install a package:
 ;;
