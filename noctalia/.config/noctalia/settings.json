@@ -369,7 +369,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Monochrome",
+        "predefinedScheme": "Catppuccin",
         "schedulingMode": "location",
         "syncGsettings": true,
         "useWallpaperColors": true
@@ -768,10 +768,6 @@
             {
                 "enabled": true,
                 "id": "niri"
-            },
-            {
-                "enabled": true,
-                "id": "kitty"
             }
         ],
         "enableUserTheming": false
