@@ -17,6 +17,10 @@
   - [[#banner-de-bienvenida][Banner de bienvenida]]
 - [[#utilidades][Utilidades]]
   - [[#visor-pdf][Visor PDF]]
+  - [[#dired-y-dirvish][Dired y dirvish]]
+  - [[#modo-abreviado][Modo abreviado]]
+  - [[#diccionario-personal][Diccionario personal]]
+  - [[#hooks][Hooks]]
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
   - [[#plugin-org-journal][Plugin: org-journal]]
@@ -308,6 +312,69 @@ Después, se añade lo siguiente a Emacs
 #+end_src
 
 Esto le dice a Doom que use la versión que ya instaló Nix.
+
+** Dired y dirvish
+
+#+begin_src elisp :tangle-no
+
+;; Eliminar moviendo a la papelera
+(setq delete-by-moving-to-trash t)
+
+;; Abrir dirvish (dired pero mejor)
+(map! :leader
+      :desc "Dirvish" "o _" #'dirvish)
+
+#+end_src
+
+** Modo abreviado
+
+#+begin_src elisp :tangle-no
+
+;; Activar el modo abreviado
+(add-hook 'text-mode-hook #'abbrev-mode)
+;(add-hook 'typst-mode-hook #'abbrev-mode)
+
+#+end_src
+
+** Diccionario personal
+
+#+begin_src elisp :tangle-no
+
+;; Diccionario personal
+(setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
+
+;; Configurar la detección del lenguaje automático
+;(use-package! guess-language
+;  :hook (text-mode . guess-language-mode)
+;  :config
+;  (setq guess-language-languages '(es en)
+;        guess-language-min-paragraph-length 35))
+
+#+end_src
+
+** Hooks
+
+#+begin_src elisp :tangle-no
+
+;; Saltos de linea duros en org mode
+(add-hook 'org-mode-hook (lambda ()
+  (auto-fill-mode 1)            ; hard wrap ON
+  (setq-local fill-column 80)   ; ancho del wrap
+  (setq-local word-wrap nil)))  ; soft wrap visual OFF
+
+(after! markdown-mode
+  (add-hook 'markdown-mode-hook #'variable-pitch-mode)
+  (add-hook 'markdown-mode-hook #'visual-fill-column-mode)
+  (setq visual-fill-column-width 80))
+
+;: Navegar entre lineas visuales
+(add-hook! 'text-mode-hook
+  (evil-local-set-key 'normal (kbd "j") #'evil-next-visual-line)
+  (evil-local-set-key 'motion (kbd "j") #'evil-next-visual-line)
+  (evil-local-set-key 'normal (kbd "k") #'evil-previous-visual-line)
+  (evil-local-set-key 'motion (kbd "k") #'evil-previous-visual-line))
+
+#+end_src
 
 
 * Org-mode
