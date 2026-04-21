@@ -327,6 +327,17 @@ Esto le dice a Doom que use la versión que ya instaló Nix.
 
 ** Dired y dirvish
 
+Ambos son exploradores de archivos que vienen instalados en Doom Emacs. La
+peculiaridad de Dired es que es un buffer de emacs, por lo que se pueden
+realizar ediciones como si fuera un archivo de texto.
+
+Y el caso de dirvish es que resulta más rapido para navegar y revisar archivos,
+ya que tiene vista previa de archivos. Por defecto puede ver cualquier archivo
+de texto, pero para imágenes y PDF hay que instalar:
+ - ~vipsthumbnail~ para las imágenes.
+ - ~pdftoppm~ para los PDF.
+
+
 #+begin_src elisp :tangle config.el
 
 ;; Eliminar moviendo a la papelera
