@@ -137,3 +137,40 @@
   :hook (org-mode . org-auto-tangle-mode)
   :config
   (setq org-auto-tangle-default t))
+
+;; Asociar los archivos
+(add-to-list 'auto-mode-alist '("\\.typ\\'" . typst-ts-mode))
+
+;; Decirle a org que Typst existe
+(with-eval-after-load 'org
+  (add-to-list 'org-src-lang-modes '("typst" . typst-ts)))
+
+;; Activar Elgot
+(add-hook 'typst-ts-mode-hook #'eglot-ensure)
+
+;; Configurar Elgot para typst
+(with-eval-after-load 'eglot
+  (with-eval-after-load 'typst-ts-mode
+    (add-to-list 'eglot-server-programs
+                 `((typst-ts-mode) .
+                   ,(eglot-alternatives `(,typst-ts-lsp-download-path
+                                          "tinymist"))))))
+
+;; Hacer funcionar typst-preview
+(use-package! typst-preview
+  :config
+  (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
+  (setq typst-preview-browser "default")
+  ;; (setq browse-url-browser-function 'browse-url-generic)
+  ;; (setq browse-url-generic-program "/usr/bin/min")
+)
+
+;; Insertar citas de forma facil
+(defun dp/citar-insert-typst-normal ()
+  (interactive)
+  (let ((key (car (citar-select-refs))))
+    (insert (concat "#cite(<" key ">, form: \"normal\")"))))
+(defun dp/citar-insert-typst-prose ()
+  (interactive)
+  (let ((key (car (citar-select-refs))))
+    (insert (concat "#cite(<" key ">, form: \"prose\")"))))

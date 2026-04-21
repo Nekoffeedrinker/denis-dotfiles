@@ -29,6 +29,8 @@
   - [[#plugin-org-roam][Plugin: org-roam]]
   - [[#plugin-org-roam-bibtex-orb][Plugin: org-roam-bibtex (orb)]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
+- [[#lenguajes][Lenguajes]]
+  - [[#typst][Typst]]
 - [[#extras][Extras]]
   - [[#plugin-evil-tutor][Plugin: evil-tutor]]
 - [[#comentarios-originales][Comentarios Originales]]
@@ -80,7 +82,8 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
  - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
    igualita a la que ya uso en Kitty.
 ** Tools
-- Activar ~biblio~ para org-roam-bibtex
+- Activar ~biblio~ para org-roam-bibtex y Typst.
+- Activar ~(lsp +eglot)~ y ~tree-sitter~ para Typst.
 - Activar ~pdf~. REVISAR: =Utilidades → Visor PDF=
 ** Lang
 - Activar ~(org +journal +roam)~
@@ -544,6 +547,74 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
   (setq org-auto-tangle-default t))
 #+end_src
 
+
+* Lenguajes
+** Typst
+Acorde a esta [[https://forum.typst.app/t/are-there-any-best-practices-for-how-to-do-typst-in-emacs/850][discusión del foro de typst]], hay que instalar 'typst-ts-mode'
+(tree-sitter), 'tinymist' (LSP) y activar 'elgot'. Por mi parte, también
+instalaré 'typst-preview' porque me gusta la vista en tiempo real.
+
+Hay que activar ~(lsp +eglot)~ y ~tree-sitter~ en ':tools' del ~init.el~.
+
+Instalar los programas:
+ - ~tinymist~
+
+Añadir los respectivos paquetes:
+#+begin_src elisp :tangle packages.el
+(package! typst-ts-mode :recipe (:host codeberg :repo "meow_king/typst-ts-mode"))
+(package! typst-preview :recipe (:host github :repo "havarddj/typst-preview.el"))
+#+end_src
+
+Instalar el lenguaje en el tree-sitter
+ 1. Asegurarnos de instalar los paquetes: ~doom sync~ y regargar emacs.
+ 2. Dentro de Emacs ~M-x treesit-install-language-grammar~.
+ 3. Elegir ~typst~.
+ 4. Si pide URL: https://github.com/uben0/tree-sitter-typst.
+ 5. El resto en default.
+
+Y configurar las opciones
+#+begin_src elisp :tangle config.el
+
+;; Asociar los archivos
+(add-to-list 'auto-mode-alist '("\\.typ\\'" . typst-ts-mode))
+
+;; Decirle a org que Typst existe
+(with-eval-after-load 'org
+  (add-to-list 'org-src-lang-modes '("typst" . typst-ts)))
+
+;; Activar Elgot
+(add-hook 'typst-ts-mode-hook #'eglot-ensure)
+
+;; Configurar Elgot para typst
+(with-eval-after-load 'eglot
+  (with-eval-after-load 'typst-ts-mode
+    (add-to-list 'eglot-server-programs
+                 `((typst-ts-mode) .
+                   ,(eglot-alternatives `(,typst-ts-lsp-download-path
+                                          "tinymist"))))))
+
+;; Hacer funcionar typst-preview
+(use-package! typst-preview
+  :config
+  (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
+  (setq typst-preview-browser "default")
+  ;; (setq browse-url-browser-function 'browse-url-generic)
+  ;; (setq browse-url-generic-program "/usr/bin/min")
+)
+
+;; Insertar citas de forma facil
+(defun dp/citar-insert-typst-normal ()
+  (interactive)
+  (let ((key (car (citar-select-refs))))
+    (insert (concat "#cite(<" key ">, form: \"normal\")"))))
+(defun dp/citar-insert-typst-prose ()
+  (interactive)
+  (let ((key (car (citar-select-refs))))
+    (insert (concat "#cite(<" key ">, form: \"prose\")"))))
+#+end_src
+
+Para la parte de las citas, hay que habilitar ~biblio~ en el ~init.el~ y
+configurar citar. Yo ya no lo configuré porque lo hice en Org-Roam-Bibtex
 
 * Extras
 ** Plugin: evil-tutor

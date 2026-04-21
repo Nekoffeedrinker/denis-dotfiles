@@ -102,14 +102,14 @@
        (eval +overlay)      ; evaluación de código en línea
        lookup               ; búsqueda de definiciones y documentación
        ;; llm               ; integración con modelos de lenguaje (IA)
-       ;; (lsp +eglot)      ; soporte para LSP (Languaje Server Protocol)
+       (lsp +eglot)      ; soporte para LSP (Languaje Server Protocol)
        magit                ; a git porcelain for Emacs
        ;; make              ; ejecución de Make tasks
        ;; pass              ; gestión de contraseñas dentro de emacs
        pdf               ; visor de PDF mejorado
        ;; terraform         ; sintaxis y ejecución de comandos Hcl
        ;; tmux              ; API para integrar sesiones tmux
-       ;; tree-sitter       ; parseo rápido para mejor resaltado
+       tree-sitter       ; parseo rápido para mejor resaltado
        ;; upload            ; subida de archivos via ssh/ftp
 
        :os
