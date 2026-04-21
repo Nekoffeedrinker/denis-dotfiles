@@ -223,19 +223,6 @@
                 },
                 {
                     "defaultSettings": {
-                        "apiKey": "",
-                        "apiUrl": "",
-                        "configPath": "",
-                        "enabled": true,
-                        "folderIds": [
-                        ],
-                        "pollIntervalMs": 10000,
-                        "verifyTls": false
-                    },
-                    "id": "plugin:syncthing-status"
-                },
-                {
-                    "defaultSettings": {
                         "compactMode": false,
                         "defaultPeerAction": "copy-ip",
                         "hideDisconnected": false,
@@ -251,6 +238,9 @@
                         "terminalCommand": ""
                     },
                     "id": "plugin:tailscale"
+                },
+                {
+                    "id": "plugin:syncthing-status"
                 },
                 {
                     "defaultSettings": {
