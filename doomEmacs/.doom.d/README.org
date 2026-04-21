@@ -9,6 +9,7 @@
   - [[#editor][Editor]]
   - [[#terminal][Terminal]]
   - [[#tools][Tools]]
+  - [[#lang][Lang]]
 - [[#aspecto-visual][Aspecto visual]]
   - [[#tipografía][Tipografía]]
   - [[#tema][Tema]]
@@ -26,6 +27,7 @@
   - [[#org-agenda][Org Agenda]]
   - [[#plugin-org-journal][Plugin: org-journal]]
   - [[#plugin-org-roam][Plugin: org-roam]]
+  - [[#plugin-org-roam-bibtex-orb][Plugin: org-roam-bibtex (orb)]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
 - [[#extras][Extras]]
   - [[#plugin-evil-tutor][Plugin: evil-tutor]]
@@ -78,8 +80,10 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
  - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
    igualita a la que ya uso en Kitty.
 ** Tools
+- Activar ~biblio~ para org-roam-bibtex
 - Activar ~pdf~. REVISAR: =Utilidades → Visor PDF=
-
+** Lang
+- Activar ~(org +journal +roam)~
 
 * Aspecto visual
 ** Tipografía
@@ -469,6 +473,60 @@ Pasando de lo básico, también se puede configurar una vista de gráfico de nod
 Refile es una funcióñ que permite traspasar bloques de encabezado entre archivos
 o secciones de archivos org. Esto es útil para mudar cosas entre notas,
 especialmente tareas pendientes.
+
+** Plugin: org-roam-bibtex (orb)
+
+Este plugin requiere de un archio `.bib`, el cuál va a albergar la lista de
+referencias que tendremos disponibles. Para tener una manera facil de gestionar
+este archivo, usaré Zotero.
+
+Preparar el archivo de referencias:
+ 1. Instalar Zotero.
+ 2. Instalar el plugin [[https://github.com/retorquere/zotero-better-bibtex/releases/tag/v9.0.19][Better BibTex]] de Zotero.
+ 3. Ir a =Archivo → Exportar biblioteca=, seleccionar formato *Better BibLaTeX*,
+    marcar *Keep updated* (dejar lo demás como está) y guardar el archivo en
+    '~/Documents/Emacs/Roam/refs/referencias.bib'.
+
+Luego, hay que activar ~biblio~ en el apartado tools del ~init.el~
+
+Y también hay que cargar un plugin
+#+begin_src elisp :tangle packages.el
+(package! org-roam-bibtex)
+#+end_src
+
+Y configurar el plugin
+
+#+begin_src elisp :tangle config.el
+
+;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
+(setq! citar-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+
+;; Decirle a orb dónde buscar las citas
+(setq bibtex-completion-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+
+;; Activar orb luego de que cargue org-roam
+(use-package! org-roam-bibtex
+  :after org-roam
+  :config
+  (org-roam-bibtex-mode 1))
+
+;; indicarle el formato e interfaz de citas a orb
+(setq orb-roam-ref-format 'org-cite)
+(setq orb-insert-interface 'citar)
+
+;; Crear un atajo para crear una nota de una bibliografía
+(map! :leader
+      (:prefix ("n r" . "+roam")
+       :desc "Crear una nota de bibliografía" "b" #'orb-insert-link))
+#+end_src
+
+Un par de notas a parte:
+ 1. Citar puede ser útil para gestionar citas en Org y LaTeX.
+ 2. Además del atajo para insertar un link, está ~M-x citar-open~ para abrir un
+    menú y navegar entre las citas disponibles y hacer varias acciones.
+    - Abrir el enlace del repositorio del documento.
+    - Abrir el PDF asociado en Emacs.
+    - Crear la nota bibliográfica (igual que el atajo).
 
 ** Plugin: org-auto-tangle
 

@@ -7,6 +7,8 @@
 
 (package! pdf-tools :built-in 'prefer)
 
+(package! org-roam-bibtex)
+
 (package! org-auto-tangle)
 
 (package! evil-tutor)

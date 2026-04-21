@@ -104,6 +104,27 @@
       `(("~/Documents/Emacs/Notas/Inbox.org" :maxlevel . 2)
         (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
 
+;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
+(setq! citar-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+
+;; Decirle a orb dónde buscar las citas
+(setq bibtex-completion-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+
+;; Activar orb luego de que cargue org-roam
+(use-package! org-roam-bibtex
+  :after org-roam
+  :config
+  (org-roam-bibtex-mode 1))
+
+;; indicarle el formato e interfaz de citas a orb
+(setq orb-roam-ref-format 'org-cite)
+(setq orb-insert-interface 'citar)
+
+;; Crear un atajo para crear una nota de una bibliografía
+(map! :leader
+      (:prefix ("n r" . "+roam")
+       :desc "Crear una nota de bibliografía" "b" #'orb-insert-link))
+
 (use-package! org-auto-tangle
   :defer t
   :hook (org-mode . org-auto-tangle-mode)

@@ -92,7 +92,7 @@
 
        :tools
        ;; ansible
-       ;; biblio            ; gestión de bibliografías y citas
+       biblio            ; gestión de bibliografías y citas
        ;; collab            ; gestión colaborativa en tiempo real
        ;; debugger          ; depurador de código integrado
        ;; direnv
