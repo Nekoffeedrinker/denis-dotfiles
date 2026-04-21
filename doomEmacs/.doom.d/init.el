@@ -106,7 +106,7 @@
        magit                ; a git porcelain for Emacs
        ;; make              ; ejecución de Make tasks
        ;; pass              ; gestión de contraseñas dentro de emacs
-       ;; pdf               ; visor de PDF mejorado
+       pdf               ; visor de PDF mejorado
        ;; terraform         ; sintaxis y ejecución de comandos Hcl
        ;; tmux              ; API para integrar sesiones tmux
        ;; tree-sitter       ; parseo rápido para mejor resaltado

@@ -2,12 +2,13 @@
 #+auto_tangle: t
 
 * Tabla de contenidos :toc:
+- [[#tangle-config-packages][Tangle config-packages]]
 - [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
 - [[#initel][init.el]]
   - [[#ui][UI]]
   - [[#editor][Editor]]
   - [[#terminal][Terminal]]
-- [[#tangle-config-packages][Tangle config-packages]]
+  - [[#tools][Tools]]
 - [[#aspecto-visual][Aspecto visual]]
   - [[#tipografía][Tipografía]]
   - [[#tema][Tema]]
@@ -16,9 +17,26 @@
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
+- [[#utilidades][Utilidades]]
+  - [[#visor-pdf][Visor PDF]]
 - [[#comentarios-originales][Comentarios Originales]]
   - [[#config][Config]]
   - [[#packages][Packages]]
+
+* Tangle config-packages
+
+#+begin_src elisp :tangle config.el
+
+;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+
+#+end_src
+#+begin_src elisp :tangle packages.el
+
+;; -*- no-byte-compile: t; -*-
+;;; $DOOMDIR/packages.el
+
+#+end_src
+
 
 * Comandos Básicos de configuración
 - *~doom doctor~*
@@ -30,6 +48,7 @@
   OJO: no carga cosas que estén en ~config.el~, para eso se necesita reiniciar.
 - *~doom gc~*
   Para limpiar los paquetes y módulos que no estén cargados.
+
 
 * init.el
 ** UI
@@ -48,20 +67,8 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
    terminal no sirven.
  - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
    igualita a la que ya uso en Kitty.
-
-* Tangle config-packages
-
-#+begin_src elisp :tangle config.el
-
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
-#+end_src
-#+begin_src elisp :tangle packages.el
-
-;; -*- no-byte-compile: t; -*-
-;;; $DOOMDIR/packages.el
-
-#+end_src
+** Tools
+- Activar ~pdf~. REVISAR: =Utilidades → Visor PDF=
 
 * Aspecto visual
 
@@ -304,6 +311,21 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
   (setq org-auto-tangle-default t))
 #+end_src
 
+
+* Utilidades
+
+** Visor PDF
+
+En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el cual vinene integrado en 'pdf-tools'.
+- Para sistemas normales se puede usar el comando ~M-x pdf-tools-install~.
+- En NixOS hay que añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
+
+Después, se añade lo siguiente a Emacs
+#+begin_src elisp :tangle packages.el
+(package! pdf-tools :built-in 'prefer)
+#+end_src
+
+Esto le dice a Doom que use la versión que ya instaló Nix.
 
 * Comentarios Originales
 ** Config
