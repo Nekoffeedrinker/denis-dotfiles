@@ -81,6 +81,12 @@
 
 (setq org-directory "~/Documents/Emacs/Notas")
 
+(setq org-journal-dir "~/Documents/Emacs/Diario/"
+      org-journal-date-prefix "#+title: "
+      org-journal-time-prefix "\n* "
+      org-journal-date-format "%A, %d/%b/%Y"
+      org-journal-file-format "%Y-%m-%d.org")
+
 (use-package! org-auto-tangle
   :defer t
   :hook (org-mode . org-auto-tangle-mode)

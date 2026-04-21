@@ -19,6 +19,7 @@
   - [[#visor-pdf][Visor PDF]]
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
+  - [[#plugin-org-journal][Plugin: org-journal]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
 - [[#comentarios-originales][Comentarios Originales]]
   - [[#config][Config]]
@@ -318,6 +319,24 @@ Los directorios y su función son:
 
 #+begin_src elisp :tangle config.el
 (setq org-directory "~/Documents/Emacs/Notas")
+#+end_src
+
+** Plugin: org-journal
+
+En ~init.el~ ubicamos =org= y añadimos la bandera '+journal'. Ej:
+#+begin_src elisp
+(org
+ +journal)
+#+end_src
+
+Luego, hay que definir la carpeta donde estarán los archivos de diario, cómo se
+llamará el archivo y el título del mismo:
+#+begin_src elisp :tangle config.el
+(setq org-journal-dir "~/Documents/Emacs/Diario/"
+      org-journal-date-prefix "#+title: "
+      org-journal-time-prefix "\n* "
+      org-journal-date-format "%A, %d/%b/%Y"
+      org-journal-file-format "%Y-%m-%d.org")
 #+end_src
 
 ** Plugin: org-auto-tangle
