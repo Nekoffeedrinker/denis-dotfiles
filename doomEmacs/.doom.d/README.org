@@ -324,7 +324,7 @@ Esto le dice a Doom que use la versión que ya instaló Nix.
 
 ** Dired y dirvish
 
-#+begin_src elisp :tangle-no
+#+begin_src elisp :tangle config.el
 
 ;; Eliminar moviendo a la papelera
 (setq delete-by-moving-to-trash t)

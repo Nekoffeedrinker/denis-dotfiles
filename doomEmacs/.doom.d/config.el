@@ -79,6 +79,13 @@
 
 (setq display-line-numbers-type 'relative)
 
+;; Eliminar moviendo a la papelera
+(setq delete-by-moving-to-trash t)
+
+;; Abrir dirvish (dired pero mejor)
+(map! :leader
+      :desc "Dirvish" "o _" #'dirvish)
+
 (setq org-directory "~/Documents/Emacs/Notas")
 
 (setq org-agenda-files
