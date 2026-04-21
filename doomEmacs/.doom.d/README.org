@@ -27,6 +27,8 @@
   - [[#plugin-org-journal][Plugin: org-journal]]
   - [[#plugin-org-roam][Plugin: org-roam]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
+- [[#extras][Extras]]
+  - [[#plugin-evil-tutor][Plugin: evil-tutor]]
 - [[#comentarios-originales][Comentarios Originales]]
   - [[#config][Config]]
   - [[#packages][Packages]]
@@ -304,9 +306,10 @@ Actualmente no se hace tangle porque es para referencia (temporalmente).
 * Utilidades
 ** Visor PDF
 
-En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el cual vinene integrado en 'pdf-tools'.
-- Para sistemas normales se puede usar el comando ~M-x pdf-tools-install~.
-- En NixOS hay que añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
+En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el
+cual vinene integrado en 'pdf-tools'.
+ - Linux normal: usar el comando ~M-x pdf-tools-install~.
+ - NixOS: añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
 
 Después, se añade lo siguiente a Emacs
 #+begin_src elisp :tangle packages.el
@@ -481,6 +484,16 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
   :hook (org-mode . org-auto-tangle-mode)
   :config
   (setq org-auto-tangle-default t))
+#+end_src
+
+
+* Extras
+** Plugin: evil-tutor
+
+Se ttrata de un plugin sencillo que abre archivos tipo manual para poder
+aprender y practicar los atajos de vim en emacs (el evil-mode).
+#+begin_src elisp :tangle packages.el
+(package! evil-tutor)
 #+end_src
 
 
