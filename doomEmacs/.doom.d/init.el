@@ -162,7 +162,8 @@
        ;; odin              ; C, minus its footguns
 
        (org                 ; Archivos de texto plano con superpoderes
-        +journal)           ; Llevar un diario en org-mode
+        +journal            ; Llevar un diario en org-mode
+        +roam)              ; Conectar org-files como en Roam Research
 
        ;; php               ; perl's insecure younger brother
        ;; plantuml          ; diagrams for confusing people more

@@ -81,11 +81,28 @@
 
 (setq org-directory "~/Documents/Emacs/Notas")
 
+(setq org-agenda-files
+      (list org-directory
+            "~/Documents/Emacs/Roam/"
+            "~/Documents/Emacs/Roam/journal/"))
+
 (setq org-journal-dir "~/Documents/Emacs/Diario/"
       org-journal-date-prefix "#+title: "
       org-journal-time-prefix "\n* "
       org-journal-date-format "%A, %d/%b/%Y"
       org-journal-file-format "%Y-%m-%d.org")
+
+(setq org-roam-directory "~/Documents/Emacs/Roam"
+      org-roam-dailies-directory "journal/")
+
+(setq org-roam-graph-viewer
+      (lambda (file)
+        (start-process "min" nil "/usr/bin/min"
+                       (concat "file://" file))))
+
+(setq org-refile-targets
+      `(("~/Documents/Emacs/Notas/Inbox.org" :maxlevel . 2)
+        (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
 
 (use-package! org-auto-tangle
   :defer t

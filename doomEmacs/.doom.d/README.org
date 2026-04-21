@@ -23,7 +23,9 @@
   - [[#hooks][Hooks]]
 - [[#org-mode][Org-mode]]
   - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
+  - [[#org-agenda][Org Agenda]]
   - [[#plugin-org-journal][Plugin: org-journal]]
+  - [[#plugin-org-roam][Plugin: org-roam]]
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
 - [[#comentarios-originales][Comentarios Originales]]
   - [[#config][Config]]
@@ -388,6 +390,22 @@ Los directorios y su función son:
 (setq org-directory "~/Documents/Emacs/Notas")
 #+end_src
 
+** Org Agenda
+
+Es una funcionalidad de Emacs para crear recordatorios, desprendiendo funciones
+como la gestión de tareas, programar eventos, calendario, repeticiones, etc.
+
+Para que las tareas se muestren en esta función hay que especificar desde qué
+carpetas las va a buscar:
+#+begin_src elisp :tangle config.el
+(setq org-agenda-files
+      (list org-directory
+            "~/Documents/Emacs/Roam/"
+            "~/Documents/Emacs/Roam/journal/"))
+#+end_src
+
+En mi caso, configuré las de Roam. Como ves, no escanea recursivamente.
+
 ** Plugin: org-journal
 
 En ~init.el~ ubicamos =org= y añadimos la bandera '+journal'. Ej:
@@ -405,6 +423,49 @@ llamará el archivo y el título del mismo:
       org-journal-date-format "%A, %d/%b/%Y"
       org-journal-file-format "%Y-%m-%d.org")
 #+end_src
+
+** Plugin: org-roam
+
+En ~init.el~ ubicamos =org= y añadimos la bandera '+roam'. Ej:
+#+begin_src elisp
+(org
+ +roam)
+#+end_src
+
+Ahora hay que configurar el directorio de Roam
+#+begin_src elisp :tangle config.el
+(setq org-roam-directory "~/Documents/Emacs/Roam"
+      org-roam-dailies-directory "journal/")
+#+end_src
+
+Hay dos cosas *MUY IMPORTANTES*:
+ 1. Utiliza una carpeta dedicada solamente a org-roam. Este plugin trabaja con
+    metadatos que solo los archivos generados por él tienen, por lo cual
+    conviene separar a las notas que no tienen dichos datos.
+ 2. Este plugin usa una base de datos, NO EDITES POR FUERA DE ESTE PLUGIN. de
+    hacerlo, estarías desactualizando la base de datos.
+
+También definí una carpeta anidada para los journal. En mi caso, utilizo este
+otro journal como si fuera un diario de trabajo. De esta manera, no mezclo las
+entradas donde hablo de mí personalmente con las entradas de mis proyectos.
+
+Pasando de lo básico, también se puede configurar una vista de gráfico de nodos
+(muy similar a obsidian) y el uso de refile.
+
+#+begin_src elisp :tangle config.el
+(setq org-roam-graph-viewer
+      (lambda (file)
+        (start-process "min" nil "/usr/bin/min"
+                       (concat "file://" file))))
+
+(setq org-refile-targets
+      `(("~/Documents/Emacs/Notas/Inbox.org" :maxlevel . 2)
+        (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
+#+end_src
+
+Refile es una funcióñ que permite traspasar bloques de encabezado entre archivos
+o secciones de archivos org. Esto es útil para mudar cosas entre notas,
+especialmente tareas pendientes.
 
 ** Plugin: org-auto-tangle
 
