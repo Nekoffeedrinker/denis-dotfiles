@@ -1,17 +1,17 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (setq doom-font
-        (font-spec
-         :family "Monaspace Xenon Frozen"
-         :size 16 :weight 'regular)
+      (font-spec
+       :family "Monaspace Xenon Frozen"
+       :size 16 :weight 'regular)
       doom-variable-pitch-font
-        (font-spec
-         :family "Public Sans"
-         :size 18)
+      (font-spec
+       :family "Public Sans"
+       :size 18)
       doom-serif-font
-        (font-spec
-         :family "Monaspace Argon Frozen"
-         :size 16))
+      (font-spec
+       :family "Monaspace Argon Frozen"
+       :size 16))
 
 (custom-set-faces!
   '(italic
