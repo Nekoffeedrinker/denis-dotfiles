@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: Diario de investigación
+# key: d-inv
+# --
+* Preguntas del diario de investigación
+** ¿Qué aborda la investigación?
+** ¿Cómo aborda la investigación? (el autor incluye)
+*** Citas de autores:
+*** Hechos:
+*** Datos (cifras):
+** ¿Cómo queda planteado y a qué preguntas llega?
+
+* Resultados presentados en la investigación
+** Datos
+** Interpretaciones
+
+* Resumen por capítulos
+
+#+STARTUP: show2levels
