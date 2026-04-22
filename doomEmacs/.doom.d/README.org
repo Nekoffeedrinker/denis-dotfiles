@@ -84,9 +84,10 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 ** Tools
 - Activar ~biblio~ para org-roam-bibtex y Typst.
 - Activar ~(lsp +eglot)~ y ~tree-sitter~ para Typst.
-- Activar ~pdf~. REVISAR: =Utilidades → Visor PDF=
+- Activar ~pdf~. REVISAR: [[*Visor PDF][Visor PDF]]
 ** Lang
 - Activar ~(org +journal +roam)~
+
 
 * Aspecto visual
 ** Tipografía
@@ -625,7 +626,8 @@ Y configurar las opciones
 #+end_src
 
 Para la parte de las citas, hay que habilitar ~biblio~ en el ~init.el~ y
-configurar citar. Yo ya no lo configuré porque lo hice en Org-Roam-Bibtex
+configurar citar. Yo ya no lo configuré porque lo hice en [[*Plugin: org-roam-bibtex (orb)][Org-Roam-Bibtex]]
+
 
 * Extras
 ** Plugin: evil-tutor
