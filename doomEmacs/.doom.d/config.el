@@ -86,6 +86,12 @@
 (map! :leader
       :desc "Dirvish" "o _" #'dirvish)
 
+(add-hook! 'text-mode-hook
+  (evil-local-set-key 'normal (kbd "j") #'evil-next-visual-line)
+  (evil-local-set-key 'motion (kbd "j") #'evil-next-visual-line)
+  (evil-local-set-key 'normal (kbd "k") #'evil-previous-visual-line)
+  (evil-local-set-key 'motion (kbd "k") #'evil-previous-visual-line))
+
 (setq org-directory "~/Documents/Emacs/Notas")
 
 (setq org-agenda-files

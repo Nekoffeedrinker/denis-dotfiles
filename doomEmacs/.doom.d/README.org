@@ -394,14 +394,15 @@ de texto, pero para imágenes y PDF hay que instalar:
   (add-hook 'markdown-mode-hook #'variable-pitch-mode)
   (add-hook 'markdown-mode-hook #'visual-fill-column-mode)
   (setq visual-fill-column-width 80))
+#+end_src
 
-;: Navegar entre lineas visuales
+*** Navegar entre lineas visuales
+#+begin_src elisp :tangle config.el
 (add-hook! 'text-mode-hook
   (evil-local-set-key 'normal (kbd "j") #'evil-next-visual-line)
   (evil-local-set-key 'motion (kbd "j") #'evil-next-visual-line)
   (evil-local-set-key 'normal (kbd "k") #'evil-previous-visual-line)
   (evil-local-set-key 'motion (kbd "k") #'evil-previous-visual-line))
-
 #+end_src
 
 
