@@ -5,6 +5,7 @@
 - [[#tangle-config-packages][Tangle config-packages]]
 - [[#comandos-básicos-de-configuración][Comandos Básicos de configuración]]
 - [[#initel][init.el]]
+  - [[#completion][completion]]
   - [[#ui][UI]]
   - [[#editor][Editor]]
   - [[#terminal][Terminal]]
@@ -65,6 +66,8 @@
 
 
 * init.el
+** completion
+- Dejar activado ~vertico~ para las citas de Typst.
 ** UI
 - Activar ~indent-guides~.
 - Activar ~ligatures~.
@@ -83,6 +86,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
    igualita a la que ya uso en Kitty.
 ** Tools
 - Activar ~biblio~ para org-roam-bibtex y Typst.
+- Dejar activado ~lookup~ para las citas de Typst
 - Activar ~(lsp +eglot)~ y ~tree-sitter~ para Typst.
 - Activar ~pdf~. REVISAR: [[*Visor PDF][Visor PDF]]
 ** Lang
@@ -626,8 +630,9 @@ Y configurar las opciones
     (insert (concat "#cite(<" key ">, form: \"prose\")"))))
 #+end_src
 
-Para la parte de las citas, hay que habilitar ~biblio~ en el ~init.el~ y
-configurar citar. Yo ya no lo configuré porque lo hice en [[*Plugin: org-roam-bibtex (orb)][Org-Roam-Bibtex]]
+Para la parte de las citas, hay que habilitar ~biblio~, ~vertico~ y ~lookup~ en
+el ~init.el~ (algunas funciones ya están activadas) y configurar citar. En mi
+caso ya configuré citar en [[*Plugin: org-roam-bibtex (orb)][Org-Roam-Bibtex]].
 
 También incluí dos lineas para que me abra Web (navegador de GNOME) en lugar de
 mi navegador por defecto. De esta manera, puedo separar mi navegador de internet
