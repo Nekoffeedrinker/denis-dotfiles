@@ -161,8 +161,9 @@
   :config
   (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
   (setq typst-preview-browser "default")
-  ;; (setq browse-url-browser-function 'browse-url-generic)
-  ;; (setq browse-url-generic-program "/usr/bin/min")
+  ;; Utilzar Gnome Web
+  (setq browse-url-browser-function 'browse-url-generic)
+  (setq browse-url-generic-program "/run/current-system/sw/bin/epiphany")
 )
 
 ;; Insertar citas de forma facil

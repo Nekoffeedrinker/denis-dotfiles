@@ -610,8 +610,9 @@ Y configurar las opciones
   :config
   (setq typst-preview-executable "/run/current-system/sw/bin/tinymist")
   (setq typst-preview-browser "default")
-  ;; (setq browse-url-browser-function 'browse-url-generic)
-  ;; (setq browse-url-generic-program "/usr/bin/min")
+  ;; Utilzar Gnome Web
+  (setq browse-url-browser-function 'browse-url-generic)
+  (setq browse-url-generic-program "/run/current-system/sw/bin/epiphany")
 )
 
 ;; Insertar citas de forma facil
@@ -628,6 +629,9 @@ Y configurar las opciones
 Para la parte de las citas, hay que habilitar ~biblio~ en el ~init.el~ y
 configurar citar. Yo ya no lo configuré porque lo hice en [[*Plugin: org-roam-bibtex (orb)][Org-Roam-Bibtex]]
 
+También incluí dos lineas para que me abra Web (navegador de GNOME) en lugar de
+mi navegador por defecto. De esta manera, puedo separar mi navegador de internet
+y dedica otra aplicación a la previsualización de documentos.
 
 * Extras
 ** Plugin: evil-tutor
