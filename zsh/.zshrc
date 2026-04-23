@@ -123,6 +123,7 @@ alias tree="exa --color=always --icons=always --tree"
 
 # == Remplazar cat ==
 alias cat="bat"
+alias catt="bat -p"
 
 # == Alias de git ==
 alias gs="git status"
