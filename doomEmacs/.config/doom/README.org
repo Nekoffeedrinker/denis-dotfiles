@@ -32,6 +32,7 @@
   - [[#plugin-org-auto-tangle][Plugin: org-auto-tangle]]
 - [[#lenguajes][Lenguajes]]
   - [[#typst][Typst]]
+  - [[#nix][Nix]]
 - [[#extras][Extras]]
   - [[#plugin-evil-tutor][Plugin: evil-tutor]]
 - [[#comentarios-originales][Comentarios Originales]]
@@ -91,6 +92,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 - Activar ~pdf~. REVISAR: [[*Visor PDF][Visor PDF]]
 ** Lang
 - Activar ~(org +journal +roam)~
+- Activar ~(nix +lsp +tree-sitter)~
 
 
 * Aspecto visual
@@ -638,6 +640,32 @@ caso ya configuré citar en [[*Plugin: org-roam-bibtex (orb)][Org-Roam-Bibtex]].
 También incluí dos lineas para que me abra Web (navegador de GNOME) en lugar de
 mi navegador por defecto. De esta manera, puedo separar mi navegador de internet
 y dedica otra aplicación a la previsualización de documentos.
+
+** Nix
+
+Primero hay que instalar ~nixd~ y ~alejadnra~ (formatter y lsp).
+
+Activar =nix= con las banderas '+lsp' y '+tree-sitter' en el ~init.el~. Ej:
+#+begin_src elisp
+(nix
+ +lsp
+ +tree-sitter)
+#+end_src
+
+Y configurar:
+#+begin_src elisp :tangle config.el
+
+;; Configurar Elgot para nixd
+(after! eglot
+  (add-to-list 'eglot-server-programs
+               '((nix-mode nix-ts-mode) . ("nixd"))))
+
+;; Configurar el alejandra como tree-sitter
+(after! nix-mode
+  (setq nix-nixfmt-bin "alejandra"))
+(after! nix-ts-mode
+  (set-formatter! 'alejandra "alejandra" :modes '(nix-ts-mode nix-mode)))
+#+end_src
 
 * Extras
 ** Plugin: evil-tutor

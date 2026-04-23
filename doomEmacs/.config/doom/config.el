@@ -181,3 +181,14 @@
   (interactive)
   (let ((key (car (citar-select-refs))))
     (insert (concat "#cite(<" key ">, form: \"prose\")"))))
+
+;; Configurar Elgot para nixd
+(after! eglot
+  (add-to-list 'eglot-server-programs
+               '((nix-mode nix-ts-mode) . ("nixd"))))
+
+;; Configurar el alejandra como tree-sitter
+(after! nix-mode
+  (setq nix-nixfmt-bin "alejandra"))
+(after! nix-ts-mode
+  (set-formatter! 'alejandra "alejandra" :modes '(nix-ts-mode nix-mode)))
