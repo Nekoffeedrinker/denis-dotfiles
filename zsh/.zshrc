@@ -163,3 +163,6 @@ export VISUAL=nvim
 
 # Usar fzf con git
 source ~/.denisDotfiles/SCRIPTS/fzf-git.sh
+
+# ========================= PATH =========================
+export PATH="$HOME/.config/emacs/bin:$PATH"
