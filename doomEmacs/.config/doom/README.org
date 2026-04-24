@@ -24,7 +24,7 @@
   - [[#diccionario-personal][Diccionario personal]]
   - [[#hooks][Hooks]]
 - [[#org-mode][Org-mode]]
-  - [[#directorioscarpetas-de-org-mode][Directorios/carpetas de org-mode]]
+  - [[#directorio-de-org-mode][Directorio de org-mode]]
   - [[#org-agenda][Org Agenda]]
   - [[#plugin-org-journal][Plugin: org-journal]]
   - [[#plugin-org-roam][Plugin: org-roam]]
@@ -409,11 +409,10 @@ de texto, pero para imágenes y PDF hay que instalar:
 
 
 * Org-mode
-** Directorios/carpetas de org-mode
+** Directorio de org-mode
 
-Los directorios y su función son:
- - ~org-directory~ donde se guardan los archivos org por defecto. En mi caso
-   lo utilizo para las notas jerárquicas. Debe de ponerse antes de cargar org.
+~org-directory~ donde se guardan los archivos org por defecto. En mi caso
+lo utilizo para las notas jerárquicas. Debe de ponerse antes de cargar org.
 
 #+begin_src elisp :tangle config.el
 (setq org-directory "~/Documents/Emacs/Notas")
