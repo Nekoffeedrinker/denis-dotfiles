@@ -428,6 +428,7 @@ carpetas las va a buscar:
 #+begin_src elisp :tangle config.el
 (setq org-agenda-files
       (list org-directory
+            "~/Documents/Emacs/Notas/ToDo/"
             "~/Documents/Emacs/Roam/"
             "~/Documents/Emacs/Roam/journal/"))
 #+end_src

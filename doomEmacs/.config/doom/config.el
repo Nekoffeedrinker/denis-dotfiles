@@ -96,6 +96,7 @@
 
 (setq org-agenda-files
       (list org-directory
+            "~/Documents/Emacs/Notas/ToDo/"
             "~/Documents/Emacs/Roam/"
             "~/Documents/Emacs/Roam/journal/"))
 
