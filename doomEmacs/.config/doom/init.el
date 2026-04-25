@@ -33,7 +33,7 @@
        doom                 ; habilitar el aspecto visual de Doom Emacs
        dashboard            ; pantalla de bienvenida al abrir
        ;; doom-quit         ; mensajes de confirmación de salida graciosos
-       ;; (emoji +unicode)  ; habiliar soporte de emogis
+       (emoji +unicode)  ; habiliar soporte de emogis
        hl-todo              ; resaltar TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        indent-guides     ; resaltar el identado usando columnas
        ligatures         ; activar soporte para ligaduras y simbolos

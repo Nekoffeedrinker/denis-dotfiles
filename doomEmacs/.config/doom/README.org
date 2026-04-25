@@ -70,6 +70,7 @@
 ** completion
 - Dejar activado ~vertico~ para las citas de Typst.
 ** UI
+- Activar ~(emoji +unicode)~
 - Activar ~indent-guides~.
 - Activar ~ligatures~.
 - Activar ~smooth-scroll~.
