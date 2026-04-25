@@ -100,6 +100,10 @@
             "~/Documents/Emacs/Roam/"
             "~/Documents/Emacs/Roam/journal/"))
 
+(use-package! org-fancy-priorities
+  :hook (org-mode . org-fancy-priorities-mode)
+  :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
+
 (setq org-journal-dir "~/Documents/Emacs/Diario/"
       org-journal-date-prefix "#+title: "
       org-journal-time-prefix "\n* "

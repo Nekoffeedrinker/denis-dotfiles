@@ -435,6 +435,37 @@ carpetas las va a buscar:
 
 En mi caso, configuré las de Roam. Como ves, no escanea recursivamente.
 
+*** Org Tasks
+
+Para cambiar las opciones disponibles para asignar tareas, incluido el menú de
+org-todo, se puede definir de la siguiente manera:
+
+#+begin_src elisp :tangle-no config.el
+(after! org
+  (setq org-todo-keywords
+        '((sequence
+           "TODO(t)" "INPROGRESS(i)" "WAITTING(w)" "|"
+           "DONE(d)" "CANCELLED(c)"))))
+#+end_src
+En mi caso no hago tangle y las dejo por defecto.
+
+**** Plugin: org-fancy-priorities
+
+Este es un plugin para personalizar las prioridades de tarea
+
+Se instala
+#+begin_src elisp :tangle packages.el
+(package! org-fancy-priorities)
+#+end_src
+
+Y se configura
+#+begin_src elisp :tangle config.el
+(use-package! org-fancy-priorities
+  :hook (org-mode . org-fancy-priorities-mode)
+  :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
+#+end_src
+
+
 ** Plugin: org-journal
 
 En ~init.el~ ubicamos =org= y añadimos la bandera '+journal'. Ej:
