@@ -436,7 +436,7 @@ carpetas las va a buscar:
 
 En mi caso, configuré las de Roam. Como ves, no escanea recursivamente.
 
-*** Org Tasks
+*** Menú de To-Do
 
 Para cambiar las opciones disponibles para asignar tareas, incluido el menú de
 org-todo, se puede definir de la siguiente manera:
@@ -450,7 +450,16 @@ org-todo, se puede definir de la siguiente manera:
 #+end_src
 En mi caso no hago tangle y las dejo por defecto.
 
-**** Plugin: org-fancy-priorities
+*** Logbook
+
+Para que las tareas guarden su estado de compeletado en una propiedad
+colapsable, se puede activar la propiedad ~logdrawer~.
+
+#+begin_src elisp :tangle config.el
+(setq org-log-into-drawer t)
+#+end_src
+
+*** Plugin: org-fancy-priorities
 
 Este es un plugin para personalizar las prioridades de tarea
 

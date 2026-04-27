@@ -100,6 +100,8 @@
             "~/Documents/Emacs/Roam/"
             "~/Documents/Emacs/Roam/journal/"))
 
+(setq org-log-into-drawer t)
+
 (use-package! org-fancy-priorities
   :hook (org-mode . org-fancy-priorities-mode)
   :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
