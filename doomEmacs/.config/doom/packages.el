@@ -5,8 +5,6 @@
 
 (package! auto-dark)
 
-(package! pdf-tools :built-in 'prefer)
-
 (package! org-fancy-priorities)
 
 (package! org-roam-bibtex)

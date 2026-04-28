@@ -322,16 +322,7 @@ Actualmente no se hace tangle porque es para referencia (temporalmente).
 ** Visor PDF
 
 En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el
-cual vinene integrado en 'pdf-tools'.
- - Linux normal: usar el comando ~M-x pdf-tools-install~.
- - NixOS: añadir ~pkgs.emacsPackages.pdf-tools~ a la lista de paquetes.
-
-Después, se añade lo siguiente a Emacs
-#+begin_src elisp :tangle packages.el
-(package! pdf-tools :built-in 'prefer)
-#+end_src
-
-Esto le dice a Doom que use la versión que ya instaló Nix.
+cual vinene integrado en 'pdf-tools', usando el comando ~M-x pdf-tools-install~.
 
 ** Dired y dirvish
 
