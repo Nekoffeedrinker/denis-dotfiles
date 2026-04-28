@@ -367,11 +367,11 @@
     "colorSchemes": {
         "darkMode": false,
         "generationMethod": "tonal-spot",
-        "manualSunrise": "06:30",
-        "manualSunset": "18:30",
+        "manualSunrise": "06:00",
+        "manualSunset": "18:00",
         "monitorForColors": "",
         "predefinedScheme": "Catppuccin",
-        "schedulingMode": "location",
+        "schedulingMode": "manual",
         "syncGsettings": true,
         "useWallpaperColors": true
     },
