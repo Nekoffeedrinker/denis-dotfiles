@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: NixOS Flake Module
+# key: nixmod
+# --
+{...}: {
+  flake.nixosModules.$1 = {pkgs, ...}: {
+    $0
+  };
+}
