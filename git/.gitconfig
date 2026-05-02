@@ -20,6 +20,7 @@
     diffFilter = delta --color-only
 
 [delta]
+    keep-plus-minus-markers = true
     navigate = true        # Usar n y N para moverse entre secciones del diff
     ; side-by-side = true  # Desactivado para activarse con un alias
 
