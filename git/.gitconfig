@@ -15,6 +15,7 @@
 # ========== Configurar Delta ==========
 [core]
     pager = delta
+	quotepath = off
 
 [interactive]
     diffFilter = delta --color-only
