@@ -33,6 +33,7 @@
 - [[#lenguajes][Lenguajes]]
   - [[#typst][Typst]]
   - [[#nix][Nix]]
+  - [[#kdl-niri][KDL (Niri)]]
 - [[#extras][Extras]]
   - [[#plugin-evil-tutor][Plugin: evil-tutor]]
 - [[#comentarios-originales][Comentarios Originales]]
@@ -697,6 +698,28 @@ Y configurar:
   (setq nix-nixfmt-bin "alejandra"))
 (after! nix-ts-mode
   (set-formatter! 'alejandra "alejandra" :modes '(nix-ts-mode nix-mode)))
+#+end_src
+
+** KDL (Niri)
+
+Para editar más comodamente los archivos de Niri (más que nada por el resaltado de sintaxis), se instala un modo para este tipo de archivos.
+
+El paqute:
+#+begin_src elisp :tangle packages.el
+(package! kdl-mode)
+#+end_src
+
+Insatlar el lenguaje en el tree-sitter
+ 1. Asegurarnos de instalar los paquetes: ~doom sync~ y regargar emacs.
+ 2. Dentro de Emacs ~M-x treesit-install-language-grammar~.
+ 3. Elegir ~kdl~.
+ 4. Si pide URL: https://github.com/nickel-lang/tree-sitter-kdl.
+ 5. El resto en default.
+
+Y asociar los archivos con este modo:
+#+begin_src elisp :tangle config.el
+(use-package! kdl-mode
+  :mode "\\.kdl\\'")
 #+end_src
 
 * Extras

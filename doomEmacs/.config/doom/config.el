@@ -199,3 +199,6 @@
   (setq nix-nixfmt-bin "alejandra"))
 (after! nix-ts-mode
   (set-formatter! 'alejandra "alejandra" :modes '(nix-ts-mode nix-mode)))
+
+(use-package! kdl-mode
+  :mode "\\.kdl\\'")
