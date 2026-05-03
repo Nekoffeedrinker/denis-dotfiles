@@ -5,7 +5,7 @@
 
 include "inputs_outputs-thinkpadX13gen2.kdl"
 input {
-    warp-mouse-to-focus
+    // warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="0%"
 }
 
