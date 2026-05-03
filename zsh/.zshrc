@@ -138,10 +138,6 @@ alias gca="git commit --amend"
 alias gcan="git commit --amend --no-edit"
 alias gl="git log"
 
-# == neofetch == 
-alias neofetch="hyfetch"
-alias fastfetch="hyfetch"
-
 # == Recostruir nix ==
 # alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
 
