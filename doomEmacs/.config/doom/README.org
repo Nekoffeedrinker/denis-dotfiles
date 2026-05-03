@@ -233,11 +233,13 @@ Caso específico de cappuccin
   (setq! auto-dark-dark-mode-hook
          (list (lambda ()
                  (setq catppuccin-flavor 'mocha)
-                 (catppuccin-reload))))
+                 (catppuccin-reload)
+                 (my/org-faces-mocha)))) ; <- fragmento agregado
   (setq! auto-dark-light-mode-hook
          (list (lambda ()
                  (setq catppuccin-flavor 'latte)
-                 (catppuccin-reload))))
+                 (catppuccin-reload)
+                 (my/org-faces-latte)))) ; <- fragmento agregado
   (defun my-auto-dark-init-h ()
     (auto-dark-mode)
     (remove-hook 'server-after-make-frame-hook #'my-auto-dark-init-h)
@@ -428,6 +430,78 @@ En ~init.el~ ubicamos =org= y añadimos la bandera '+pretty'. Ej:
 #+begin_src elisp
 (org
  +pretty)
+#+end_src
+
+*** Encabezados con tamaños variables
+
+Encontré un framento de código para hacer variar el tamaño de los encabezados en
+orgmode, incluyendo el título.
+
+#+begin_src elisp
+(custom-theme-set-faces!
+'doom-one
+'(org-level-8 :inherit outline-3 :height 1.0)
+'(org-level-7 :inherit outline-3 :height 1.0)
+'(org-level-6 :inherit outline-3 :height 1.1)
+'(org-level-5 :inherit outline-3 :height 1.2)
+'(org-level-4 :inherit outline-3 :height 1.3)
+'(org-level-3 :inherit outline-3 :height 1.4)
+'(org-level-2 :inherit outline-2 :height 1.5)
+'(org-level-1 :inherit outline-1 :height 1.6)
+'(org-document-title :height 1.8 :bold t :underline nil))
+#+end_src
+
+Pero cómo uso catppuccin —nuevamente causando problemas— la vida no podía ser
+tan facil. Debido a que catppuccin no define sus colores en la variable outlines
+outline, sino que usa foreground (caso contrario al de, por ejemplo, doom-one),
+es necesario harcodear los colores en la nueva definición de la fuente para
+poder conservarlos. Y como uso dos sabores de catppuccin, debo hardodear ambas
+fuentes.
+
+Entonces, tengo que definir las faces para cada sabor dentro de una función y
+luego hacer que se llamen estas funciones dentro de auto-dark.
+
+#+begin_src elisp :tangle config.el
+(defun my/org-faces-latte ()
+  (custom-set-faces!
+    '(org-level-1 :foreground "#d20f39" :height 1.6)
+    '(org-level-2 :foreground "#fe640b" :height 1.5)
+    '(org-level-3 :foreground "#df8e1d" :height 1.4)
+    '(org-level-4 :foreground "#40a02b" :height 1.3)
+    '(org-level-5 :foreground "#209fb5" :height 1.2)
+    '(org-level-6 :foreground "#7287fd" :height 1.1)
+    '(org-level-7 :foreground "#8839ef" :height 1.0)
+    '(org-level-8 :foreground "#e64553" :height 1.0)
+    '(org-document-title :height 1.8 :bold t :underline nil)))
+
+(defun my/org-faces-mocha ()
+  (custom-set-faces!
+    '(org-level-1 :foreground "#f38ba8" :height 1.6)
+    '(org-level-2 :foreground "#fab387" :height 1.5)
+    '(org-level-3 :foreground "#f9e2af" :height 1.4)
+    '(org-level-4 :foreground "#a6e3a1" :height 1.3)
+    '(org-level-5 :foreground "#74c7ec" :height 1.2)
+    '(org-level-6 :foreground "#b4befe" :height 1.1)
+    '(org-level-7 :foreground "#cba6f7" :height 1.0)
+    '(org-level-8 :foreground "#eba0ac" :height 1.0)
+    '(org-document-title :height 1.8 :bold t :underline nil)))
+#+end_src
+
+Una vez definida, vamos a [[*Plugin: Auto-Dark][auto-dark]] y modificamos el hook. Usaré flechas de comentarios para indicar qué es lo que cambié.
+
+Debería quedar algo así:
+#+begin_src elisp
+(setq! auto-dark-dark-mode-hook
+       (list (lambda ()
+               (setq catppuccin-flavor 'mocha)
+               (catppuccin-reload)
+               (my/org-faces-mocha))))  ; <- agregar esto
+
+(setq! auto-dark-light-mode-hook
+       (list (lambda ()
+               (setq catppuccin-flavor 'latte)
+               (catppuccin-reload)
+               (my/org-faces-latte))))  ; <- agregar esto
 #+end_src
 
 ** Org Agenda
