@@ -74,6 +74,7 @@
 ** completion
 - Dejar activado ~vertico~ para las citas de Typst.
 ** UI
+- Activar ~doom-quit~
 - Activar ~(emoji +unicode)~
 - Activar ~indent-guides~.
 - Activar ~ligatures~.
@@ -327,7 +328,7 @@ Actualmente no se hace tangle porque es para referencia (temporalmente).
 
 ** No pedir confirmación
 
-#+begin_src elisp :tangle config.el
+#+begin_src elisp :tangle-no config.el
 (setq confirm-kill-emacs nil)
 #+end_src
 
