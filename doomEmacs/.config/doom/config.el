@@ -79,6 +79,8 @@
 
 (setq display-line-numbers-type 'relative)
 
+(setq confirm-kill-emacs nil)
+
 ;; Eliminar moviendo a la papelera
 (setq delete-by-moving-to-trash t)
 

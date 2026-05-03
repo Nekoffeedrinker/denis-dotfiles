@@ -17,6 +17,8 @@
   - [[#numeración-de-lineas][Numeración de lineas]]
   - [[#frame][Frame]]
   - [[#banner-de-bienvenida][Banner de bienvenida]]
+- [[#comportamiento][Comportamiento]]
+  - [[#no-pedir-confirmación][No pedir confirmación]]
 - [[#utilidades][Utilidades]]
   - [[#visor-pdf][Visor PDF]]
   - [[#dired-y-dirvish][Dired y dirvish]]
@@ -317,6 +319,14 @@ Para cambiarlo las letras grandes de DOOM EMACS por una imagen:
 #+end_src
 
 Actualmente no se hace tangle porque es para referencia (temporalmente).
+
+* Comportamiento
+
+** No pedir confirmación
+
+#+begin_src elisp :tangle config.el
+(setq confirm-kill-emacs nil)
+#+end_src
 
 
 * Utilidades
