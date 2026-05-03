@@ -27,6 +27,7 @@
   - [[#hooks][Hooks]]
 - [[#org-mode][Org-mode]]
   - [[#directorio-de-org-mode][Directorio de org-mode]]
+  - [[#org-mode-bonito][Org-mode Bonito]]
   - [[#org-agenda][Org Agenda]]
   - [[#plugin-org-journal][Plugin: org-journal]]
   - [[#plugin-org-roam][Plugin: org-roam]]
@@ -95,7 +96,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 - Activar ~(lsp +eglot)~ y ~tree-sitter~ para Typst.
 - Activar ~pdf~. REVISAR: [[*Visor PDF][Visor PDF]]
 ** Lang
-- Activar ~(org +journal +roam)~
+- Activar ~(org +pretty +journal +roam)~
 - Activar ~(nix +lsp +tree-sitter)~
 
 
@@ -419,6 +420,14 @@ lo utilizo para las notas jerárquicas. Debe de ponerse antes de cargar org.
 
 #+begin_src elisp :tangle config.el
 (setq org-directory "~/Documents/Emacs/Notas")
+#+end_src
+
+** Org-mode Bonito
+
+En ~init.el~ ubicamos =org= y añadimos la bandera '+pretty'. Ej:
+#+begin_src elisp
+(org
+ +pretty)
 #+end_src
 
 ** Org Agenda
