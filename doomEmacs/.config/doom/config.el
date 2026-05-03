@@ -171,6 +171,11 @@
                    ,(eglot-alternatives `(,typst-ts-lsp-download-path
                                           "tinymist"))))))
 
+;; hacer que los tabs sean de 2 (igual que el formatter)
+(after! typst-ts-mode
+  (setq typst-ts-mode-indent-offset 2)
+  (setq typst-ts-indent-offset 2))
+
 ;; Hacer funcionar typst-preview
 (use-package! typst-preview
   :config
