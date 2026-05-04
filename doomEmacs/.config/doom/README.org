@@ -88,7 +88,7 @@
 ** Terminal
 De las cuatro disponibles (eshell, shell, term, vterm), elegí:
  - ~eshell~ porque es la que tiene más cosas. Está escrita en elisp, entiende
-   comandos de Emacs nativamente, más dificil de usar, pero algunos programas de
+   comandos de Emacs nativamente, más difícil de usar, pero algunos programas de
    terminal no sirven.
  - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
    igualita a la que ya uso en Kitty.
@@ -107,7 +107,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 * Aspecto visual
 ** Tipografía
 
-Para Doom emacs, hay 5 variables para controlar las fuentes. A parte de la
+Para Doom Emacs, hay 5 variables para controlar las fuentes. A parte de la
 fuente primaria, el resto son opcionales
 - ~doom-font~ es fuente primaria (monoespaciada).
 - ~doom-variable-pitch-font~ es una fuente que no es monoespaciada
@@ -136,9 +136,9 @@ fuente primaria, el resto son opcionales
     :slant italic))
 #+end_src
 
-Una función poderosa de emacs son los /faces/ que serían como estilos de fuente
+Una función poderosa de Emacs son los /faces/ que serían como estilos de fuente
 que podemos configurar para ciertos casos. En la configuración de arriba, se
-configuró una para que el texto en italicas tenga una fuente distinta.
+configuró una para que el texto en itálicas tenga una fuente distinta.
 
 *** Ligaduras
 
@@ -221,7 +221,7 @@ Requiere instalar el paquete y configurar su comportamiento.
 (package! auto-dark)
 #+end_src
 
-Caso específico de cappuccin
+Caso específico de catppuccin
 
 #+begin_src elisp :tangle config.el
 (use-package! auto-dark
@@ -254,7 +254,7 @@ Caso específico de cappuccin
     (add-hook hook #'my-auto-dark-init-h -95)))
 #+end_src
 
-Para temas que no son cappuccin
+Para temas que no son catppuccin
 
 #+begin_src elisp :tangle-no
 (use-package! auto-dark
@@ -285,7 +285,7 @@ Para temas que no son cappuccin
    (add-hook hook #'my-auto-dark-init-h -95)))
 #+end_src
 
-Actualmente estoy usando cappuccin, por lo que el tangle va para ese.
+Actualmente estoy usando catppuccin, por lo que el tangle va para ese.
 
 ** Numeración de lineas
 
@@ -328,27 +328,25 @@ Para cambiarlo las letras grandes de DOOM EMACS por una imagen:
 Actualmente no se hace tangle porque es para referencia (temporalmente).
 
 * Comportamiento
-
 ** No pedir confirmación
 
 #+begin_src elisp :tangle-no config.el
 (setq confirm-kill-emacs nil)
 #+end_src
 
-
 * Utilidades
 ** Visor PDF
 
 En init-tools activa ~pdf~. Luego tendrás que instalar el server 'epdfinfo' el
-cual vinene integrado en 'pdf-tools', usando el comando ~M-x pdf-tools-install~.
+cual viene integrado en 'pdf-tools', usando el comando ~M-x pdf-tools-install~.
 
 ** Dired y dirvish
 
 Ambos son exploradores de archivos que vienen instalados en Doom Emacs. La
-peculiaridad de Dired es que es un buffer de emacs, por lo que se pueden
+peculiaridad de Dired es que es un buffer de Emacs, por lo que se pueden
 realizar ediciones como si fuera un archivo de texto.
 
-Y el caso de dirvish es que resulta más rapido para navegar y revisar archivos,
+Y el caso de dirvish es que resulta más rápido para navegar y revisar archivos,
 ya que tiene vista previa de archivos. Por defecto puede ver cualquier archivo
 de texto, pero para imágenes y PDF hay que instalar:
  - ~vipsthumbnail~ para las imágenes.
@@ -449,8 +447,8 @@ En ~init.el~ ubicamos =org= y añadimos la bandera '+pretty'. Ej:
 
 *** Encabezados con tamaños variables
 
-Encontré un framento de código para hacer variar el tamaño de los encabezados en
-orgmode, incluyendo el título.
+Encontré un fragmento de código para hacer variar el tamaño de los encabezados
+en org-mode, incluyendo el título.
 
 #+begin_src elisp
 (custom-theme-set-faces!
@@ -467,10 +465,10 @@ orgmode, incluyendo el título.
 #+end_src
 
 Pero cómo uso catppuccin —nuevamente causando problemas— la vida no podía ser
-tan facil. Debido a que catppuccin no define sus colores en la variable outlines
+tan fácil. Debido a que catppuccin no define sus colores en la variable outlines
 outline, sino que usa foreground (caso contrario al de, por ejemplo, doom-one),
 es necesario harcodear los colores en la nueva definición de la fuente para
-poder conservarlos. Y como uso dos sabores de catppuccin, debo hardodear ambas
+poder conservarlos. Y como uso dos sabores de catppuccin, debo harcodear ambas
 fuentes.
 
 Entonces, tengo que definir las faces para cada sabor dentro de una función y
@@ -552,7 +550,7 @@ En mi caso no hago tangle y las dejo por defecto.
 
 *** Logbook
 
-Para que las tareas guarden su estado de compeletado en una propiedad
+Para que las tareas guarden su estado de completado en una propiedad
 colapsable, se puede activar la propiedad ~logdrawer~.
 
 #+begin_src elisp :tangle config.el
@@ -633,14 +631,14 @@ Pasando de lo básico, también se puede configurar una vista de gráfico de nod
         (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
 #+end_src
 
-Refile es una funcióñ que permite traspasar bloques de encabezado entre archivos
+Refile es una función que permite traspasar bloques de encabezado entre archivos
 o secciones de archivos org. Esto es útil para mudar cosas entre notas,
 especialmente tareas pendientes.
 
 ** Plugin: org-roam-bibtex (orb)
 
-Este plugin requiere de un archio `.bib`, el cuál va a albergar la lista de
-referencias que tendremos disponibles. Para tener una manera facil de gestionar
+Este plugin requiere de un archivo `.bib`, el cuál va a albergar la lista de
+referencias que tendremos disponibles. Para tener una manera fácil de gestionar
 este archivo, usaré Zotero.
 
 Preparar el archivo de referencias:
@@ -710,8 +708,8 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
 
 * Lenguajes
 ** Typst
-Acorde a esta [[https://forum.typst.app/t/are-there-any-best-practices-for-how-to-do-typst-in-emacs/850][discusión del foro de typst]], hay que instalar 'typst-ts-mode'
-(tree-sitter), 'tinymist' (LSP) y activar 'elgot'. Por mi parte, también
+Acorde a esta [[https://forum.typst.app/t/are-there-any-best-practices-for-how-to-do-typst-in-emacs/850][discusión del foro de Typst]], hay que instalar 'typst-ts-mode'
+(tree-sitter), 'tinymist' (LSP) y activar 'eglot'. Por mi parte, también
 instalaré 'typst-preview' porque me gusta la vista en tiempo real.
 
 Hay que activar ~(lsp +eglot)~ y ~tree-sitter~ en ':tools' del ~init.el~.
@@ -726,7 +724,7 @@ Añadir los respectivos paquetes:
 #+end_src
 
 Instalar el lenguaje en el tree-sitter
- 1. Asegurarnos de instalar los paquetes: ~doom sync~ y regargar emacs.
+ 1. Asegurarnos de instalar los paquetes: ~doom sync~ y recargar Emacs.
  2. Dentro de Emacs ~M-x treesit-install-language-grammar~.
  3. Elegir ~typst~.
  4. Si pide URL: https://github.com/uben0/tree-sitter-typst.
@@ -815,15 +813,15 @@ Y configurar:
 
 ** KDL (Niri)
 
-Para editar más comodamente los archivos de Niri (más que nada por el resaltado de sintaxis), se instala un modo para este tipo de archivos.
+Para editar más cómodamente los archivos de Niri (más que nada por el resaltado de sintaxis), se instala un modo para este tipo de archivos.
 
-El paqute:
+El paquete:
 #+begin_src elisp :tangle packages.el
 (package! kdl-mode)
 #+end_src
 
-Insatlar el lenguaje en el tree-sitter
- 1. Asegurarnos de instalar los paquetes: ~doom sync~ y regargar emacs.
+Instalar el lenguaje en el tree-sitter
+ 1. Asegurarnos de instalar los paquetes: ~doom sync~ y recargar Emacs.
  2. Dentro de Emacs ~M-x treesit-install-language-grammar~.
  3. Elegir ~kdl~.
  4. Si pide URL: https://github.com/nickel-lang/tree-sitter-kdl.
@@ -838,8 +836,8 @@ Y asociar los archivos con este modo:
 * Extras
 ** Plugin: evil-tutor
 
-Se ttrata de un plugin sencillo que abre archivos tipo manual para poder
-aprender y practicar los atajos de vim en emacs (el evil-mode).
+Se trata de un plugin sencillo que abre archivos tipo manual para poder
+aprender y practicar los atajos de vim en Emacs (el evil-mode).
 #+begin_src elisp :tangle packages.el
 (package! evil-tutor)
 #+end_src
