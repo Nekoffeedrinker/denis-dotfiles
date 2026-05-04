@@ -9,6 +9,7 @@
   - [[#ui][UI]]
   - [[#editor][Editor]]
   - [[#terminal][Terminal]]
+  - [[#checkers][Checkers]]
   - [[#tools][Tools]]
   - [[#lang][Lang]]
 - [[#aspecto-visual][Aspecto visual]]
@@ -91,6 +92,8 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
    terminal no sirven.
  - ~vterm~ porque es un emulador de la terminal del sistema, por lo que es
    igualita a la que ya uso en Kitty.
+** Checkers
+- Activar ~(spell +flyspell)~
 ** Tools
 - Activar ~biblio~ para org-roam-bibtex y Typst.
 - Dejar activado ~lookup~ para las citas de Typst
@@ -374,19 +377,30 @@ de texto, pero para imágenes y PDF hay que instalar:
 #+end_src
 
 ** Diccionario personal
+Primero, activar ~(spell +flyspell)~ en el apartado =checkers= del init.el.
 
-#+begin_src elisp :tangle-no
+Después hay que instalar un backend para que funcione ispell y flyspell. en mi caso voy a instalar hunspell. En nix os se haría con estos paquetes
 
-;; Diccionario personal
+#+begin_src nix
+hunspell
+hunspellDicts.es-mx
+hunspellDicts.en-us
+#+end_src
+
+Ahora, configuro los diccionarios para tener Español e Inglés
+
+#+begin_src elisp :tangle config.el
+(with-eval-after-load "ispell"
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary "es_MX,en_US")
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "es_MX,en_US"))
+#+end_src
+
+Y un diccionario personal para las palabras que a veces no reconoce.
+
+#+begin_src elisp :tangle config.el
 (setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
-
-;; Configurar la detección del lenguaje automático
-;(use-package! guess-language
-;  :hook (text-mode . guess-language-mode)
-;  :config
-;  (setq guess-language-languages '(es en)
-;        guess-language-min-paragraph-length 35))
-
 #+end_src
 
 ** Hooks

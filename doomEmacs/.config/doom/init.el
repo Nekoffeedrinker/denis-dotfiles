@@ -87,7 +87,7 @@
 
        :checkers
        syntax               ; chequeo de sintaxis en tiempo real
-       ;; (spell +flyspell) ; corrector ortográfico al vuelo
+       (spell +flyspell) ; corrector ortográfico al vuelo
        ;; grammar           ; correción gramatical avanzada
 
        :tools

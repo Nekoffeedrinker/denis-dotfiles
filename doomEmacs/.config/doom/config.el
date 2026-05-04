@@ -88,6 +88,14 @@
 (map! :leader
       :desc "Dirvish" "o _" #'dirvish)
 
+(with-eval-after-load "ispell"
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary "es_MX,en_US")
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "es_MX,en_US"))
+
+(setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
+
 (add-hook! 'text-mode-hook
   (evil-local-set-key 'normal (kbd "j") #'evil-next-visual-line)
   (evil-local-set-key 'motion (kbd "j") #'evil-next-visual-line)
