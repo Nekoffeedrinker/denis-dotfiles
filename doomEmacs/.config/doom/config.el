@@ -98,27 +98,27 @@
 
 (defun my/org-faces-latte ()
   (custom-set-faces!
-    '(org-level-1 :foreground "#d20f39" :height 1.6)
-    '(org-level-2 :foreground "#fe640b" :height 1.5)
-    '(org-level-3 :foreground "#df8e1d" :height 1.4)
-    '(org-level-4 :foreground "#40a02b" :height 1.3)
-    '(org-level-5 :foreground "#209fb5" :height 1.2)
-    '(org-level-6 :foreground "#7287fd" :height 1.1)
+    '(org-level-1 :foreground "#d20f39" :height 1.2)
+    '(org-level-2 :foreground "#fe640b" :height 1.2)
+    '(org-level-3 :foreground "#df8e1d" :height 1.1)
+    '(org-level-4 :foreground "#40a02b" :height 1.1)
+    '(org-level-5 :foreground "#209fb5" :height 1.0)
+    '(org-level-6 :foreground "#7287fd" :height 1.0)
     '(org-level-7 :foreground "#8839ef" :height 1.0)
     '(org-level-8 :foreground "#e64553" :height 1.0)
-    '(org-document-title :height 1.8 :bold t :underline nil)))
+    '(org-document-title :height 1.3 :bold t :underline nil)))
 
 (defun my/org-faces-mocha ()
   (custom-set-faces!
-    '(org-level-1 :foreground "#f38ba8" :height 1.6)
-    '(org-level-2 :foreground "#fab387" :height 1.5)
-    '(org-level-3 :foreground "#f9e2af" :height 1.4)
-    '(org-level-4 :foreground "#a6e3a1" :height 1.3)
-    '(org-level-5 :foreground "#74c7ec" :height 1.2)
-    '(org-level-6 :foreground "#b4befe" :height 1.1)
+    '(org-level-1 :foreground "#f38ba8" :height 1.2)
+    '(org-level-2 :foreground "#fab387" :height 1.2)
+    '(org-level-3 :foreground "#f9e2af" :height 1.1)
+    '(org-level-4 :foreground "#a6e3a1" :height 1.1)
+    '(org-level-5 :foreground "#74c7ec" :height 1.0)
+    '(org-level-6 :foreground "#b4befe" :height 1.0)
     '(org-level-7 :foreground "#cba6f7" :height 1.0)
     '(org-level-8 :foreground "#eba0ac" :height 1.0)
-    '(org-document-title :height 1.8 :bold t :underline nil)))
+    '(org-document-title :height 1.3 :bold t :underline nil)))
 
 (setq org-agenda-files
       (list org-directory
