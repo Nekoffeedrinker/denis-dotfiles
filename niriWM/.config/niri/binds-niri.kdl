@@ -8,12 +8,13 @@ binds {
     Mod+E hotkey-overlay-title="Abrir el Explorador de archivos" { spawn "nautilus" "--new-window"; }
     Mod+N hotkey-overlay-title="Abrir el Editor de texto" { spawn "gnome-text-editor" "--new-window"; }
     Mod+Shift+N hotkey-overlay-title="Abrir Emacs" { spawn "emacs"; }
-    Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }
+
     Mod+M hotkey-overlay-title="Abrir Zapzap" { spawn "zapzap"; }
+    Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }
     // Super+Shift+B hotkey-overlay-title="Abrir Zen Browser" { spawn "zen"; }
 
     XF86Favorites hotkey-overlay-title="Abrir la calculadora" { spawn "gnome-calculator"; }
-    Shift+XF86Favorites hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
+    Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "missioncenter"; }
 
 
     // =============== Teclas de volumen y medios ===============
