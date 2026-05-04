@@ -2,6 +2,7 @@ binds {
     // Mostrar una lista de los atajos importantes
     Mod+Shift+Slash { show-hotkey-overlay; }
 
+
     // =============== Abrir programas ===============
 
     Mod+Return hotkey-overlay-title="Abrir Kitty" { spawn "kitty"; }
@@ -47,11 +48,8 @@ binds {
     // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
 
+    // =============== Manejo de ventanas ===============
 
-
-    // Open/close the Overview: a zoomed-out view of workspaces and windows.
-    // You can also move the mouse into the top-left hot corner,
-    // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
@@ -74,17 +72,23 @@ binds {
     Mod+Shift+K     { move-window-up; }
     Mod+Shift+L     { move-column-right; }
 
-    // Alternative commands that move across workspaces when reaching
-    // the first or last window in a column.
+    // Alternativamente, puedes moverte entre espacios de trabajo
+    // al llegar a la primera o la última ventana verticalmente.
+    // Es decir, si voy para abajo sigo hacia abajo, aunque eso
+    // implique bajar al siguiente workspace; lo mismo para subir.
+    // -----------------------------------------------------
     // Mod+J     { focus-window-or-workspace-down; }
     // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    // Mod+Shift+J     { move-window-down-or-to-workspace-down; }
+    // Mod+Shift+K     { move-window-up-or-to-workspace-up; }
 
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
     Mod+Shift+Home { move-column-to-first; }
     Mod+Shift+End  { move-column-to-last; }
+
+
+    // ========= Entre monitores =========
 
     Mod+Ctrl+Left  { focus-monitor-left; }
     Mod+Ctrl+Down  { focus-monitor-down; }
@@ -104,13 +108,16 @@ binds {
     Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
-    // Alternatively, there are commands to move just a single window:
+    // Alternativamente, puedes mover ventanas en lugar de columnas:
     // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
     // ...
 
-    // And you can also move a whole workspace to another monitor:
+    // O incluso mover todo el espacio de trabajo a otro monitor:
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
+
+
+    // ========= Entre espacios de trabajo =========
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
@@ -121,7 +128,7 @@ binds {
     Mod+Shift+U         { move-column-to-workspace-down; }
     Mod+Shift+I         { move-column-to-workspace-up; }
 
-    // Alternatively, there are commands to move just a single window:
+    // Alternativamente, puedes mover ventanas en lugar de columnas:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
     // ...
 
@@ -130,46 +137,11 @@ binds {
     Mod+Ctrl+U         { move-workspace-down; }
     Mod+Ctrl+I         { move-workspace-up; }
 
-    // You can bind mouse wheel scroll ticks using the following syntax.
-    // These binds will change direction based on the natural-scroll setting.
-    //
-    // To avoid scrolling through workspaces really fast, you can use
-    // the cooldown-ms property. The bind will be rate-limited to this value.
-    // You can set a cooldown on any bind, but it's most useful for the wheel.
-    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
-
-    Mod+WheelScrollRight      { focus-column-right; }
-    Mod+WheelScrollLeft       { focus-column-left; }
-    Mod+Ctrl+WheelScrollRight { move-column-right; }
-    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
-
-    // Usually scrolling up and down with Shift in applications results in
-    // horizontal scrolling; these binds replicate that.
-    Mod+Shift+WheelScrollDown      { focus-column-right; }
-    Mod+Shift+WheelScrollUp        { focus-column-left; }
-    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
-    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
-
-    // Similarly, you can bind touchpad scroll "ticks".
-    // Touchpad scrolling is continuous, so for these binds it is split into
-    // discrete intervals.
-    // These binds are also affected by touchpad's natural-scroll, so these
-    // example binds are "inverted", since we have natural-scroll enabled for
-    // touchpads by default.
-    // Mod+TouchpadScrollDown { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"; }
-    // Mod+TouchpadScrollUp   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
-
-    // You can refer to workspaces by index. However, keep in mind that
-    // niri is a dynamic workspace system, so these commands are kind of
-    // "best effort". Trying to refer to a workspace index bigger than
-    // the current workspace count will instead refer to the bottommost
-    // (empty) workspace.
-    //
-    // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
-    // will all refer to the 3rd workspace.
+    // También pueden acceder a los espacios de trabajo mediante índices.
+    // Sin embargo, niri está pensado para tener espacios de trabajo
+    // dinámicos, y tendrán un comportamiento similar al de gnome.
+    // Por ejemplo, teniendo ocupados 2 workspaces, los índices
+    // superiores a 3 siempre apuntarán al último workspace vacío.
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -189,71 +161,114 @@ binds {
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
 
-    // Alternatively, there are commands to move just a single window:
+    // Alternativamente, puedes mover ventanas en lugar de columnas:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
-    // Switches focus between the current and the previous workspace.
-    // Mod+Tab { focus-workspace-previous; }
 
-    // The following binds move the focused window in and out of a column.
-    // If the window is alone, they will consume it into the nearby column to the side.
-    // If the window is already in a column, they will expel it out.
-    Mod+BracketLeft  { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
+    // ========= Atajos del mouse =========
 
-    // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
-    // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    // Puedes usar los pasos de la rudea del mouse de la siguente maera.
+    // Ojo, estos atajos son sensibles a la configuración 'natural-scroll'
+    //
+    // Para evitar ir muy rápido, puedes usar la propiedad 'cooldown-ms'.
+    // Esta opción se puede usar en otros atajos, pero es mayormente útil aquí.
+    // -----------------------------------------------------
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
+    Mod+WheelScrollRight      { focus-column-right; }
+    Mod+WheelScrollLeft       { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+
+    // Para cuando no hay scroll horizontal, se puede usar Shift
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+
+    // ========= Atajos del trackpad =========
+
+    // Similar al mouse, puedes poner atajos al touchpad. Eso sí, acá los
+    // pasos no son claros debido a que el desplazamiento es continuo.
+    // Además, estos atajos también son sensibles al 'natural-scroll',
+    // por lo que normalmente los vas a querer invertidos, ya que casi
+    // todos tenemos activado el desplazamiento natural en el trackpad.
+    //
+    // Tal es el caso de estos, que son para el volumen
+    Mod+TouchpadScrollDown { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"; }
+    Mod+TouchpadScrollUp   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
+
+
+    // ========= Más manejo de ventanas =========
+
+    // Cambiar el tamaño de las columnas
     Mod+R { switch-preset-column-width; }
-    // Cycling through the presets in reverse order is also possible.
+    // También se puede cambiar en reversa
     // Mod+R { switch-preset-column-width-back; }
+
+    // Cambiar el tamaño de las ventanas
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
+
+    // Maximizar y pantalla completa
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
 
-    // Expand the focused column to space not taken up by other fully visible columns.
-    // Makes the column "fill the rest of the space".
+    // Ocupar el espacio restante
     Mod+Ctrl+F { expand-column-to-available-width; }
 
+    // Centrar la columna actual
     Mod+C { center-column; }
-
-    // Center all fully visible columns on screen.
+    // Centrar según todas las colunmas visibles del workspace
     Mod+Ctrl+C { center-visible-columns; }
 
-    // Finer width adjustments.
-    // This command can also:
-    // * set width in pixels: "1000"
-    // * adjust width in pixels: "-5" or "+5"
-    // * set width as a percentage of screen width: "25%"
-    // * adjust width as a percentage of screen width: "-10%" or "+10%"
-    // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
-    // set-column-width "100" will make the column occupy 200 physical screen pixels.
+    // Ajuste fino de anchó de columna
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
-
-    // Finer height adjustments when in column with other windows.
+    // Ajuste fino de altura de filas
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
+    // Este comando puede:
+    // * Especificar un valor concreto en pixeles: "1000"
+    // * Hacer ajuste en pixeles: "-5" or "+5"
+    // * Especificar un valor según el porcentaje de pantalla: "25%"
+    // * Hacer ajuste según el porcentaje de la pantalla: "-10%" or "+10%"
+    //
+    // Hay que aclarar que los tamaños en pixeles son lógicos, o escalados.
+    // Por ejemplo, en un output con escala 2.0, `set-column-width "100"`
+    // va a hacer que la columna ocupe 200 pixeles físicos de la pantalla.
+    // -----------------------------------------------------
 
-    // Move the focused window between the floating and the tiling layout.
+    // Hacer flotar la ventana actual
     Mod+Shift+Space       { toggle-window-floating; }
     Mod+Space { switch-focus-between-floating-and-tiling; }
 
-    // Toggle tabbed column display mode.
-    // Windows in this column will appear as vertical tabs,
-    // rather than stacked on top of each other.
+    // Modo “tabbed column”
+    // Al activarlo sobre una columna, esta mostrara a las ventanas
+    // como pestañas verticales, lugar de una arriba de la otra
     Mod+W { toggle-column-tabbed-display; }
 
-    // Actions to switch layouts.
-    // Note: if you uncomment these, make sure you do NOT have
-    // a matching layout switch hotkey configured in xkb options above.
-    // Having both at once on the same hotkey will break the switching,
-    // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
-    // Mod+Space       { switch-layout "next"; }
-    // Mod+Shift+Space { switch-layout "prev"; }
+    // ========= “Consume windows” =========
+
+    // "Consumir una ventana" se refiere a hacer que dicha ventana
+    // entre o salga en alguna columna adyacente.
+    // Si la ventana está sola, se consumirá hacia la columna en la parte de abajo.
+    // Si la ventana ya está acompañada en una columna, esta saldrá para ser única
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    // La otra forma es tomar la ventana de la derecha y consumirla
+    // en la columna actual, poniéndola abajo también.
+    Mod+Comma  { consume-window-into-column; }
+    // Y para expulsar hacia la derecha la ventana de hasta abajo
+    Mod+Period { expel-window-from-column; }
+
+
+    // =============== Otros atajos útiles ===============
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
