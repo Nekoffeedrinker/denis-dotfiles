@@ -241,7 +241,7 @@ window-rule {
     clip-to-geometry true
 }
 
-include "binds-noctalia_defaults.kdl"
+include "binds-noctalia.kdl"
 
 include "binds-niri.kdl"
 
