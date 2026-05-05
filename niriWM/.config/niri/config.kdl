@@ -157,10 +157,9 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-//spawn-at-startup "waybar"
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "flameshot"
+spawn-at-startup "niri-float-sticky" "-title" "^Picture-in-Picture$"
 
 spawn-at-startup "zapzap"
 
@@ -220,6 +219,28 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+    match title="Configuración" // de Flameshot
+    open-floating true
+}
+
+window-rule {
+    match app-id="org.gnome.Calculator"
+    open-floating true
+}
+
+window-rule {
+    match app-id="org.gnome.NautilusPreviewer"
+    open-floating true
+}
+
+window-rule {
+    match app-id="io.missioncenter.MissionCenter"
+    open-floating true
+    default-column-width { fixed 1200; }
+    default-window-height { fixed 800; }
 }
 
 // Example: block out two password managers from screen capture.
