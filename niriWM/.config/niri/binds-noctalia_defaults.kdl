@@ -2,7 +2,10 @@ binds {
     // Core Noctalia binds
     Mod+D { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Mod+S { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
-    Mod+Comma { spawn-sh "noctalia-shell ipc call settings toggle"; }
+    Mod+X { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
+    Mod+Alt+L hotkey-overlay-title="Bloquear pantalla" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Alt+Shift+L hotkey-overlay-title="Bloquear pantalla y suspender" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "lockAndSuspend"; }
+    Mod+Shift+Comma { spawn-sh "noctalia-shell ipc call settings toggle"; }
 
     // Audio & Brightness
     XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
@@ -14,7 +17,8 @@ binds {
     // Clipper
     //Mod+V { spawn "noctalia-shell" "ipc" "call" "plugin:clipper" "toggle"; }
     Mod+V { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
+    // Mod+Shift+V { spawn-sh "noctalia-shell ipc call launcher emoji"; }
 
-    // Cheat sheet
+    // Pluggins
     Mod+F1 { spawn-sh "noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
 }
