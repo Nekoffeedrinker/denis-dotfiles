@@ -17,6 +17,16 @@ binds {
     XF86Favorites hotkey-overlay-title="Abrir la calculadora" { spawn "gnome-calculator"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "missioncenter"; }
 
+    // ========= Capturas de pantalla =========
+
+    // Print { screenshot; }
+    // Ctrl+Print { screenshot-screen; }
+    // Alt+Print { screenshot-window; }
+
+    // Flameshot
+    Print { spawn "flameshot" "gui"; }
+    Ctrl+Print { spawn "flameshot" "screen"; }
+    Alt+Print { spawn "flameshot" "full"; }
 
     // =============== Teclas de volumen y medios ===============
 
@@ -268,11 +278,7 @@ binds {
     Mod+Period { expel-window-from-column; }
 
 
-    // =============== Otros atajos útiles ===============
-
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    // =============== Otros atajos ===============
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
