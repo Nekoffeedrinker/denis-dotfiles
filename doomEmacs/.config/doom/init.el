@@ -53,7 +53,7 @@
        vi-tilde-fringe      ; poner `~` para líneas vacias al final (terminó el documento)
        ;; window-select     ; salto entre ventanas de manera visual (asignando letras o números)
        workspaces           ; activar función de workspases mediante TAB
-       ;; zen               ; modo de escritura sin distracción
+       zen               ; modo de escritura sin distracción
 
        :editor
        (evil +everywhere)   ; movimientos de vim en todo emacs
