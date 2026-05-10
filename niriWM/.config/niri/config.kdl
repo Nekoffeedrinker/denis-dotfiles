@@ -212,31 +212,38 @@ window-rule {
     default-column-width {}
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
-}
-
-window-rule {
-    match title="Configuración" // de Flameshot
-    open-floating true
-}
-
-window-rule {
-    match app-id="org.gnome.Calculator"
-    open-floating true
-}
-
-window-rule {
+window-rule { // Flotar aplicaciones
     match app-id="org.gnome.NautilusPreviewer"
+    match app-id="org.gnome.Calculator"
+
+    match title="Abrir archivo"
+    match title="Open file"
+    match app-id="org.gnome.Nautilus" title="Archivos"
+    match title="Configuración" // de Flameshot
+    match app-id="Upscayl" title="Select Image"
+
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    // Si la expresión regular no sirve:
+    // - host Firefox (app-id: "firefox")
+    // - Flatpak Firefox (app-id: "org.mozilla.firefox")
+    // -------------------------------------------
+
+    // match app-id="firefox" title="Bitwarden"
+    // -------------------------------------------
+    // Comentado porque no sirve. Requiere script
+
     open-floating true
 }
 
-window-rule {
+window-rule { // Abrir maximizadas
+    match app-id=".virt-manager-wrapped" title=".*en QEMU/KVM"
+    match app-id="Lunacy" title="Lunacy"
+    match app-id="gimp" title="Programa de manipulación de imágenes de GNU"
+    match app-id="spotify"
+    open-maximized true
+}
+
+window-rule { // Abre maximizada y de cierto tamaño
     match app-id="io.missioncenter.MissionCenter"
     open-floating true
     default-column-width { fixed 1200; }
