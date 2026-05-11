@@ -110,21 +110,22 @@ bindkey "^X^E" edit-command-line
 
 # ========================= ALIAS =========================
 
-# == ls colorado ==
-# alias ls="ls --color"
-# alias l="ls -lh --color"
-# alias ll="ls -alh --color"
-
 # == Remplazar ls y tree ==
 alias ls="exa --color=always --icons=always"
 alias l="exa --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time"
 alias ll="exa --color=always --icons=always --git -al"
 alias tree="exa --color=always --icons=always --tree"
 
+alias rls="\ls --color"
+alias rl="\ls -lh --color"
+alias rll="\ls -alh --color"
+
 # == Remplazar cat ==
 alias cat="bat"
 alias catt="bat -P"
 alias cattt="bat -pp"
+
+alias rcat="\cat"
 
 # == Alias de git ==
 alias gs="git status"
@@ -137,6 +138,7 @@ alias gc="git commit"
 alias gca="git commit --amend"
 alias gcan="git commit --amend --no-edit"
 alias gl="git log"
+alias glo="git log --oneline"
 
 # == Recostruir nix ==
 # alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
