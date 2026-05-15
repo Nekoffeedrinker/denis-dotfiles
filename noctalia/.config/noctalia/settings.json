@@ -370,7 +370,7 @@
     "colorSchemes": {
         "darkMode": false,
         "generationMethod": "tonal-spot",
-        "manualSunrise": "06:00",
+        "manualSunrise": "05:00",
         "manualSunset": "18:00",
         "monitorForColors": "",
         "predefinedScheme": "Catppuccin",
