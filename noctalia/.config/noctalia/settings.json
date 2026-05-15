@@ -519,7 +519,7 @@
             ]
         },
         "language": "es",
-        "lockOnSuspend": true,
+        "lockOnSuspend": false,
         "lockScreenAnimations": true,
         "lockScreenBlur": 0.5,
         "lockScreenCountdownDuration": 10000,
@@ -558,14 +558,14 @@
         "enabled": true,
         "fadeDuration": 5,
         "lockCommand": "",
-        "lockTimeout": 6600,
+        "lockTimeout": 3600,
         "resumeLockCommand": "",
         "resumeScreenOffCommand": "",
         "resumeSuspendCommand": "",
         "screenOffCommand": "",
-        "screenOffTimeout": 600,
+        "screenOffTimeout": 180,
         "suspendCommand": "",
-        "suspendTimeout": 1800
+        "suspendTimeout": 300
     },
     "location": {
         "analogClockInCalendar": false,
