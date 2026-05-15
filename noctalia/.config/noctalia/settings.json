@@ -204,10 +204,13 @@
                     ],
                     "chevronColor": "none",
                     "colorizeIcons": false,
-                    "drawerEnabled": false,
+                    "drawerEnabled": true,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "ZapZap",
+                        "spotify-client",
+                        "steam"
                     ]
                 },
                 {
