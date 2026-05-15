@@ -236,6 +236,7 @@ window-rule { // Flotar aplicaciones
 }
 
 window-rule { // Abrir maximizadas
+    match app-id="io.missioncenter.MissionCenter"
     match app-id=".virt-manager-wrapped" title=".*en QEMU/KVM"
     match app-id="Lunacy" title="Lunacy"
     match app-id="gimp" title="Programa de manipulación de imágenes de GNU"
@@ -244,7 +245,7 @@ window-rule { // Abrir maximizadas
 }
 
 window-rule { // Abre maximizada y de cierto tamaño
-    match app-id="io.missioncenter.MissionCenter"
+    match app-id="org.gnome.SystemMonitor"
     open-floating true
     default-column-width { fixed 1200; }
     default-window-height { fixed 800; }

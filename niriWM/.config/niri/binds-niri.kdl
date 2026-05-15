@@ -15,7 +15,7 @@ binds {
     // Super+Shift+B hotkey-overlay-title="Abrir Zen Browser" { spawn "zen"; }
 
     XF86Favorites hotkey-overlay-title="Abrir la calculadora" { spawn "gnome-calculator"; }
-    Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "missioncenter"; }
+    Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
 
     // ========= Capturas de pantalla =========
 
