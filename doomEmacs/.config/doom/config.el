@@ -96,6 +96,12 @@
 
 (setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
 
+(use-package! langtool
+  :config
+  (setq langtool-http-server-host "localhost"
+        langtool-http-server-port 8081))
+(setq langtool-mother-tongue "es")
+
 (add-hook! 'text-mode-hook
   (evil-local-set-key 'normal (kbd "j") #'evil-next-visual-line)
   (evil-local-set-key 'motion (kbd "j") #'evil-next-visual-line)

@@ -25,6 +25,7 @@
   - [[#dired-y-dirvish][Dired y dirvish]]
   - [[#modo-abreviado][Modo abreviado]]
   - [[#diccionario-personal][Diccionario personal]]
+  - [[#revisión-de-gramática][Revisión de gramática]]
   - [[#hooks][Hooks]]
 - [[#org-mode][Org-mode]]
   - [[#directorio-de-org-mode][Directorio de org-mode]]
@@ -399,6 +400,21 @@ Y un diccionario personal para las palabras que a veces no reconoce.
 
 #+begin_src elisp :tangle config.el
 (setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
+#+end_src
+
+** Revisión de gramática
+Hay que usar el paquete para LanguageTool.
+#+begin_src elisp :tangle packages.el
+(package! langtool)
+#+end_src
+
+Y configurar para que utilice el servidor local y español.
+#+begin_src elisp :tangle config.el
+(use-package! langtool
+  :config
+  (setq langtool-http-server-host "localhost"
+        langtool-http-server-port 8081))
+(setq langtool-mother-tongue "es")
 #+end_src
 
 ** Hooks

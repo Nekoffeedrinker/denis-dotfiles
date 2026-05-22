@@ -5,6 +5,8 @@
 
 (package! auto-dark)
 
+(package! langtool)
+
 (package! org-fancy-priorities)
 
 (package! org-roam-bibtex)
