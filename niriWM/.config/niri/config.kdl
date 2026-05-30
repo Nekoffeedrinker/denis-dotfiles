@@ -160,6 +160,7 @@ layout {
 spawn-at-startup "noctalia-shell"
 spawn-at-startup "flameshot"
 spawn-at-startup "niri-float-sticky" "-title" "^Picture-in-Picture$"
+// spawn-sh-at-startup "easyeffects --service-mode --hide-window"
 
 spawn-at-startup "zapzap"
 
