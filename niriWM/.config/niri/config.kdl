@@ -226,6 +226,11 @@ window-rule { // Flotar aplicaciones
     match title="Configuración" // de Flameshot
     match app-id="Upscayl" title="Select Image"
 
+    match app-id="resolve"
+    // match app-id="resolve" title="resolve"
+    // match app-id="resolve" title="Organizador de proyectos"
+    // match app-id="resolve" title="^Crear"
+
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     // Si la expresión regular no sirve:
     // - host Firefox (app-id: "firefox")
@@ -246,6 +251,13 @@ window-rule { // Abrir maximizadas
     match app-id="gimp" title="Programa de manipulación de imágenes de GNU"
     match app-id="affinity.exe" title="Affinity"
     match app-id="spotify"
+    open-maximized true
+}
+
+window-rule { // Abre maximizada y no en pantalla completa
+    match app-id="resolve" title="^DaVinci Resolve -"
+    open-floating false
+    open-fullscreen false
     open-maximized true
 }
 
