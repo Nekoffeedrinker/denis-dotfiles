@@ -154,6 +154,14 @@ alias lg="lazygit"
 # Abrir algo usando la temrinal de manera facil
 abrir() { nohup "$@" &>/dev/null & disown; }
 
+# Navegar entrando y saliendo de yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
 
 # === === Integraciones de shell === ===
 eval "$(fzf --zsh)"
