@@ -44,7 +44,7 @@
        ophints              ; resalta el área de la última acción
        (popup +defaults)    ; gestión inteligente de ventanas temporales
        smooth-scroll     ; desplazamiento suave (especialmente para trackpad)
-       ;; tabs              ; barra de pestañas
+       tabs              ; barra de pestañas
        treemacs          ; explorador de archivos lateral avanzado
        ;; unicode           ; activar soporte extendido para caracteres unicode
        (vc-gutter           ; indicar los cambios segun git en el margen derecho
