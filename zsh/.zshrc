@@ -142,6 +142,9 @@ alias gcan="git commit --amend --no-edit"
 alias gl="git log"
 alias glo="git log --oneline"
 
+# == Alias de Lazygit ==
+alias lg="lazygit"
+
 # == Recostruir nix ==
 # alias rebuild="sudo nixos-rebuild switch --flake ~/denisNixOS/#thinkpadx13"
 
