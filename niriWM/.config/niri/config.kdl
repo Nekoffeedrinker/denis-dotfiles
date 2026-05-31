@@ -249,6 +249,7 @@ window-rule { // Abrir maximizadas
     match app-id=".virt-manager-wrapped" title=".*en QEMU/KVM"
     match app-id="Lunacy" title="Lunacy"
     match app-id="gimp" title="Programa de manipulación de imágenes de GNU"
+    match app-id="scribus" title="^Scribus"
     match app-id="affinity.exe" title="Affinity"
     match app-id="spotify"
     open-maximized true
