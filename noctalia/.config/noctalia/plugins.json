@@ -7,10 +7,6 @@
         }
     ],
     "states": {
-        "air-quality": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
         "battery-threshold": {
             "enabled": true,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
