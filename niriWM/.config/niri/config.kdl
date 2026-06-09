@@ -247,6 +247,7 @@ window-rule { // Flotar aplicaciones
 window-rule { // Abrir maximizadas
     match app-id="io.missioncenter.MissionCenter"
     match app-id=".virt-manager-wrapped" title=".*en QEMU/KVM"
+    match app-id="parsecd" title="Parsec"
     match app-id="Lunacy" title="Lunacy"
     match app-id="gimp" title="Programa de manipulación de imágenes de GNU"
     match app-id="scribus" title="^Scribus"
