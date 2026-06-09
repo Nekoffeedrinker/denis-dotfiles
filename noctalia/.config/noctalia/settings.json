@@ -42,7 +42,7 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.7000000000000001,
+        "backgroundOpacity": 0.6,
         "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
@@ -796,7 +796,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/denis/Pictures/Wallpapers",
+        "directory": "/home/denis/Pictures/Saved/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
@@ -835,7 +835,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "cat painting",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
