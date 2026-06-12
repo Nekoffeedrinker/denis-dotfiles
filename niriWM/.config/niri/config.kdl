@@ -257,6 +257,12 @@ window-rule { // Abrir maximizadas
     open-maximized true
 }
 
+window-rule { // Abre maximizada pero no hasta los extremos
+    match app-id="org.inkscape.Inkscape" title=r"- Inkscape$"
+    open-maximized-to-edges false
+    open-maximized true
+}
+
 window-rule { // Abre maximizada y no en pantalla completa
     match app-id="resolve" title="^DaVinci Resolve -"
     open-floating false
