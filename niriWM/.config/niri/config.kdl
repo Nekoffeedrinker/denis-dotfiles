@@ -225,11 +225,11 @@ window-rule { // Flotar aplicaciones
     match app-id="org.gnome.Characters"
     match title="Configuración" // de Flameshot
     match app-id="Upscayl" title="Select Image"
-
     match app-id="resolve"
     // match app-id="resolve" title="resolve"
     // match app-id="resolve" title="Organizador de proyectos"
     // match app-id="resolve" title="^Crear"
+    match app-id="org.kde.kdenlive" title="Splash Screen — Kdenlive"
 
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     // Si la expresión regular no sirve:
@@ -252,6 +252,7 @@ window-rule { // Abrir maximizadas
     match app-id="gimp" title="Programa de manipulación de imágenes de GNU"
     match app-id="scribus" title="^Scribus"
     match app-id="affinity.exe" title="Affinity"
+    match app-id="org.kde.kdenlive" title=r"— Kdenlive$"
     match app-id="spotify"
     open-maximized true
 }
