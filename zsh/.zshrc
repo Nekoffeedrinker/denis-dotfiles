@@ -115,6 +115,7 @@ alias exa="eza"
 
 alias ls="exa --color=always --icons=always"
 alias l="exa --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time"
+alias la="exa --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time -a"
 alias ll="exa --color=always --icons=always --git -al"
 alias tree="exa --color=always --icons=always --tree"
 
