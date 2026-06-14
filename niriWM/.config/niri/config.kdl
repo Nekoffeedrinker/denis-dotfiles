@@ -232,6 +232,8 @@ window-rule { // Flotar aplicaciones
     // match app-id="resolve" title="Organizador de proyectos"
     // match app-id="resolve" title="^Crear"
     match app-id="org.kde.kdenlive" title="Splash Screen — Kdenlive"
+    match app-id="org.inkscape.Inkscape" title="importación"
+    match app-id="import_web_image.py" // de inkscape
 
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     // Si la expresión regular no sirve:
