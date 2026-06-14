@@ -301,7 +301,7 @@ window-rule {
 
 include "binds-noctalia.kdl"
 
-include "binds-niri.kdl"
+include "binds.kdl"
 
 recent-windows {
     off
