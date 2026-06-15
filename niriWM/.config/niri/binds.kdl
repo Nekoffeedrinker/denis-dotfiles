@@ -11,8 +11,9 @@ binds {
     Mod+Shift+N hotkey-overlay-title="Abrir Emacs" { spawn "emacs"; }
 
     Mod+M hotkey-overlay-title="Abrir Zapzap" { spawn "zapzap"; }
-    Mod+B hotkey-overlay-title="Abrir Helium Browser" { spawn "helium"; }
-    Super+Shift+B hotkey-overlay-title="Abrir Zen Browser" { spawn "app.zen_browser.zen"; }
+    Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }
+    Mod+Shift+B hotkey-overlay-title="Abrir Zen Browser" { spawn "app.zen_browser.zen"; }
+    Mod+Ctrl+B hotkey-overlay-title="Abrir Helium Browser" { spawn "helium"; }
 
     XF86Favorites hotkey-overlay-title="Abrir la calculadora" { spawn "gnome-calculator"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
