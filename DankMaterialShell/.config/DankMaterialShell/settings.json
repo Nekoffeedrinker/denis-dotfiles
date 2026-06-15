@@ -10,7 +10,7 @@
       },
       "dark": {
         "flavor": "mocha",
-        "accent": "rosewater"
+        "accent": "peach"
       }
     }
   },
@@ -47,6 +47,12 @@
   "modalAnimationSpeed": 1,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": true,
+  "blurEnabled": false,
+  "blurForegroundLayers": true,
+  "blurLayerOutlineOpacity": 0.12,
+  "blurBorderColor": "outline",
+  "blurBorderCustomColor": "#ffffff",
+  "blurBorderOpacity": 0.35,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": true,
@@ -63,6 +69,9 @@
   "selectedGpuIndex": 0,
   "enabledGpuPciIds": [],
   "showSystemTray": true,
+  "systemTrayIconTintMode": "none",
+  "systemTrayIconTintSaturation": 50,
+  "systemTrayIconTintStrength": 135,
   "showClock": true,
   "showNotificationButton": true,
   "showBattery": true,
@@ -136,7 +145,7 @@
   "workspaceAppIconSizeOffset": 0,
   "groupWorkspaceApps": true,
   "workspaceFollowFocus": false,
-  "showOccupiedWorkspacesOnly": false,
+  "showOccupiedWorkspacesOnly": true,
   "reverseScrolling": false,
   "dwlShowAllTags": false,
   "workspaceColorMode": "default",
@@ -177,12 +186,6 @@
   "greeterEnableFprint": false,
   "greeterEnableU2f": false,
   "greeterWallpaperPath": "",
-  "greeterUse24HourClock": true,
-  "greeterShowSeconds": false,
-  "greeterPadHours12Hour": false,
-  "greeterLockDateFormat": "",
-  "greeterFontFamily": "",
-  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -193,7 +196,9 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
-  "spotlightSectionViewModes": {},
+  "spotlightSectionViewModes": {
+    "apps": "list"
+  },
   "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
   "dankLauncherV2Size": "compact",
@@ -204,7 +209,7 @@
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": true,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "iconTheme": "Adwaita",
   "cursorSettings": {
     "theme": "Adwaita",
@@ -271,6 +276,10 @@
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
   "terminalsAlwaysDark": false,
+  "muxType": "tmux",
+  "muxUseCustomCommand": false,
+  "muxCustomCommand": "",
+  "muxSessionFilter": "",
   "runDmsMatugenTemplates": false,
   "matugenTemplateGtk": false,
   "matugenTemplateNiri": false,
@@ -333,7 +342,7 @@
   "lockScreenShowMediaPlayer": true,
   "lockScreenPowerOffMonitorsOnLock": false,
   "lockAtStartup": false,
-  "enableFprint": false,
+  "enableFprint": true,
   "maxFprintTries": 15,
   "enableU2f": false,
   "u2fMode": "or",
@@ -374,7 +383,8 @@
     "poweroff",
     "lock",
     "suspend",
-    "restart"
+    "restart",
+    "hibernate"
   ],
   "powerMenuDefaultAction": "logout",
   "powerMenuGridLayout": false,
@@ -409,9 +419,19 @@
       ],
       "showOnLastDisplay": true,
       "leftWidgets": [
-        "launcherButton",
-        "workspaceSwitcher",
-        "focusedWindow"
+        {
+          "id": "launcherButton",
+          "enabled": true
+        },
+        {
+          "id": "workspaceSwitcher",
+          "enabled": true
+        },
+        {
+          "id": "focusedWindow",
+          "enabled": true,
+          "focusedWindowCompactMode": false
+        }
       ],
       "centerWidgets": [
         "music",
@@ -428,6 +448,10 @@
           "enabled": true
         },
         {
+          "id": "dankPomodoroTimer",
+          "enabled": true
+        },
+        {
           "id": "dankKDEConnect",
           "enabled": true
         },
@@ -436,19 +460,15 @@
           "enabled": true
         },
         {
-          "id": "notificationButton",
-          "enabled": true
-        },
-        {
           "id": "clipboard",
           "enabled": true
         },
         {
-          "id": "catWidget",
+          "id": "notificationButton",
           "enabled": true
         },
         {
-          "id": "powerUsagePlugin",
+          "id": "catWidget",
           "enabled": true
         },
         {
@@ -467,17 +487,17 @@
           "showScreenSharingIcon": true
         }
       ],
-      "spacing": 4,
-      "innerPadding": 4,
+      "spacing": 0,
+      "innerPadding": 2,
       "bottomGap": 0,
-      "transparency": 1,
+      "transparency": 0.71,
       "widgetTransparency": 1,
-      "squareCorners": false,
+      "squareCorners": true,
       "noBackground": false,
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
       "removeWidgetPadding": false,
-      "widgetPadding": 8,
+      "widgetPadding": 5,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
@@ -485,12 +505,12 @@
       "borderColor": "surfaceText",
       "borderOpacity": 1,
       "borderThickness": 1,
-      "widgetOutlineEnabled": false,
-      "widgetOutlineColor": "primary",
-      "widgetOutlineOpacity": 1,
+      "widgetOutlineEnabled": true,
+      "widgetOutlineColor": "secondary",
+      "widgetOutlineOpacity": 0.54,
       "widgetOutlineThickness": 1,
-      "fontScale": 1,
-      "iconScale": 1,
+      "fontScale": 0.95,
+      "iconScale": 0.85,
       "autoHide": false,
       "autoHideDelay": 250,
       "showOnWindowsOpen": false,
@@ -503,7 +523,7 @@
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
-      "shadowOpacity": 60,
+      "shadowOpacity": 28,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
       "clickThrough": false

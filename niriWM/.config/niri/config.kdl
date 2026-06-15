@@ -336,13 +336,14 @@ include "binds-noctalia.kdl"
 
 // =============== Archivos que sobreescriben la configuración ===============
 
-// // === Dank Material Shell ===
-// include "dms/colors.kdl"
-// include "dms/layout.kdl"
-// include "dms/alttab.kdl"
-// include "dms/binds.kdl"
-// include "dms/outputs.kdl"
-// include "dms/cursor.kdl"
-
 // === Noctalia ===
 include "./noctalia.kdl"
+
+// === Dank Material Shell ===
+// include "dms/binds.kdl"
+// include "dms/cursor.kdl"
+// include "dms/outputs.kdl"
+// include "dms/windowrules.kdl"
+// include "dms/layout.kdl"
+// include "dms/colors.kdl"
+// include "dms/alttab.kdl"
