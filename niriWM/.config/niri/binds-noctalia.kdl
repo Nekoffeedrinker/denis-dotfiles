@@ -15,8 +15,9 @@ binds {
     XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
 
     // Clipper
-    //Mod+V { spawn "noctalia-shell" "ipc" "call" "plugin:clipper" "toggle"; }
-    Mod+V { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
+    // Mod+V { spawn "noctalia-shell" "ipc" "call" "plugin:clipper" "toggle"; }
+    // Mod+V { spawn-sh "noctalia-shell ipc call launcher clipboard"; }
+    Mod+V { spawn "noctalia-shell" "ipc" "call" "plugin:clipboard" "toggle"; }
     // Mod+Shift+V { spawn-sh "noctalia-shell ipc call launcher emoji"; }
 
     // Pluggins

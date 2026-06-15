@@ -224,11 +224,6 @@
                 },
                 {
                     "defaultSettings": {
-                    },
-                    "id": "plugin:kde-connect"
-                },
-                {
-                    "defaultSettings": {
                         "compactMode": false,
                         "defaultPeerAction": "copy-ip",
                         "hideDisconnected": false,
@@ -259,6 +254,19 @@
                         "verifyTls": false
                     },
                     "id": "plugin:syncthing-status"
+                },
+                {
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:kde-connect"
+                },
+                {
+                    "defaultSettings": {
+                        "density": "comfortable",
+                        "maxHistorySize": 100,
+                        "showImagePreviews": true
+                    },
+                    "id": "plugin:clipboard"
                 },
                 {
                     "compactMode": true,
