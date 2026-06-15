@@ -17,6 +17,7 @@ binds {
     XF86Favorites hotkey-overlay-title="Abrir la calculadora" { spawn "gnome-calculator"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
+    Mod+Shift+V hotkey-overlay-title="Abrir GNOME Characters" { spawn "gnome-characters"; }
 
     // ========= Capturas de pantalla =========
 
