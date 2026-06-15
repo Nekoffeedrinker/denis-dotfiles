@@ -16,6 +16,7 @@ binds {
 
     XF86Favorites hotkey-overlay-title="Abrir la calculadora" { spawn "gnome-calculator"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
+    Ctrl+Alt+Delete hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
 
     // ========= Capturas de pantalla =========
 
@@ -32,11 +33,10 @@ binds {
 
     // Volumen mediante PipeWire & WirePlumber.
     // '-l 1.0' limita el volumen al 100%
-    // (las comentadas las trabaja Noctalia)
     // -------------------------------------------
-    // XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    // XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    // XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
     // Control de medios mediante playerctl.
@@ -52,10 +52,8 @@ binds {
     XF86HangupPhone allow-when-locked=true { spawn-sh "playerctl next"; }
 
     // Controlar el brillo mediante brightnessctl.
-    // (están comentadas porque las maneja Noctalia)
-    // -------------------------------------------
-    // XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
 
     // =============== Manejo de ventanas ===============

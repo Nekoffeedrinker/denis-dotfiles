@@ -3,11 +3,19 @@
 // Visita la wiki para una descripción detallada de la configuración
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+
+// ======================== Hardware ========================
+
 include "inputs_outputs-thinkpadX13gen2.kdl"
+
+// Comportamiento del mouse respecto a la ventana en foco
 input {
     // warp-mouse-to-focus
     focus-follows-mouse max-scroll-amount="0%"
 }
+
+
+// ======================== Posicionamiento de ventanas ========================
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
@@ -24,12 +32,8 @@ layout {
         proportion 0.66667
     }
 
-    // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
-    // preset-window-heights { }
-
-    // You can change the default width of the new windows.
     default-column-width { proportion 0.5; }
-    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    // Si la opción se deja vacía, las ventanas decidirán su ancho inicial
     // default-column-width {}
 
     // By default focus ring and border are rendered as a solid background rectangle
@@ -152,6 +156,9 @@ layout {
     }
 }
 
+
+// ======================== Procesos al inicio ========================
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -173,12 +180,6 @@ hotkey-overlay {
     skip-at-startup
 }
 
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
-// If the client will specifically ask for CSD, the request will be honored.
-// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
-// This option will also fix border/focus ring drawing behind some semitransparent windows.
-// After enabling or disabling this, you need to restart the apps for this to take effect.
-prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -188,16 +189,8 @@ screenshot-path "~/Pictures/Capturas de pantalla/Screenshot from %Y-%m-%d %H-%M-
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
 
-// Animation settings.
-// The wiki explains how to configure individual animations:
-// https://yalter.github.io/niri/Configuration:-Animations
-animations {
-    // Uncomment to turn off all animations.
-    // off
 
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
-}
+// ======================== Reglas de ventana ========================
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -299,7 +292,31 @@ window-rule {
     clip-to-geometry true
 }
 
-include "binds-noctalia.kdl"
+
+// ======================== Más aspectos visuales ========================
+
+// Pedirle a las aplicacione sque omitan sus decoraciones de cliente,
+// o sea, bordes, botones de cerrado, espacios y espacios para arrastrar.
+prefer-no-csd
+
+// Animation settings.
+// The wiki explains how to configure individual animations:
+// https://yalter.github.io/niri/Configuration:-Animations
+animations {
+    // Uncomment to turn off all animations.
+    // off
+
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+}
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
+
+// ======================== Atajos del teclado ========================
 
 include "binds.kdl"
 
@@ -313,12 +330,13 @@ recent-windows {
     }
 }
 
-cursor {
-    xcursor-theme "Adwaita"
-    xcursor-size 24
-}
+// include "binds-dms.kdl"
+include "binds-noctalia.kdl"
 
-// = Incluir archivos de DMS
+
+// =============== Archivos que sobreescriben la configuración ===============
+
+// // === Dank Material Shell ===
 // include "dms/colors.kdl"
 // include "dms/layout.kdl"
 // include "dms/alttab.kdl"
@@ -326,6 +344,5 @@ cursor {
 // include "dms/outputs.kdl"
 // include "dms/cursor.kdl"
 
-// = Incluir archivo de Noctalia
+// === Noctalia ===
 include "./noctalia.kdl"
-
