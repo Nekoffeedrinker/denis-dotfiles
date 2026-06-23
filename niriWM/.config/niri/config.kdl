@@ -234,6 +234,7 @@ window-rule { // Flotar aplicaciones
     // - host Firefox (app-id: "firefox")
     // - Flatpak Firefox (app-id: "org.mozilla.firefox")
     // -------------------------------------------
+    match app-id="app.zen_browser.zen" title="^Picture-in-Picture$"
 
     // match app-id="firefox" title="Bitwarden"
     // -------------------------------------------
