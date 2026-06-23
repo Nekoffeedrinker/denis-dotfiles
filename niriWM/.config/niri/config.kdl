@@ -276,6 +276,13 @@ window-rule { // Abre maximizada y de cierto tamaño
     default-window-height { fixed 800; }
 }
 
+window-rule { // Pantalla completa
+    match app-id="dontstarve_steam_x64"
+    open-maximized true
+    open-fullscreen true
+}
+
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
