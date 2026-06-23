@@ -250,6 +250,7 @@ window-rule { // Abrir maximizadas
     match app-id="scribus" title="^Scribus"
     match app-id="affinity.exe" title="Affinity"
     match app-id="org.kde.kdenlive" title=r"— Kdenlive$"
+    match app-id="SubtitleEdit"
     match app-id="spotify"
     open-maximized true
 }
