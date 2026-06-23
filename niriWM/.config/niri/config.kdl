@@ -330,7 +330,7 @@ cursor {
 include "binds.kdl"
 
 recent-windows {
-    off
+    // off
     binds {
         Alt+Tab         { next-window scope="output"; }
         Alt+Shift+Tab   { previous-window scope="output"; }
