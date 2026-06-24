@@ -59,16 +59,25 @@ Después ejecuta este comando *dentro de tu directorio home*
 
 #+begin_src bash
 
-git clone --recurse-submodules https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles/
+git clone https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles/
 
 #+end_src
 
-OJO: mientras el repositorio sea privado, debes añadir a GitHub una llave SSH de la
-máquina donde vas a clonar el repositorio, para luego usar este comando:
+*** Cambiar el remote
+
+Ver el remote actual
 
 #+begin_src bash
 
-git clone --recurse-submodules git@github.com:Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles/
+git remote -v
+
+#+end_src
+
+Cambiar el remote
+
+#+begin_src bash
+
+git remote set-url origin git@github.com:Nekoffeedrinker/denis-dotfiles.git
 
 #+end_src
 
