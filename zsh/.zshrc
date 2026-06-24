@@ -110,25 +110,22 @@ bindkey "^X^E" edit-command-line
 
 # ========================= ALIAS =========================
 
-# == Remplazar ls y tree ==
-alias exa="eza"
+# == Remplazar ls ==
+alias ls="ls --color"
 
-alias ls="exa --color=always --icons=always"
-alias l="exa --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time"
-alias la="exa --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time -a"
-alias ll="exa --color=always --icons=always --git -al"
-alias tree="exa --color=always --icons=always --tree"
+alias l="eza --color=always --icons=always"
+alias la="eza --color=always --icons=always -a"
+alias ll="eza --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time"
+alias lla="eza --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time -a"
+alias li="eza --color=always --icons=always --git -l"
+alias lia="eza --color=always --icons=always --git -al"
 
-alias rls="\ls --color"
-alias rl="\ls -lh --color"
-alias rll="\ls -alh --color"
+# == Remplazar tree ==
+alias t="eza --color=always --icons=always --tree"
 
 # == Remplazar cat ==
-alias cat="bat"
-alias catt="bat -P"
-alias cattt="bat -pp"
-
-alias rcat="\cat"
+alias batt="bat -P"
+alias battt="bat -pp"
 
 # == Alias de git ==
 alias gs="git status"

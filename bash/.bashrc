@@ -1,0 +1,54 @@
+# ========================= ALIAS =========================
+
+# == Remplazar ls ==
+alias ls="ls --color"
+
+alias l="eza --color=always --icons=always"
+alias la="eza --color=always --icons=always -a"
+alias ll="eza --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time"
+alias lla="eza --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time -a"
+alias li="eza --color=always --icons=always --git -l"
+alias lia="eza --color=always --icons=always --git -al"
+
+# == Remplazar tree ==
+alias t="eza --color=always --icons=always --tree"
+
+# == Remplazar cat ==
+alias batt="bat -P"
+alias battt="bat -pp"
+
+# == Alias de git ==
+alias gs="git status"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gdd='git -c delta.features=side-by-side diff'
+alias gdds='git -c delta.features=side-by-side diff --staged'
+alias ga="git add"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gcan="git commit --amend --no-edit"
+alias gl="git log"
+alias glo="git log --oneline"
+
+# == Alias de Lazygit ==
+alias lg="lazygit"
+
+
+# === === Funciones === ===
+
+# Abrir algo usando la temrinal de manera facil
+abrir() { nohup "$@" &>/dev/null & disown; }
+
+# Navegar entrando y saliendo de yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
+
+
+# ========================= VARIABLES DE ENTORNO =========================
+export EDITOR=nvim
+export VISUAL=nvim
