@@ -218,11 +218,12 @@ binds {
     // Cambiar el tamaño de las columnas
     Mod+R { switch-preset-column-width; }
     // También se puede cambiar en reversa
-    // Mod+R { switch-preset-column-width-back; }
+    Mod+Shift+R { switch-preset-column-width-back; }
 
     // Cambiar el tamaño de las ventanas
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
+    Mod+T { switch-preset-window-height; }
+    Mod+Shift+T { switch-preset-window-height-back; }
+    Mod+Ctrl+T { reset-window-height; }
 
     // Maximizar y pantalla completa
     Mod+F { maximize-column; }
