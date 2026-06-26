@@ -1,0 +1,4 @@
+# Cargar alias desde archivo externo
+if [ -f ~/.denisDotfiles/EXTRAS/alias_comandos ]; then
+    source ~/.denisDotfiles/EXTRAS/alias_comandos
+fi
