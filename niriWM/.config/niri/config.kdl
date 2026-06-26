@@ -217,6 +217,7 @@ window-rule { // Flotar aplicaciones
     match app-id="org.gnome.Nautilus" title="Open video file"
     match app-id="org.gnome.Nautilus" title="^Añadir archivos de vídeo"
     match app-id="org.gnome.Nautilus" title="Archivos"
+    match app-id="org.gnome.Nautilus" title="Abrir una carpeta como bóveda"
 
     match title="Configuración" // de Flameshot
     match app-id="Upscayl" title="Select Image"
