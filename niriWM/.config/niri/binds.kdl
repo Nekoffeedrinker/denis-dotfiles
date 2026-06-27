@@ -187,22 +187,19 @@ binds {
     // Movimientos de columna
     Mod+WheelScrollDown       { focus-column-right; }
     Mod+WheelScrollUp         { focus-column-left; }
-    Mod+Shift+WheelScrollDown { focus-window-down; }
-    Mod+Shift+WheelScrollUp   { focus-window-up; }
-
-    Mod+Ctrl+WheelScrollDown       { move-column-right; }
-    Mod+Ctrl+WheelScrollUp         { move-column-left; }
-    Mod+Ctrl+Shift+WheelScrollDown { move-window-down; }
-    Mod+Ctrl+Shift+WheelScrollUp   { move-window-up; }
+    Mod+Shift+WheelScrollDown { move-column-right; }
+    Mod+Shift+WheelScrollUp   { move-column-left; }
+    Mod+Ctrl+WheelScrollDown  { move-window-down; }
+    Mod+Ctrl+WheelScrollUp    { move-window-up; }
 
     // Movimientos de workspace
-    Mod+Alt+WheelScrollDown      cooldown-ms=200 { focus-workspace-down; }
-    Mod+Alt+WheelScrollUp        cooldown-ms=200 { focus-workspace-up; }
+    Mod+Alt+WheelScrollDown        cooldown-ms=200 { focus-workspace-down; }
+    Mod+Alt+WheelScrollUp          cooldown-ms=200 { focus-workspace-up; }
     Mod+Alt+Shift+WheelScrollDown  cooldown-ms=200 { move-column-to-workspace-down; }
     Mod+Alt+Shift+WheelScrollUp    cooldown-ms=200 { move-column-to-workspace-up; }
 
-    Mod+Alt+Ctrl+WheelScrollDown      cooldown-ms=200 { move-workspace-down; }
-    Mod+Alt+Ctrl+WheelScrollUp        cooldown-ms=200 { move-workspace-up; }
+    Mod+Alt+Ctrl+WheelScrollDown   cooldown-ms=200 { move-workspace-down; }
+    Mod+Alt+Ctrl+WheelScrollUp     cooldown-ms=200 { move-workspace-up; }
 
     // ========= Atajos del trackpad =========
 
@@ -231,10 +228,11 @@ binds {
 
     // Maximizar y pantalla completa
     Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+Ctrl+F { fullscreen-window; }
+    // Mod+Alt+F { fullscreen-window; }
 
     // Ocupar el espacio restante
-    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+Shift+F { expand-column-to-available-width; }
 
     // Centrar la columna actual
     Mod+C { center-column; }
