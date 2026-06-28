@@ -96,7 +96,7 @@
   (ispell-set-spellchecker-params)
   (ispell-hunspell-add-multi-dic "es_MX,en_US"))
 
-(setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
+(setq ispell-personal-dictionary "~/Emacs-things/mis-palabras.pws")
 
 (use-package! langtool
   :config
@@ -167,10 +167,10 @@
         (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
 
 ;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
-(setq! citar-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+(setq! citar-bibliography '("~/Emacs-things/referencias.bib"))
 
 ;; Decirle a orb dónde buscar las citas
-(setq bibtex-completion-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+(setq bibtex-completion-bibliography '("~/Emacs-things/referencias.bib"))
 
 ;; Activar orb luego de que cargue org-roam
 (use-package! org-roam-bibtex

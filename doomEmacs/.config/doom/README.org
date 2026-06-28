@@ -399,7 +399,7 @@ Ahora, configuro los diccionarios para tener Español e Inglés
 Y un diccionario personal para las palabras que a veces no reconoce.
 
 #+begin_src elisp :tangle config.el
-(setq ispell-personal-dictionary "~/.config/doom/mis-palabras.pws")
+(setq ispell-personal-dictionary "~/Emacs-things/mis-palabras.pws")
 #+end_src
 
 ** Revisión de gramática
@@ -662,7 +662,7 @@ Preparar el archivo de referencias:
  2. Instalar el plugin [[https://github.com/retorquere/zotero-better-bibtex/releases/tag/v9.0.19][Better BibTex]] de Zotero.
  3. Ir a =Archivo → Exportar biblioteca=, seleccionar formato *Better BibLaTeX*,
     marcar *Keep updated* (dejar lo demás como está) y guardar el archivo en
-    '~/Documents/Emacs/Roam/refs/referencias.bib'.
+    '~/Emacs-things/referencias.bib'.
 
 Luego, hay que activar ~biblio~ en el apartado tools del ~init.el~
 
@@ -676,10 +676,10 @@ Y configurar el plugin
 #+begin_src elisp :tangle config.el
 
 ;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
-(setq! citar-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+(setq! citar-bibliography '("~/Emacs-things/referencias.bib"))
 
 ;; Decirle a orb dónde buscar las citas
-(setq bibtex-completion-bibliography '("~/Documents/Emacs/Roam/refs/referencias.bib"))
+(setq bibtex-completion-bibliography '("~/Emacs-things/referencias.bib"))
 
 ;; Activar orb luego de que cargue org-roam
 (use-package! org-roam-bibtex
