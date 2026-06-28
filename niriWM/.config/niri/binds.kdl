@@ -16,6 +16,7 @@ binds {
     Mod+Ctrl+B hotkey-overlay-title="Abrir Helium Browser" { spawn "helium"; }
 
     XF86Favorites hotkey-overlay-title="Abrir la calculadora" { spawn "gnome-calculator"; }
+    Shift+XF86Favorites hotkey-overlay-title="Abrir el Qalculate" { spawn "qalculate-gtk"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Abrir el monitor del sistema" { spawn "gnome-system-monitor"; }
     Mod+Delete hotkey-overlay-title="Abrir Mission Center" { spawn "missioncenter"; }
