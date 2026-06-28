@@ -10,6 +10,7 @@
   - [[#editor][Editor]]
   - [[#terminal][Terminal]]
   - [[#checkers][Checkers]]
+  - [[#os][OS]]
   - [[#tools][Tools]]
   - [[#lang][Lang]]
 - [[#definir-rutas-y-archivos][Definir rutas y archivos]]
@@ -94,6 +95,8 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
    igualita a la que ya uso en Kitty.
 ** Checkers
 - Activar ~(spell +flyspell)~
+** OS
+- Activar ~tty~
 ** Tools
 - Activar ~biblio~ para org-roam-bibtex y Typst.
 - Dejar activado ~lookup~ para las citas de Typst

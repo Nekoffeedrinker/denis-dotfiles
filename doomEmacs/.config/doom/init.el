@@ -114,7 +114,7 @@
 
        :os
        (:if (featurep :system 'macos) macos)  ; mejoras para macOS
-       ;; tty               ; mejor experiencia en terminal tty
+       tty               ; mejor experiencia en terminal tty
 
        :lang
        ;; ada               ; In strong typing we (blindly) trust
