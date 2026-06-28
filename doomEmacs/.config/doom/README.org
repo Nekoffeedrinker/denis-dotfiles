@@ -101,7 +101,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 - Activar ~(lsp +eglot)~ y ~tree-sitter~ para Typst.
 - Activar ~pdf~. REVISAR: [[*Visor PDF][Visor PDF]]
 ** Lang
-- Activar ~(org +pretty +journal +roam)~
+- Activar ~(org +journal +roam)~
 - Activar ~(nix +lsp +tree-sitter)~
 
 
