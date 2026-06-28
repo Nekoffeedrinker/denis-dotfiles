@@ -8,6 +8,19 @@
 (defvar dir/orgRoam       (expand-file-name "Org-roam"         dir/docsPersonal))
 (defvar dir/diario        (expand-file-name "Diario/"          dir/docsPersonal))
 
+;; Crear directorios si no existen
+(dolist (dir (list dir/cosasEmacs
+                   dir/docsPersonal
+                   dir/orgRoam
+                   dir/diario))
+  (make-directory dir t))
+
+;; Crear archivos vacíos si no existen
+(dolist (file (list file/bibliografia
+                    file/diccionario))
+  (unless (file-exists-p file)
+    (write-region "" nil file)))
+
 (setq doom-font
       (font-spec
        :family "Monaspace Xenon Frozen"

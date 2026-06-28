@@ -114,8 +114,28 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 (defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
 (defvar dir/orgRoam       (expand-file-name "Org-roam"         dir/docsPersonal))
 (defvar dir/diario        (expand-file-name "Diario/"          dir/docsPersonal))
+
+;; Crear directorios si no existen
+(dolist (dir (list dir/cosasEmacs
+                   dir/docsPersonal
+                   dir/orgRoam
+                   dir/diario))
+  (make-directory dir t))
+
+;; Crear archivos vacíos si no existen
+(dolist (file (list file/bibliografia
+                    file/diccionario))
+  (unless (file-exists-p file)
+    (write-region "" nil file)))
 #+end_src
 
+Este código se compone de dos partes. La primera es donde se definen las rutas y
+los archivos. Lo genial es que define una ruta base y luego define rutas más específicas extendiendo desde las rutas base.
+
+Y la segunda parte es para crear los directorios y los archivos si es que no
+existen. Esto es muy útil para cuando se ejecuta Doom Emacs en una maquina
+nueva, ya que de esta manera siempre se podrán usar todas las funciones, sobre
+todo las de journal, org-roam y bibliografía.
 
 * Aspecto visual
 ** Tipografía
