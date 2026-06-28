@@ -273,6 +273,7 @@ window-rule { // Abre maximizada y no en pantalla completa
 
 window-rule { // Abre maximizada y de cierto tamaño
     match app-id="org.gnome.SystemMonitor"
+    match app-id="missioncenter"
     open-floating true
     default-column-width { fixed 1200; }
     default-window-height { fixed 800; }
