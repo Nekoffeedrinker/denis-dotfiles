@@ -110,7 +110,7 @@
   (evil-local-set-key 'normal (kbd "k") #'evil-previous-visual-line)
   (evil-local-set-key 'motion (kbd "k") #'evil-previous-visual-line))
 
-(setq org-directory "~/Documents/Emacs/Notas")
+(setq org-directory "~/Documents/")
 
 (defun my/org-faces-latte ()
   (custom-set-faces!
@@ -142,13 +142,13 @@
   :hook (org-mode . org-fancy-priorities-mode)
   :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
 
-(setq org-journal-dir "~/Documents/Emacs/Diario/"
+(setq org-journal-dir "~/Documents/Personal/Diario/"
       org-journal-date-prefix "#+title: "
       org-journal-time-prefix "\n* "
       org-journal-date-format "%A, %d/%b/%Y"
       org-journal-file-format "%Y-%m-%d.org")
 
-(setq org-roam-directory "~/Documents/Emacs/Roam"
+(setq org-roam-directory "~/Documents/Personal/Org-roam"
       org-roam-dailies-directory "journal/")
 
 (setq org-roam-graph-viewer

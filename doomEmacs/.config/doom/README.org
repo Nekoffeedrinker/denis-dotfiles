@@ -449,7 +449,7 @@ Y configurar para que utilice el servidor local y español.
 lo utilizo para las notas jerárquicas. Debe de ponerse antes de cargar org.
 
 #+begin_src elisp :tangle config.el
-(setq org-directory "~/Documents/Emacs/Notas")
+(setq org-directory "~/Documents/")
 #+end_src
 
 ** Org-mode Bonito
@@ -584,7 +584,7 @@ En ~init.el~ ubicamos =org= y añadimos la bandera '+journal'. Ej:
 Luego, hay que definir la carpeta donde estarán los archivos de diario, cómo se
 llamará el archivo y el título del mismo:
 #+begin_src elisp :tangle config.el
-(setq org-journal-dir "~/Documents/Emacs/Diario/"
+(setq org-journal-dir "~/Documents/Personal/Diario/"
       org-journal-date-prefix "#+title: "
       org-journal-time-prefix "\n* "
       org-journal-date-format "%A, %d/%b/%Y"
@@ -601,7 +601,7 @@ En ~init.el~ ubicamos =org= y añadimos la bandera '+roam'. Ej:
 
 Ahora hay que configurar el directorio de Roam
 #+begin_src elisp :tangle config.el
-(setq org-roam-directory "~/Documents/Emacs/Roam"
+(setq org-roam-directory "~/Documents/Personal/Org-roam"
       org-roam-dailies-directory "journal/")
 #+end_src
 
