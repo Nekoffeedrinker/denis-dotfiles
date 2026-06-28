@@ -1,5 +1,13 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+(defvar dir/cosasEmacs   (expand-file-name "~/Emacs-things/"))
+(defvar dir/docsPersonal (expand-file-name "~/Documents/Personal/"))
+
+(defvar file/bibliografia (expand-file-name "referencias.bib"  dir/cosasEmacs))
+(defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
+(defvar dir/orgRoam       (expand-file-name "Org-roam"         dir/docsPersonal))
+(defvar dir/diario        (expand-file-name "Diario/"          dir/docsPersonal))
+
 (setq doom-font
       (font-spec
        :family "Monaspace Xenon Frozen"
@@ -96,7 +104,7 @@
   (ispell-set-spellchecker-params)
   (ispell-hunspell-add-multi-dic "es_MX,en_US"))
 
-(setq ispell-personal-dictionary "~/Emacs-things/mis-palabras.pws")
+(setq ispell-personal-dictionary file/diccionario)
 
 (use-package! langtool
   :config
@@ -142,13 +150,13 @@
   :hook (org-mode . org-fancy-priorities-mode)
   :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
 
-(setq org-journal-dir "~/Documents/Personal/Diario/"
+(setq org-journal-dir dir/diario
       org-journal-date-prefix "#+title: "
       org-journal-time-prefix "\n* "
       org-journal-date-format "%A, %d/%b/%Y"
       org-journal-file-format "%Y-%m-%d.org")
 
-(setq org-roam-directory "~/Documents/Personal/Org-roam"
+(setq org-roam-directory dir/orgRoam
       org-roam-dailies-directory "journal/")
 
 (setq org-roam-graph-viewer
@@ -157,10 +165,10 @@
                        (concat "file://" file))))
 
 ;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
-(setq! citar-bibliography '("~/Emacs-things/referencias.bib"))
+(setq! citar-bibliography (list file/bibliografia))
 
 ;; Decirle a orb dónde buscar las citas
-(setq bibtex-completion-bibliography '("~/Emacs-things/referencias.bib"))
+(setq bibtex-completion-bibliography (list file/bibliografia))
 
 ;; Activar orb luego de que cargue org-roam
 (use-package! org-roam-bibtex
