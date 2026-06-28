@@ -59,7 +59,6 @@
 
 #+end_src
 
-
 * Comandos Básicos de configuración
 - *~doom doctor~*
   Diagnostica problemas en la configuración y puede sugerirte cómo solucionarlo.
@@ -70,7 +69,6 @@
   OJO: no carga cosas que estén en ~config.el~, para eso se necesita reiniciar.
 - *~doom gc~*
   Para limpiar los paquetes y módulos que no estén cargados.
-
 
 * init.el
 ** completion
@@ -475,7 +473,6 @@ Y configurar para que utilice el servidor local y español.
   (evil-local-set-key 'motion (kbd "k") #'evil-previous-visual-line))
 #+end_src
 
-
 * Org-mode
 ** Directorio de org-mode
 
@@ -566,7 +563,6 @@ Debería quedar algo así:
                (my/org-faces-latte))))  ; <- agregar esto
 #+end_src
 
-
 *** Menú de To-Do
 
 Para cambiar las opciones disponibles para asignar tareas, incluido el menú de
@@ -605,7 +601,6 @@ Y se configura
   :hook (org-mode . org-fancy-priorities-mode)
   :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
 #+end_src
-
 
 ** Plugin: org-journal
 
@@ -729,7 +724,6 @@ Se trata de un plugin que automatiza la acción de 'org-babel-tangle'
   :config
   (setq org-auto-tangle-default t))
 #+end_src
-
 
 * Lenguajes
 ** Typst
@@ -866,7 +860,6 @@ aprender y practicar los atajos de vim en Emacs (el evil-mode).
 #+begin_src elisp :tangle packages.el
 (package! evil-tutor)
 #+end_src
-
 
 * Comentarios Originales
 ** Config
