@@ -281,6 +281,7 @@ window-rule { // Abre maximizada y de cierto tamaño
 
 window-rule { // Pantalla completa
     match app-id="dontstarve_steam_x64"
+    match app-id="FEZ.bin.x86_64"
     open-maximized true
     open-fullscreen true
 }
