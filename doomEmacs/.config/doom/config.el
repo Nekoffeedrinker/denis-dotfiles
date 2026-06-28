@@ -136,12 +136,6 @@
     '(org-level-8 :foreground "#eba0ac" :height 1.0 :bold nil)
     '(org-document-title :height 1.3 :bold t :underline nil)))
 
-(setq org-agenda-files
-      (list org-directory
-            "~/Documents/Emacs/Notas/ToDo/"
-            "~/Documents/Emacs/Roam/"
-            "~/Documents/Emacs/Roam/journal/"))
-
 (setq org-log-into-drawer t)
 
 (use-package! org-fancy-priorities
@@ -161,10 +155,6 @@
       (lambda (file)
         (start-process "min" nil "/usr/bin/min"
                        (concat "file://" file))))
-
-(setq org-refile-targets
-      `(("~/Documents/Emacs/Notas/Inbox.org" :maxlevel . 2)
-        (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
 
 ;; Decirle a 'citar' dónde está la bibliografía (necesario para orb)
 (setq! citar-bibliography '("~/Emacs-things/referencias.bib"))

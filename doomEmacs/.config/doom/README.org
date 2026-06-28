@@ -30,7 +30,6 @@
 - [[#org-mode][Org-mode]]
   - [[#directorio-de-org-mode][Directorio de org-mode]]
   - [[#org-mode-bonito][Org-mode Bonito]]
-  - [[#org-agenda][Org Agenda]]
   - [[#plugin-org-journal][Plugin: org-journal]]
   - [[#plugin-org-roam][Plugin: org-roam]]
   - [[#plugin-org-roam-bibtex-orb][Plugin: org-roam-bibtex (orb)]]
@@ -533,22 +532,6 @@ Debería quedar algo así:
                (my/org-faces-latte))))  ; <- agregar esto
 #+end_src
 
-** Org Agenda
-
-Es una funcionalidad de Emacs para crear recordatorios, desprendiendo funciones
-como la gestión de tareas, programar eventos, calendario, repeticiones, etc.
-
-Para que las tareas se muestren en esta función hay que especificar desde qué
-carpetas las va a buscar:
-#+begin_src elisp :tangle config.el
-(setq org-agenda-files
-      (list org-directory
-            "~/Documents/Emacs/Notas/ToDo/"
-            "~/Documents/Emacs/Roam/"
-            "~/Documents/Emacs/Roam/journal/"))
-#+end_src
-
-En mi caso, configuré las de Roam. Como ves, no escanea recursivamente.
 
 *** Menú de To-Do
 
@@ -634,22 +617,14 @@ otro journal como si fuera un diario de trabajo. De esta manera, no mezclo las
 entradas donde hablo de mí personalmente con las entradas de mis proyectos.
 
 Pasando de lo básico, también se puede configurar una vista de gráfico de nodos
-(muy similar a obsidian) y el uso de refile.
+(muy similar a obsidian).
 
 #+begin_src elisp :tangle config.el
 (setq org-roam-graph-viewer
       (lambda (file)
         (start-process "min" nil "/usr/bin/min"
                        (concat "file://" file))))
-
-(setq org-refile-targets
-      `(("~/Documents/Emacs/Notas/Inbox.org" :maxlevel . 2)
-        (,(directory-files "~/Documents/Emacs/Roam/" t "\\.org$") :maxlevel . 2)))
 #+end_src
-
-Refile es una función que permite traspasar bloques de encabezado entre archivos
-o secciones de archivos org. Esto es útil para mudar cosas entre notas,
-especialmente tareas pendientes.
 
 ** Plugin: org-roam-bibtex (orb)
 
