@@ -62,7 +62,7 @@
        (format +onsave)  ; autoformateo al guardar
        ;; god               ; ejecutar atajos emacs sin las teclas modificadoras
        ;; lispy             ; edita y organiza lisp usando teclas rápidas como en vim
-       ;; multiple-cursors  ; utilizar múltiples cursores
+       multiple-cursors  ; utilizar múltiples cursores
        ;; objed             ; edición basada en 'objetos de texto'
        ;; parinfer          ; en lisp pone paréntesis autoáticamente según la sangría
        ;; rotate-text       ; alterna entre palabras opuestas o relacionadas

@@ -85,6 +85,7 @@
 - Desactivar '+pretty' en ~vc-gutter~ porque me gustan los indicadores toscos.
 ** Editor
 - Activar ~(format +onsave)~.
+- Activar ~multiple-cursors~.
 - Activar ~word-wrap~ (para lenguajes de programación).
 ** Terminal
 De las cuatro disponibles (eshell, shell, term, vterm), elegí:
