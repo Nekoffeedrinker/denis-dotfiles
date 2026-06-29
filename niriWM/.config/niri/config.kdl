@@ -109,7 +109,7 @@ layout {
     // You can enable drop shadows for windows.
     shadow {
         // Uncomment the next line to enable shadows.
-        // on
+        on
 
         // By default, the shadow draws only around its window, and not behind it.
         // Uncomment this setting to make the shadow draw behind its window.
@@ -305,6 +305,21 @@ window-rule {
     clip-to-geometry true
 }
 
+window-rule {
+    match app-id="kitty"
+    opacity 0.80
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+blur {
+    passes 1
+    offset 3
+    noise 0.02
+    saturation 1.5
+}
 
 // ======================== Más aspectos visuales ========================
 
