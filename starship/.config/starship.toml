@@ -1,0 +1,81 @@
+# ── Global ────────────────────────────────────────────────
+# Prompt Spacing: Sparse → línea en blanco antes de cada prompt
+add_newline = true
+
+# Prompt Height: Two lines + Prompt Connection: Dotted
+# La primera línea tiene info + fill de puntos; la segunda el carácter ❯
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$python\
+$nodejs\
+$rust\
+$golang\
+$fill\
+$cmd_duration\
+$line_break\
+$character"""
+
+# ── Fill (conexión punteada, Connection Color: Dark) ──────
+[fill]
+symbol = "·"
+style = "#4A4A4A" 
+
+# ── Character (el ❯ del prompt) ──────────────────────────
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol   = "[❯](bold red)"
+
+# ── Directory ─────────────────────────────────────────────
+[directory]
+style             = "bold cyan"
+truncation_length = 3
+truncate_to_repo  = true
+format            = "[ $path]($style) "
+
+# ── Git ───────────────────────────────────────────────────
+[git_branch]
+symbol = " "
+style  = "bold purple"
+
+[git_status]
+format    = '([$ahead_behind$staged$modified$untracked]($style) )'
+conflicted = "⚡"
+ahead      = "⇡${count} "
+behind     = "⇣${count} "
+staged     = "+${count} "
+modified   = "!${count} "
+untracked  = "?${count} "
+
+# ── Command duration ──────────────────────────────────────
+[cmd_duration]
+min_time = 2000
+format   = "[ $duration]($style) "
+style    = "yellow"
+
+# ── Lenguajes (iconos Many icons) ─────────────────────────
+[python]
+symbol = " "
+
+[nodejs]
+symbol = "󰎙 "
+
+[rust]
+symbol = " "
+
+[golang]
+symbol = " "
+
+# ── OS icon (Many icons) ──────────────────────────────────
+[os]
+disabled = false
+style    = "color239"
+
+[os.symbols]
+Fedora  = " "
+NixOS   = " "
+Linux   = " "
+Windows = " "
