@@ -35,6 +35,11 @@ abbr gll git log
 # -- Abrir Lazygit --
 abbr lg lazygit
 
+# -- Locuras --
+
+# fzf + bat + nvim
+alias fvim='nvim $(fzf -m --preview="bat -p {}")'
+
 # ============================== Funciones ==============================
 
 # -- Abrir algo y seguir usando la terminal --

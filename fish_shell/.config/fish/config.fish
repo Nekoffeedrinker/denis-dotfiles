@@ -10,5 +10,11 @@ if status is-interactive
         starship module character
     end
 
+    # usar Zoxide
+    zoxide init --cmd cd fish | source
+
+    # usar fzf y sus atajos de teclado
+    fzf --fish | source
+
     # Commands to run in interactive sessions can go here
 end
