@@ -10,6 +10,5 @@ if status is-interactive
         starship module character
     end
 
-
     # Commands to run in interactive sessions can go here
 end

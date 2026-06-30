@@ -14,13 +14,11 @@ abbr la ezal -a
 abbr t eza -T
 abbr ta eza -Ta
 
-
 # === === Leer archivos de texto plano === ===
 
 alias cat='bat'
-abbr catt bat -P   # bat sin pager
-abbr bat bat -pp  # bat sin pager ni decoraciones
-
+abbr catt bat -P # bat sin pager
+abbr bat bat -pp # bat sin pager ni decoraciones
 
 # === === Uso de Git === ===
 
@@ -39,8 +37,6 @@ abbr glo git log --oneline
 # -- Abrir Lazygit --
 abbr lg lazygit
 
-
-
 # ============================== Funciones ==============================
 
 # -- Abrir algo y seguir usando la terminal --
@@ -51,10 +47,10 @@ end
 
 # -- Navegar entrando y saliendo de yazi --
 function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	command yazi $argv --cwd-file="$tmp"
-	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
-		builtin cd -- "$cwd"
-	end
-	command rm -f -- "$tmp"
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    command yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
+        builtin cd -- "$cwd"
+    end
+    command rm -f -- "$tmp"
 end
