@@ -1,15 +1,15 @@
 # === === Listar directorios === ===
 
-alias ls='ls --color'
-
 alias eza='eza --color=always --icons=always --git --across'
-abbr l eza
-abbr la eza -a
+alias ezal='eza -l --no-permissions --no-filesize --no-user --no-time'
+
+abbr ls eza
+abbr lsa eza -a
 abbr ll eza -lg
 abbr lla eza -lga
 
-alias li='eza -l --no-permissions --no-filesize --no-user --no-time'
-abbr lia li -a
+abbr l ezal
+abbr la ezal -a
 
 abbr t eza -T
 abbr ta eza -Ta
@@ -17,8 +17,9 @@ abbr ta eza -Ta
 
 # === === Leer archivos de texto plano === ===
 
-abbr batno bat -P   # bat sin pager
-abbr batpl bat -pp  # bat sin pager ni decoraciones
+alias cat='bat'
+abbr catt bat -P   # bat sin pager
+abbr bat bat -pp  # bat sin pager ni decoraciones
 
 
 # === === Uso de Git === ===
