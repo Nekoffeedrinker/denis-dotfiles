@@ -7,12 +7,10 @@ abbr ls eza
 abbr lsa eza -a
 abbr ll eza -lg
 abbr lla eza -lga
-
 abbr l ezal
 abbr la ezal -a
 
-abbr t eza -T
-abbr ta eza -Ta
+abbr tree eza -T
 
 # === === Leer archivos de texto plano === ===
 
