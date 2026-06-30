@@ -31,8 +31,8 @@ abbr ga git add
 abbr gc git commit
 abbr gca git commit --amend
 abbr gce git commit --amend --no-edit
-abbr gl git log
-abbr glo git log --oneline
+abbr gl git log --oneline --graph --all
+abbr gll git log
 
 # -- Abrir Lazygit --
 abbr lg lazygit
