@@ -307,7 +307,7 @@ window-rule {
 
 window-rule {
     match app-id="kitty"
-    // opacity 0.90
+    opacity 0.95
     background-effect {
         blur true
         xray false
@@ -315,8 +315,8 @@ window-rule {
 }
 
 blur {
-    passes 2
-    offset 4
+    passes 1
+    offset 3
     noise 0.02
     // saturation 1.5
 }
