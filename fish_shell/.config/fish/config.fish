@@ -1,5 +1,7 @@
 if status is-interactive
 
+    # ======================== Configurar Fish ========================
+
     # quitar el mensaje de bienvenida
     set -g fish_greeting
 
@@ -15,6 +17,13 @@ if status is-interactive
 
     # usar fzf y sus atajos de teclado
     fzf --fish | source
+
+
+    # ======================== Configurar más cosas ========================
+
+    set -x EDITOR nvim
+    set -x VISUAL nvim
+
 
     # Commands to run in interactive sessions can go here
 end
