@@ -40,9 +40,6 @@ abbr lg lazygit
 # Abrir emacs en la terminal
 abbr temacs emacs -nw
 
-# fzf + bat + nvim
-alias fvim='nvim $(fzf -m --preview="bat -p {}")'
-
 # ============================== Funciones ==============================
 
 # -- Abrir algo y seguir usando la terminal --
