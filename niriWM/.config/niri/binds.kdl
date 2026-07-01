@@ -226,7 +226,7 @@ binds {
     // Cambiar el tamaño de las ventanas
     Mod+T { switch-preset-window-height; }
     Mod+Shift+T { switch-preset-window-height-back; }
-    Mod+Ctrl+T { reset-window-height; }
+    Mod+ALT+T { reset-window-height; }
 
     // Maximizar y pantalla completa
     Mod+F { maximize-column; }
