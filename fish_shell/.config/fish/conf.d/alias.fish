@@ -35,7 +35,10 @@ abbr gll git log
 # -- Abrir Lazygit --
 abbr lg lazygit
 
-# -- Locuras --
+# === === Otras cosas === ===
+
+# Abrir emacs en la terminal
+abbr temacs emacs -nw
 
 # fzf + bat + nvim
 alias fvim='nvim $(fzf -m --preview="bat -p {}")'
