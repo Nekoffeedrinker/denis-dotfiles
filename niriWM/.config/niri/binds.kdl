@@ -8,7 +8,7 @@ binds {
     Mod+Return hotkey-overlay-title="Abrir Kitty" { spawn "kitty"; }
     Mod+E hotkey-overlay-title="Abrir el Explorador de archivos" { spawn "nautilus" "--new-window"; }
     Mod+N hotkey-overlay-title="Abrir el Editor de texto" { spawn "gnome-text-editor" "--new-window"; }
-    Mod+Shift+N hotkey-overlay-title="Abrir Emacs" { spawn "emacs"; }
+    Mod+Shift+N hotkey-overlay-title="Abrir Emacs" { spawn-sh "emacsclient -c -a 'emacs'"; }
 
     Mod+M hotkey-overlay-title="Abrir Zapzap" { spawn "zapzap"; }
     Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }

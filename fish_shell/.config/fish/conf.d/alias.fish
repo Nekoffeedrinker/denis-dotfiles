@@ -38,7 +38,7 @@ abbr lg lazygit
 # === === Otras cosas === ===
 
 # Abrir emacs en la terminal
-abbr temacs emacs -nw
+alias temacs="emacsclient -nw -a 'emacs -nw'"
 
 # ============================== Funciones ==============================
 
