@@ -75,6 +75,7 @@ disabled = false
 style    = "color239"
 
 [os.symbols]
+Ubuntu  = " "
 Fedora  = " "
 NixOS   = " "
 Linux   = " "
