@@ -271,7 +271,7 @@ window-rule { // Abre maximizada y no en pantalla completa
     open-maximized true
 }
 
-window-rule { // Abre maximizada y de cierto tamaño
+window-rule { // Administrador de tareas
     match app-id="org.gnome.SystemMonitor"
     match app-id="missioncenter"
     open-floating true
@@ -293,7 +293,7 @@ window-rule { // Zap Zap
     default-window-height { fixed 786; }
 }
 
-window-rule { // Pantalla completa
+window-rule { // Juegos en pantalla completa
     match app-id="dontstarve_steam_x64"
     match app-id="FEZ.bin.x86_64"
     open-maximized true
