@@ -279,6 +279,13 @@ window-rule { // Abre maximizada y de cierto tamaño
     default-window-height { fixed 800; }
 }
 
+window-rule { // Bitwarden
+    match app-id="Bitwarden"
+    open-floating true
+    default-column-width { fixed 640; }
+    default-window-height { fixed 779; }
+}
+
 window-rule { // Pantalla completa
     match app-id="dontstarve_steam_x64"
     match app-id="FEZ.bin.x86_64"
