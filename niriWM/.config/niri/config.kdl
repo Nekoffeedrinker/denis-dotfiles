@@ -286,6 +286,13 @@ window-rule { // Bitwarden
     default-window-height { fixed 779; }
 }
 
+window-rule { // Zap Zap
+    match app-id="com.rtosta.zapzap"
+    open-floating true
+    default-column-width { fixed 1128; }
+    default-window-height { fixed 786; }
+}
+
 window-rule { // Pantalla completa
     match app-id="dontstarve_steam_x64"
     match app-id="FEZ.bin.x86_64"
