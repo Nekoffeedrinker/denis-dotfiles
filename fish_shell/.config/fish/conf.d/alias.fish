@@ -14,9 +14,9 @@ abbr tree eza -T
 
 # === === Leer archivos de texto plano === ===
 
-alias cat='bat'
-abbr catt cat -P # bat sin pager
-abbr bat cat -pp # bat sin pager ni decoraciones
+abbr cat bat
+abbr catt bat -P # bat sin pager
+abbr cattt bat -pp # bat sin pager ni decoraciones
 
 # === === Uso de Git === ===
 
