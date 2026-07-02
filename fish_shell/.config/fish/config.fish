@@ -5,6 +5,9 @@ if status is-interactive
     # quitar el mensaje de bienvenida
     set -g fish_greeting
 
+    # definir donde esta la config de starship
+    set -x STARSHIP_CONFIG ~/.config/starship-fish.toml
+
     # Promnt de Starship (con transcient mode)
     starship init fish | source
     enable_transience

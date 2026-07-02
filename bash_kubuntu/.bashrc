@@ -126,4 +126,5 @@ if [ -f ~/.denisDotfiles/EXTRAS/alias_comandos ]; then
 fi
 
 # Usar prompt de starship
+export STARSHIP_CONFIG=~/.config/starship-bash.toml
 eval "$(starship init bash)"
