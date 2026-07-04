@@ -115,7 +115,7 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 (defvar file/bibliografia (expand-file-name "referencias.bib"  dir/cosasEmacs))
 (defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
 (defvar dir/orgRoam       (expand-file-name "Org-roam"         dir/docsPersonal))
-(defvar dir/diario        (expand-file-name "Diario/"          dir/docsPersonal))
+(defvar dir/diario        (expand-file-name "Diario-org/"          dir/docsPersonal))
 
 ;; Crear directorios si no existen
 (dolist (dir (list dir/cosasEmacs
