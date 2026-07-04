@@ -279,6 +279,13 @@ window-rule { // Administrador de tareas
     default-window-height { fixed 800; }
 }
 
+window-rule { // gnome text editor
+    match app-id="org.gnome.TextEditor"
+    open-floating true
+    default-column-width { fixed 480; }
+    default-window-height { fixed 390; }
+}
+
 window-rule { // Bitwarden
     match app-id="Bitwarden"
     open-floating true
