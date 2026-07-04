@@ -289,7 +289,7 @@ window-rule { // gnome text editor
 window-rule { // Bitwarden
     match app-id="Bitwarden"
     open-floating true
-    default-column-width { fixed 640; }
+    default-column-width { fixed 960; }
     default-window-height { fixed 779; }
 }
 
