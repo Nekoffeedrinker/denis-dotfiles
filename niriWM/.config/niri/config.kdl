@@ -241,6 +241,9 @@ window-rule { // Flotar aplicaciones
     // -------------------------------------------
     // Comentado porque no sirve. Requiere script
 
+    match app-id="com.github.finefindus.eyedropper"
+    match app-id="app.drey.Dialect"
+
     open-floating true
 }
 
