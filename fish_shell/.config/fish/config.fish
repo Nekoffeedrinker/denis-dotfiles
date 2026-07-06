@@ -27,6 +27,8 @@ if status is-interactive
     set -x EDITOR nvim
     set -x VISUAL nvim
 
+    # Hacer que no se guarde historial de jrnl
+    abbr jrnl " jrnl"
 
     # Commands to run in interactive sessions can go here
 end

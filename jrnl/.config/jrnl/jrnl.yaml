@@ -12,8 +12,8 @@ indent_character: '|'
 journals:
   default:
     journal: /home/denis/Documents/Personal/Diario
-linewrap: 79
+linewrap: 81
 tagsymbols: '#@'
 template: false
-timeformat: '%F %r'
+timeformat: '%A %d/%b/%Y %H:%M:%S'
 version: v4.2
