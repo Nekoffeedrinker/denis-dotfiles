@@ -243,6 +243,8 @@ window-rule { // Flotar aplicaciones
 
     match app-id="com.github.finefindus.eyedropper"
     match app-id="app.drey.Dialect"
+    match app-id="de.haeckerfelix.Shortwave"
+    match app-id="io.github.focustimerhq.FocusTimer"
 
     open-floating true
 }
