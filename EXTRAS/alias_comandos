@@ -3,15 +3,15 @@
 # == Remplazar ls ==
 alias ls="ls --color"
 
-alias l="eza --color=always --icons=always"
-alias la="eza --color=always --icons=always -a"
-alias ll="eza --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time"
-alias lla="eza --color=always --icons=always --git -l --no-permissions --no-filesize --no-user --no-time -a"
-alias li="eza --color=always --icons=always --git -l"
-alias lia="eza --color=always --icons=always --git -al"
+alias l="eza --color=always --icons=auto"
+alias la="eza --color=always --icons=auto -a"
+alias ll="eza --color=always --icons=auto --git -l --no-permissions --no-filesize --no-user --no-time"
+alias lla="eza --color=always --icons=auto --git -l --no-permissions --no-filesize --no-user --no-time -a"
+alias li="eza --color=always --icons=auto --git -l"
+alias lia="eza --color=always --icons=auto --git -al"
 
 # == Remplazar tree ==
-alias t="eza --color=always --icons=always --tree"
+alias t="eza --color=always --icons=auto --tree"
 
 # == Remplazar cat ==
 alias batt="bat -P"
