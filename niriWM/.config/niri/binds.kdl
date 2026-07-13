@@ -11,7 +11,7 @@ binds {
     Mod+Shift+N hotkey-overlay-title="Abrir Emacs" { spawn-sh "emacsclient -c -a 'emacs'"; }
 
     Mod+M hotkey-overlay-title="Abrir Zapzap" { spawn "zapzap"; }
-    Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "firefox"; }
+    Mod+B hotkey-overlay-title="Abrir Firefox" { spawn "org.mozilla.firefox"; }
     Mod+Shift+B hotkey-overlay-title="Abrir Zen Browser" { spawn "app.zen_browser.zen"; }
     Mod+Ctrl+B hotkey-overlay-title="Abrir Helium Browser" { spawn "helium"; }
 
