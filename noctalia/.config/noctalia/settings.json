@@ -247,39 +247,6 @@
                 },
                 {
                     "defaultSettings": {
-                        "compactMode": false,
-                        "defaultPeerAction": "copy-ip",
-                        "hideDisconnected": false,
-                        "hideMullvadExitNodes": true,
-                        "loginServer": "",
-                        "pingCount": 5,
-                        "refreshInterval": 5000,
-                        "showIpAddress": true,
-                        "showPeerCount": true,
-                        "showSearchBar": false,
-                        "sshUsername": "",
-                        "taildropDownloadDir": "~/Downloads",
-                        "taildropEnabled": true,
-                        "taildropReceiveMode": "operator",
-                        "terminalCommand": ""
-                    },
-                    "id": "plugin:tailscale"
-                },
-                {
-                    "defaultSettings": {
-                        "apiKey": "",
-                        "apiUrl": "",
-                        "configPath": "",
-                        "enabled": true,
-                        "folderIds": [
-                        ],
-                        "pollIntervalMs": 10000,
-                        "verifyTls": false
-                    },
-                    "id": "plugin:syncthing-status"
-                },
-                {
-                    "defaultSettings": {
                     },
                     "id": "plugin:kde-connect"
                 },
