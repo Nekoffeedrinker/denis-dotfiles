@@ -169,7 +169,7 @@ spawn-at-startup "flameshot"
 spawn-at-startup "niri-float-sticky" "-title" "^Picture-in-Picture$"
 // spawn-sh-at-startup "easyeffects --service-mode --hide-window"
 
-spawn-at-startup "zapzap"
+// spawn-at-startup "zapzap"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
