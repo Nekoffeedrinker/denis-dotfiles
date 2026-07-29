@@ -6,13 +6,13 @@
 (defvar file/bibliografia (expand-file-name "referencias.bib"  dir/cosasEmacs))
 (defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
 (defvar dir/orgRoam       (expand-file-name "Org-roam"         dir/docsPersonal))
-(defvar dir/diario        (expand-file-name "Diario-org/"          dir/docsPersonal))
+;; (defvar dir/diario        (expand-file-name "Diario-org/"          dir/docsPersonal))
 
 ;; Crear directorios si no existen
 (dolist (dir (list dir/cosasEmacs
                    dir/docsPersonal
-                   dir/orgRoam
-                   dir/diario))
+                   ;; dir/diario
+                   dir/orgRoam))
   (make-directory dir t))
 
 ;; Crear archivos vacíos si no existen
@@ -162,12 +162,6 @@
 (use-package! org-fancy-priorities
   :hook (org-mode . org-fancy-priorities-mode)
   :config (setq org-fancy-priorities-list '("❗" "⬆" "⬇")))
-
-(setq org-journal-dir dir/diario
-      org-journal-date-prefix "#+title: "
-      org-journal-time-prefix "\n* "
-      org-journal-date-format "%A, %d/%b/%Y"
-      org-journal-file-format "%Y-%m-%d.org")
 
 (setq org-roam-directory dir/orgRoam
       org-roam-dailies-directory "journal/")

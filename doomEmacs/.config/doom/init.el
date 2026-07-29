@@ -167,7 +167,7 @@
 
        (org                 ; Archivos de texto plano con superpoderes
         ;; +pretty             ; Mejorar el aspecto de org-mode
-        +journal            ; Llevar un diario en org-mode
+        ;; +journal            ; Llevar un diario en org-mode
         +roam)              ; Conectar org-files como en Roam Research
 
        ;; php               ; perl's insecure younger brother

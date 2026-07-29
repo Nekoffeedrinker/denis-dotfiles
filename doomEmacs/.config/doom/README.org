@@ -115,13 +115,13 @@ De las cuatro disponibles (eshell, shell, term, vterm), elegí:
 (defvar file/bibliografia (expand-file-name "referencias.bib"  dir/cosasEmacs))
 (defvar file/diccionario  (expand-file-name "mis-palabras.pws" dir/cosasEmacs))
 (defvar dir/orgRoam       (expand-file-name "Org-roam"         dir/docsPersonal))
-(defvar dir/diario        (expand-file-name "Diario-org/"          dir/docsPersonal))
+;; (defvar dir/diario        (expand-file-name "Diario-org/"          dir/docsPersonal))
 
 ;; Crear directorios si no existen
 (dolist (dir (list dir/cosasEmacs
                    dir/docsPersonal
-                   dir/orgRoam
-                   dir/diario))
+                   ;; dir/diario
+                   dir/orgRoam))
   (make-directory dir t))
 
 ;; Crear archivos vacíos si no existen
@@ -615,7 +615,7 @@ En ~init.el~ ubicamos =org= y añadimos la bandera '+journal'. Ej:
 
 Luego, hay que definir la carpeta donde estarán los archivos de diario, cómo se
 llamará el archivo y el título del mismo:
-#+begin_src elisp :tangle config.el
+#+begin_src elisp :tangle-no config.el
 (setq org-journal-dir dir/diario
       org-journal-date-prefix "#+title: "
       org-journal-time-prefix "\n* "
