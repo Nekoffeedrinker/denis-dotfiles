@@ -25,6 +25,7 @@ if status is-interactive
 
     set -x EDITOR nvim
     set -x VISUAL nvim
+    set -gx LS_COLORS (cat ~/.config/fish/anexos/ls_colors_ayu)
 
     # Arreglar el clear en Kitty
     function clear
