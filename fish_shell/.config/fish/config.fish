@@ -1,4 +1,5 @@
 if status is-interactive
+    # Commands to run in interactive sessions can go here
 
     # ======================== Configurar Fish ========================
 
@@ -38,5 +39,6 @@ if status is-interactive
     # Hacer que no se guarde historial de jrnl
     abbr jrnl " jrnl"
 
-    # Commands to run in interactive sessions can go here
+    # Larper mode
+    abbr fetch hyfetch
 end
