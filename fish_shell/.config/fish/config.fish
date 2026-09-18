@@ -31,6 +31,9 @@ if status is-interactive
     fish_add_path ~/.local/bin
     fish_add_path /var/lib/flatpak/exports/bin
 
+    # Usar bitwarden para SSH
+    set -gx SSH_AUTH_SOCK ~/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock
+
     # Arreglar el clear en Kitty
     function clear
         printf '\033[2J\033[3J\033[H'
