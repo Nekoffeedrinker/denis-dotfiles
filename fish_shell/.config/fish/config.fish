@@ -42,6 +42,9 @@ if status is-interactive
     # Hacer que no se guarde historial de jrnl
     abbr jrnl " jrnl"
 
+    # evitarme accidentes con el comando rm
+    alias rm='trash'
+
     # Larper mode
     abbr fetch hyfetch
 end
