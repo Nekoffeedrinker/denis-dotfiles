@@ -8,6 +8,9 @@ abbr lg lazygit
 # -- Abrir emacs en la terminal --
 alias temacs="emacsclient -nw -a 'emacs -nw'"
 
+# Reiniciar Doom Emacs
+alias remacs="emacsclient -e '(kill-emacs)'; emacs --daemon"
+
 # -- Abrir yazi y usarlo para navegar --
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
