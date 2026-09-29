@@ -1,54 +1,18 @@
-#+title: TIENES QUE LEERME
+#+title: Bienvenida a mis dotfiles
 
 * Acerca de
-Estos son los 'dotfiles' que utilizo para configurar algunos programas que
-utilizo en Linux. Están reunidos aquí para una mejor organización y un correcto
-control de versiones. Para ello utilizo esencialmente GNU Stow y Git.
 
-Una peculiaridad de mi organización es que los archivos de configuración no
-contienen comentarios, no como tal. Me refiero a que si, por ejemplo, entras al
-~init.lua~ de Neovim, no encontrarás ningún comentario de linea o bloques de
-comentarios. Esto es porque la documentación está realizada mediante Emacs
-Org-mode.
+Este repositorio contiene mis 'doftiles', que son archivos de texto donde se guardan configuraciones para algunos programas, window managers y shells de terminal. En Linux es posible configurar muchas aplicaciones mediante estos archivos, haciendo la configuración más portable y fácil de darle seguimiento de versiones. Para ello utilizo GNU Stow y Git.
 
-Emacs no es requerido para usar estos /dotfiles/, ya que se pueden leer los
-archivos org en cualquier editor de texto. Pero si deseas replicar mi flujo de
-trabajo, recomiendo ampliamente aprender a usarlo, especialmente la
-funcionalidad que explicaré abajo. En caso contrario, puedes simplemente usar
-Stow para instalar los archivos y olvidarte, ya que este no copiará ningún
-archivo org a tu directorio home.
+Git es para el control de versiones, pero Stow es para organizar mejor este repositorio. La ventaja de usar GNU Stow es que puedo separar los dotfiles entre cada uno de los programas, por lo que puedo elegir a qué programa le aplico su configuración. Incluso, podría tener múltiples configuraciones para el mismo programa y poder elegir cuál de todas usar.
+
+Una peculiaridad de mis dotfiles es que comencé a separarlos en múltiples repositorios. Tras cierta cantidad de programas, se volvió insostenible mantener un monorepo que iba cambiando continuamente y en múltiples lugares. Por eso, decidí darle su propio repositorio a las configuraciones que son lo suficientemente grandes.
 
 * Requerimientos
 - Git
 - GNU Stow
 
-Ambos requerimientos son relativamente opcionales. *Git* se puede omitir
-parcialmente, ya que se puede descargar el repositorio en formato ~.zip~ desde
-el propio GitHub. También se puede prescindir de *GNU Stow*, debido a que puedes
-crear manualmente tus propios /symlinks/ (en español, enlaces simbólicos), u
-optar por la vía fácil de copiar los archivos a sus respectivas carpetas.
-
-Sin embargo, estas dos herramientas permiten un uso más práctico, además de
-añadir funciones que serían una tarea laboriosa o ineficiente si se hicieran de
-manera manual: el control de versiones y la automatización de creación de
-múltiples de enlaces, respectivamente.
-
-Por lo tanto, recomiendo ampliamente utilizar amplias herramientas y aprender lo
-suficiente para tu conveniencia.
-
-** ¿Necesito Emacs o no?
-Como lo mencioné en la introducción, Emacs es completamente opcional para el uso
-de estos archivos. No obstante, esta configuración está pensada para *realizar
-el mantenimiento de estos usando Emacs*, debido a que la explicación y
-documentación está en archivos org.
-
-Si deseas replicar mi método, te recomiendo ampliamente aprender Doom Emacs (mis
-configuraciones lo incluyen). Pero si solo quieres algo específico y leer la
-documentación sobre ello, es mejor que abras el ~.org~ en cualquier editor y lo
-leas detenidamente.
-
-Para las personas interesadas en usar los ~:tangle~ de org-mode, dejaré una
-explicación al final de este README.
+Ambos requerimientos son relativamente opcionales. *Git* se puede omitir parcialmente, ya que se puede descargar el repositorio en formato ~.zip~ desde el propio GitHub. También se puede prescindir de *GNU Stow*, debido a que puedes crear manualmente tus propios /symlinks/ (en español, enlaces simbólicos), u optar por la vía fácil de copiar los archivos a sus respectivas carpetas.
 
 * Instalación
 ** Git
@@ -63,42 +27,34 @@ git clone https://github.com/Nekoffeedrinker/denis-dotfiles.git ~/.denisDotfiles
 
 #+end_src
 
-*** Cambiar el remote
+*** Clonar subrepos
 
-Ver el remote actual
+*NOTA:* Este es un workarround temporal. En el futuro, este proceso se realizará de manera diferente.
 
-#+begin_src bash
-
-git remote -v
-
-#+end_src
-
-Cambiar el remote
+Debido a que hay repositorios individuales que se usan en estos dotfiles, hay que clonarlos por separado. Esto te dará la versión más actualizada de todos y los posicionará en su lugar correcto.
 
 #+begin_src bash
 
-git remote set-url origin git@github.com:Nekoffeedrinker/denis-dotfiles.git
-
+cd ~/.denisDotfiles/
+git clone https://github.com/Nekoffeedrinker/doomEmacs-dotfiles.git ./doomEmacs-repo/.config/doom
+git clone https://github.com/Nekoffeedrinker/neovim-dotfiles.git ./neovim-repo/.config/nvim
+git clone https://github.com/Nekoffeedrinker/niriWM-dotfiles.git ./niriWM-repo/.config/niri
+git clone https://github.com/Nekoffeedrinker/mangoWM-dotfiles.git ./mangoWM-repo/.config/mango
+git clone https://github.com/Nekoffeedrinker/noctalia-dotfiles.git ./noctalia-repo
 #+end_src
 
-Ya que lo tengas, verifica que estén los archivos y continua con Stow
-
-#+RESULTS:
+Puedes omitir alguno de los repositorios si es que no deseas tener todos.
 
 ** GNU Stow
-Lo primero que hay que hacer es posicionar el esta carpeta de /dotfiles/ dentro
-de nuestro /home directory/, el directorio de usuario, que en sistemas Linux lo
-podremos identificar como ~/home/username/~, o simplemente con la tilde (~/).
-Esto es porque la manera más sencilla de usar Stow es creando los enlaces afuera
-del directorio donde ejecutamos el programa.
 
-Otra cuestión acerca de Stow es que no copiará ningún archivo org del tipo
-README (ejemplo: ~README-nvim.org~), por lo que estos solo vivirán en esta
-carpeta.
+Lo primero que hay que hacer es posicionar el esta carpeta de /dotfiles/ dentro de nuestro /home directory/, el directorio de usuario, que en sistemas Linux lo podremos identificar como ~/home/username/~, o simplemente con la tilde (~/). Esto es porque la manera más sencilla de usar Stow es creando los enlaces afuera del directorio donde ejecutamos el programa.
+
+Otra cuestión acerca de Stow es que no copiará ningún archivo org del tipo README (ejemplo: ~README-nvim.org~), por lo que estos solo vivirán en esta carpeta.
 
 *Para entrar más en detalle, favor de consultar el final de este README.*
 
 *** Instalar todas las configuraciones
+
 Para instalar todas las configuraciones, ejecuta:
 
 #+begin_src bash
@@ -117,9 +73,8 @@ stow -D *
 
 
 *** Instalar solo las configuraciones de 1 programa
-Supongamos que quieres instalar *Neovim*. Primero identifica el en el
-repositorio el nombre de la carpeta, en este caso ~nvim~. A continuación,
-ejecuta el siguiente comando:
+
+Supongamos que quieres instalar *Neovim*. Primero identifica el en el repositorio el nombre de la carpeta, en este caso ~nvim~. A continuación, ejecuta el siguiente comando:
 
 #+begin_src bash
 
@@ -136,32 +91,3 @@ stow -D nvim
 #+end_src
 
 
-* TODO Más detalles sobre GNU Stow
-
-* TODO Cómo usar Emacs org-mode para escribir dotfiles
-
-
-# ----------------------------------------------------------
-
-# ATENCIÓN: Los comentarios aquí abajo son parte de los TODO que debo realizar
-# en este archivo README.
-
-# Si exploras el repositorio, te darás cuenta que está lleno de archivos
-# ~README~ que terminan en ~.org~. Estos son las configuraciones de manera
-# comentada en archivos org, que sirven para generar los respectivos archivos de
-# configuración. Esta manera de organizar me permite generar mejor
-# documentación, así como poder organizar por temas cada cosa.
-
-# Otra ventaja de este sistema es que me facilita configurar programas con
-# varios archivos de configuración (como Doom Emacs). Esto gracias a que
-# centralizo toda la información en uno solo.
-
-# La manera en que están guardados estos archivos es mediante "paquetes", los
-# cuales se pueden cargar mediante *GNU Stow*. Este es un programa de terminal
-# que permite crear /enlaces simbólicos/ entre esta carpeta y los verdaderos
-# archivos de configuración.
-
-# La ventaja de usar estos enlaces es que en ambas ubicaciones está el mismo
-# archivo con el mismo contenido. Además, si uno de los dos es modificado, el
-# otro reflejará dicha modificación. Es como los accesos directos de Windows,
-# pero mejores.
