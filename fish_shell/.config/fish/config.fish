@@ -39,8 +39,8 @@ if status is-interactive
         printf '\033[2J\033[3J\033[H'
     end
 
-    # Hacer que no se guarde historial de jrnl
-    abbr jrnl " jrnl"
+    # # Hacer que no se guarde historial de jrnl
+    # abbr jrnl " jrnl"
 
     # evitarme accidentes con el comando rm
     alias rm='trash'
