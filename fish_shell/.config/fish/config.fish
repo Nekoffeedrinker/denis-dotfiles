@@ -28,6 +28,7 @@ if status is-interactive
     set -x VISUAL nvim
     set -gx LS_COLORS (cat ~/.config/fish/anexos/ls_colors_ayu)
     fish_add_path ~/.config/emacs/bin
+    fish_add_path ~/bin
     fish_add_path ~/.local/bin
     fish_add_path /var/lib/flatpak/exports/bin
 
