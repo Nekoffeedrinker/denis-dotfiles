@@ -23,9 +23,9 @@ save_always = true
 accept = "c"
 
 [save]
-directory = "screenshots"
-month_format = "%Y-%m"
-filename_format = "%Y-%m-%d_%H-%M"
+directory = "Capturas de pantalla"
+month_format = ""
+filename_format = "screenshot_%Y%m%d_%H%M%S"
 
 [notifications]
 enabled = true
