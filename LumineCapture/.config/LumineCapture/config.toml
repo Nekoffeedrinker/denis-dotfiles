@@ -21,6 +21,7 @@ save_always = true
 # like pressing enter or double click on the selection zone
 # c (copy), p (pin), s(save), in any order
 accept = "c"
+overlay = "layer"
 
 [save]
 directory = "Capturas de pantalla"
